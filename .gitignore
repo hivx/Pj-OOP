@@ -1,0 +1,6 @@
+# Default ignored files
+/.idea/workspace.xml
+/src/card/Card$1.class
+/src/card/Card$Rank.class
+/src/card/Card$Suit.class
+/src/card/Card.class

@@ -1,4 +1,6 @@
-import card.Deck;
+package src;
+
+import src.card.Deck;
 
 public class Main {
     public static void main(String[] args) {
