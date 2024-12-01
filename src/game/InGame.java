@@ -40,12 +40,11 @@ public class InGame extends JFrame{
     Player_ver_end player;
     private ChiaBai_Avatar_NgauNhien_ver_end cbnn;
     private GT_TLMN_PhanNhomBai_ver_end gtbot_pnb;
-//    private NaiveBayes_Bot_LearnData_ver_end nbbl;
+    //private NaiveBayes_Bot_LearnData_ver_end nbbl;
     private GT_TLMN_BOT_TinhToan_va_RaQuyetDinh_ver_end gtbot_ttvrqd;
-   private DieuKhienBatDauVaKetThucGame_ver_end dkbatdauketthucgame;
+    private DieuKhienBatDauVaKetThucGame_ver_end dkbatdauketthucgame;
     private DieuKhienLuotDanh_ver_end dkluot;
     //private GT_TLMN_PhanNhomBai_ver_end gtplayer_pnb;
-    
     private  int soPlayerBiKhoa,SONGUOICHOI=2,isTurn;
     int[] soluonglaconlaicuaActor=new int[30];
     boolean isKETTHUC,isToiTrang;
@@ -57,10 +56,9 @@ public class InGame extends JFrame{
     int index_actor_truoc=0,index_actor_sau=0;
     private  int BOTRABAI_O_GIAY;
     private int THOIGIANBATDAUGAME_O_GIAY=0;
-  public InGame(String avatar,String chieucualuot,int soluongmay,
-          String chedochoi,String nhac,int thoigiantremayrabai) throws SQLException
-    {
-      
+    public InGame(String avatar,String chieucualuot,int soluongmay,
+          String chedochoi,String nhac,int thoigiantremayrabai) throws SQLException {
+
         this.avatarplayer=avatar;
         this.chieucualuot=chieucualuot;
         this.SONGUOICHOI=soluongmay+1;
@@ -69,8 +67,7 @@ public class InGame extends JFrame{
         this.BOTRABAI_O_GIAY=10-thoigiantremayrabai;
         run();
     }
-    public void run() throws SQLException
-    {
+    public void run() throws SQLException {
         taoCuaSo();
         chiaBai();
         chiaAvatar();
@@ -82,92 +79,61 @@ public class InGame extends JFrame{
         isTurn=0;
         theyCard.removeAll(theyCard);
         tatCaPlayerDuocMoKhoaLuot();
-         dkbatdauketthucgame=new DieuKhienBatDauVaKetThucGame_ver_end(SONGUOICHOI,player,bot1,bot2,bot3);
-         dkbatdauketthucgame.thongBaoChuanBi();
-      
-         dkbatdauketthucgame.timeChuanBi();
-         add(dkbatdauketthucgame.thongbaochuanbivaogame);
-         add(dkbatdauketthucgame.timechuanbivaogame);
-          dkbatdauketthucgame.DieuKhienTrangThaiNhacDauVanGame();
+        dkbatdauketthucgame=new DieuKhienBatDauVaKetThucGame_ver_end(SONGUOICHOI,player,bot1,bot2,bot3);
+        dkbatdauketthucgame.thongBaoChuanBi();
+        dkbatdauketthucgame.timeChuanBi();
+        add(dkbatdauketthucgame.thongbaochuanbivaogame);
+        add(dkbatdauketthucgame.timechuanbivaogame);
+        dkbatdauketthucgame.DieuKhienTrangThaiNhacDauVanGame();
         demNguocChuanBiBatDau();
-        
     }
-    public void chiaBai()
-    {
-       cbnn=new ChiaBai_Avatar_NgauNhien_ver_end();
-       cbnn.getChiaBai();
-     
+    public void chiaBai() {
+        cbnn=new ChiaBai_Avatar_NgauNhien_ver_end();
+        cbnn.getChiaBai();
     }
-    public void chiaAvatar()
-    {
-          cbnn.getAvatar(9, Integer.parseInt(avatarplayer));
+    public void chiaAvatar() {
+        cbnn.getAvatar(9, Integer.parseInt(avatarplayer));
     }
-  
-    public void taoCacActor()
-    {
-//Bộ bài đầu vào
-
-/*cbnn.phanbai1= "2$3$8$10$12$17$18$20$31$33$35$37$40$";
-cbnn.phanbai2= "7$21$22$25$28$38$39$42$43$45$46$49$51$";
-cbnn.phanbai3= "6$9$11$13$19$24$26$30$32$34$36$44$48$";
-cbnn.phanbai4= "1$4$5$14$15$16$23$27$29$41$47$50$52$";*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-   player=new Player_ver_end(1,cbnn.phanbai1,400,440,416,455,
-    450,490,550,630,400,450,340,550,450,450,550,450,280,580,avatarplayer,    13    ,150,500);
-   bot1=new Bot_ver_end(2,cbnn.phanbai2,70,370,50,205,63,225,100,
-   220,120,310,170,250,125,325,20,320,cbnn.avatarnv[2],chedochoi,      13    ,50,240);
-   bot2=new Bot_ver_end(3,cbnn.phanbai3,650,100,400,140,416,155,
-  500,20,500,90,500,20,505,110,560,120,cbnn.avatarnv[3],chedochoi,    13       ,600,40);
-   bot3=new Bot_ver_end(4,cbnn.phanbai4,950,370,800,205,815,225,870,220
-   ,880,310,900,250,885,325,950,310,cbnn.avatarnv[4],chedochoi,    13      ,800,240);
-   for(int i=1;i<=SONGUOICHOI;i++)
-   {
-       soluonglaconlaicuaActor[i]=13;
-   }
-    }
-    
-    public void chonSoBotDeSetupOption()
-    {
-        if(SONGUOICHOI==2)
-        {
-         setUpOptionBotLenBackground(bot1);
+    //Bộ bài đầu vào
+    /*cbnn.phanbai1= "2$3$8$10$12$17$18$20$31$33$35$37$40$";
+    cbnn.phanbai2= "7$21$22$25$28$38$39$42$43$45$46$49$51$";
+    cbnn.phanbai3= "6$9$11$13$19$24$26$30$32$34$36$44$48$";
+    cbnn.phanbai4= "1$4$5$14$15$16$23$27$29$41$47$50$52$";*/
+    public void taoCacActor() {
+        player=new Player_ver_end(1,cbnn.phanbai1,400,440,416,455,
+                450,490,550,630,400,450,340,550,450,450,550,450,280,580,avatarplayer,    13    ,150,500);
+        bot1=new Bot_ver_end(2,cbnn.phanbai2,70,370,50,205,63,225,100,
+                220,120,310,170,250,125,325,20,320,cbnn.avatarnv[2],chedochoi,      13    ,50,240);
+        bot2=new Bot_ver_end(3,cbnn.phanbai3,650,100,400,140,416,155,
+                500,20,500,90,500,20,505,110,560,120,cbnn.avatarnv[3],chedochoi,    13       ,600,40);
+        bot3=new Bot_ver_end(4,cbnn.phanbai4,950,370,800,205,815,225,870,220
+                ,880,310,900,250,885,325,950,310,cbnn.avatarnv[4],chedochoi,    13      ,800,240);
+        for(int i=1;i<=SONGUOICHOI;i++) {
+            soluonglaconlaicuaActor[i]=13;
         }
-        else if(SONGUOICHOI==3)
-        {
-        setUpOptionBotLenBackground(bot1);
-        setUpOptionBotLenBackground(bot2);
-        }
-        else if(SONGUOICHOI==4)
-         {
-        setUpOptionBotLenBackground(bot1);
-        setUpOptionBotLenBackground(bot2);
-        setUpOptionBotLenBackground(bot3);
-         }
     }
-   public void taoKhungOption()
-    {
+    public void chonSoBotDeSetupOption() {
+        if(SONGUOICHOI==2) {
+            setUpOptionBotLenBackground(bot1);
+        } else if(SONGUOICHOI==3) {
+            setUpOptionBotLenBackground(bot1);
+            setUpOptionBotLenBackground(bot2);
+        } else if(SONGUOICHOI==4) {
+            setUpOptionBotLenBackground(bot1);
+            setUpOptionBotLenBackground(bot2);
+            setUpOptionBotLenBackground(bot3);
+        }
+    }
+    public void taoKhungOption() {
         URL url = InGame.class.getResource("/ima_TLMN/khungoption.png");
-ImageIcon icon = new ImageIcon(url);
-     setLayout(null); 
-     khungoption.setIcon(icon);
-     khungoption.setBounds(0,0  ,icon.getIconWidth(), icon.getIconHeight());
+        ImageIcon icon = new ImageIcon(url);
+        setLayout(null);
+        khungoption.setIcon(icon);
+        khungoption.setBounds(0,0  ,icon.getIconWidth(), icon.getIconHeight());
     }
     public void setUpOptionBotLenBackground(Bot_ver_end bot)
     {    add(bot.winner);
-        add(bot.nhanthoigian); 
+        add(bot.nhanthoigian);
         add(bot.nhanclock);
      add(bot.avatar);
         add(bot.nhankhongtheo);
@@ -193,10 +159,10 @@ ImageIcon icon = new ImageIcon(url);
                pl.nhanbackhome.addMouseListener(mouseAdapterPlayerChonOptionKhac);
         add(pl.nhannewgame);
         pl.nhannewgame.addMouseListener(mouseAdapterPlayerChonOptionKhac);
-        add(pl.nhanthoigian); 
+        add(pl.nhanthoigian);
         add(pl.nhanclock);
         add(pl.cardhide);
-        add(pl.nhankhongtheo);  
+        add(pl.nhankhongtheo);
         add(pl.nhanthongbao3bichditruoc);
         add(pl.nhanthongbaobainhoditruoc);
        add(pl.nutrabai);
@@ -217,19 +183,19 @@ ImageIcon icon = new ImageIcon(url);
     }
     public void taoCuaSo(){
          setResizable(false);//không cho phóng to
-         setTitle("Tiến Lên Miền Nam(phiên bản Legend)");
+         setTitle("Tiến Lên Miền Nam");
          setBounds(50, 0, 1050, 700);
          setLocation(180, 0);//vị trí mặc định
          setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 URL url = InGame.class.getResource("/ima_TLMN/bg_TLMN_2.png");
-         panel=new BackgroundGame(new ImageIcon(url).getImage()); 
-         setContentPane(panel);	
+         panel=new BackgroundGame(new ImageIcon(url).getImage());
+         setContentPane(panel);
        taoKhungOption();
-         panel.setLayout(null);  
-        
-       
+         panel.setLayout(null);
+
+
     }
-      public void demNguocChuanBiBatDau() 
+      public void demNguocChuanBiBatDau()
          {
               ActionListener aTime = new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -239,11 +205,11 @@ ImageIcon icon = new ImageIcon(url);
         {
             dkbatdauketthucgame.thongbaochuanbivaogame.setVisible(false);
             dkbatdauketthucgame.timechuanbivaogame.setVisible(false);
-             Date date = new Date();  
-    SimpleDateFormat  formatter = new SimpleDateFormat("dd-M-yyyy hh:mm:ss");  
-    thoigianhethongbatdaugame  = formatter.format(date);  
+             Date date = new Date();
+    SimpleDateFormat  formatter = new SimpleDateFormat("dd-M-yyyy hh:mm:ss");
+    thoigianhethongbatdaugame  = formatter.format(date);
             int iwin=dkbatdauketthucgame.indexActorKetThucLuonDoToiTrang();
-            if(iwin==1) 
+            if(iwin==1)
        {
            for(int i=player.baivuachon.size()-1;i>=0;i--)
             {
@@ -251,12 +217,12 @@ ImageIcon icon = new ImageIcon(url);
             add(player.nhanbaira[j]);
             player.nhanbaira[j].setVisible(true);
             }
-           dkbatdauketthucgame.iwin=1; 
+           dkbatdauketthucgame.iwin=1;
            dkbatdauketthucgame.isTurn=1;
            dkbatdauketthucgame.istoitrang=true;
            isKETTHUC=true;
            JOptionPane.showMessageDialog(null,"Bài của bạn tới trắng!!! Chúc mừng bạn đã thắng");
-           
+
                 try {
                     dkbatdauketthucgame.luuLichSuDau(thoigianhethongbatdaugame, SONGUOICHOI,
                             "Yes", cbnn.avatarnv[1],1);
@@ -265,7 +231,7 @@ ImageIcon icon = new ImageIcon(url);
                     Logger.getLogger(InGame.class.getName()).log(Level.SEVERE, null, ex);
                 }
        }
-            else if((iwin==3&&SONGUOICHOI>=3)||(iwin==4&&SONGUOICHOI>=4)||(iwin==2)&&SONGUOICHOI>=2) 
+            else if((iwin==3&&SONGUOICHOI>=3)||(iwin==4&&SONGUOICHOI>=4)||(iwin==2)&&SONGUOICHOI>=2)
    {
        isToiTrang=true;
           try {
@@ -275,16 +241,16 @@ ImageIcon icon = new ImageIcon(url);
            {raBaiMain(bot1);bot1.tatOptionBot();}
            if(iwin==3&&SONGUOICHOI>=3)
          {raBaiMain(bot2);bot2.tatOptionBot();
-         
+
          }
            if(iwin==4&&SONGUOICHOI>=4)
           {raBaiMain(bot3);bot3.tatOptionBot();
           }
-           
+
            } catch (SQLException ex) {
                     Logger.getLogger(InGame.class.getName()).log(Level.SEVERE, null, ex);
                 }
-   
+
            try {
 dkbatdauketthucgame.isTurn=iwin;
                     dkbatdauketthucgame.xuLyKetThucGame();
@@ -292,17 +258,17 @@ dkbatdauketthucgame.isTurn=iwin;
                     Logger.getLogger(InGame.class.getName()).log(Level.SEVERE, null, ex);
                 }
    }
-   else 
+   else
    {
      int indexnguoicolabainhonhat=dkbatdauketthucgame.timNguoiCoBaiNhoNhat();
-       
+
        chuyenToiLuotActor(indexnguoicolabainhonhat);
    }
               dkbatdauketthucgame.time.stop();
         }
         }
         };
-          dkbatdauketthucgame.time= new Timer(1000, aTime);      
+          dkbatdauketthucgame.time= new Timer(1000, aTime);
 	 dkbatdauketthucgame.time.start();
         }
     public MouseAdapter mouseAdapterPlayerRaQuyetDinh = new MouseAdapter()
@@ -313,7 +279,7 @@ dkbatdauketthucgame.isTurn=iwin;
             player.nhanthongbao3bichditruoc.setVisible(false);
             player.nhanthongbaobainhoditruoc.setVisible(false);
             if(soPlayerBiKhoa==SONGUOICHOI-1) tatCaPlayerDuocMoKhoaLuot();
-            
+
             player.xuLyRaBai(player);
              theyCard.removeAll(theyCard);
             for(int i=0;i<player.baivuachon.size();i++)
@@ -342,7 +308,7 @@ dkbatdauketthucgame.isTurn=iwin;
                 }
 return;
             }
-      } 
+      }
         if(e.getSource()==player.nutkhongtheo)
         {
            daKhoaLuotActor[1]=true;
@@ -372,7 +338,7 @@ play.play();
 }
 });
 }
-      public MouseAdapter mouseAdapterPlayerChonOptionKhac = new MouseAdapter() 
+      public MouseAdapter mouseAdapterPlayerChonOptionKhac = new MouseAdapter()
 {
   public void mousePressed(MouseEvent e) {
        if(e.getSource()==player.nhansoundon)

@@ -46,7 +46,7 @@ public class TuyChon extends JFrame
            int indexnhactemp;
     public TuyChon() throws SQLException
             {
-         setTitle("Tiến Lên Miền Nam(phiên bản Legend)");
+         setTitle("Tiến Lên Miền Nam");
          setBounds(50, 0, 700, 697);
                 setLocation(300, 0);
           setVisible(false);
@@ -720,7 +720,7 @@ play.play();
 }
   public JPanel copyRight()
 {
-    JLabel text1=new JLabel("Tiến lên miền nam phiên bản huyền thoại (version 1).");
+    JLabel text1=new JLabel("Tiến lên miền nam.");
     JLabel text2=new JLabel("Thời hạn: vĩnh viễn ");
     JLabel text3=new JLabel("Design by: KMA-ATTT-AT15-Team");
      text1.setFont(new Font("Arial", Font.BOLD, 18));

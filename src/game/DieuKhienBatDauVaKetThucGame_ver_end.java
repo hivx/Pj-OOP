@@ -19,7 +19,6 @@ import javax.swing.Timer;
 
 
 public class DieuKhienBatDauVaKetThucGame_ver_end {
-
     int SONGUOICHOI,iwin,isTurn,bodem=3;
      JLabel timechuanbivaogame=new JLabel("3");
     Bot_ver_end bot1,bot2,bot3;
