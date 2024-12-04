@@ -17,7 +17,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.Scanner;
 
-public class GT_TLMN_PhanNhomBai_ver_end extends GT_TLMN_General_ver_end{
+public class GT_TLMN_PhanNhomBai_ver_end extends GT_TLMB{
    
 int numbbaiconlaicuatoi;
  

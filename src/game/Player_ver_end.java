@@ -87,8 +87,8 @@ public class Player_ver_end extends Actor_ver_end{
             int j=baivuachon.get(i).vitri;
             nhanbaira[j].setVisible(false);
         }
-      bodem=20;
-      nhanthoigian.setText(""+20);
+      bodem=1000;
+      nhanthoigian.setText(""+1000);
         baivuachon.removeAll(baivuachon);
         nutkhongtheo.setVisible(false);
         nhanclock.setVisible(true);

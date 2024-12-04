@@ -15,7 +15,6 @@ import javax.swing.JOptionPane;
  * @author Admin
  */
 public class Bot_ver_end extends Actor_ver_end{
-
     public Bot_ver_end(int indexActor,String listBaiDuocChia,int x_cardau,
      int y_carddau,int xclock,int yclock,int xtime,int ytime,int x_nhan_ktheo,
      int y_nhan_ktheo,int xcardhide,int ycardhide,int xbaira,int ybaira,

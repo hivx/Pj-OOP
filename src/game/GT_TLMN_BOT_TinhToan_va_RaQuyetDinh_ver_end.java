@@ -15,9 +15,7 @@ import java.util.Vector;
 import game.NaiveBayes_Bot_LearnData_ver_end;
 import java.util.logging.Level;
 import java.util.logging.Logger;
- public class GT_TLMN_BOT_TinhToan_va_RaQuyetDinh_ver_end extends GT_TLMN_General_ver_end{
-
-    
+ public class GT_TLMN_BOT_TinhToan_va_RaQuyetDinh_ver_end extends GT_TLMB{
   public GT_TLMN_BOT_TinhToan_va_RaQuyetDinh_ver_end(ArrayList<Card_Player_ver_end> arrLbaiplayerra,
         ArrayList<CardBot_ver_end> cacbobaicuatoi,int[] SoLaActor,
        int soLuongActor,int index_actor,int index_actor_truoc,int index_actor_sau,int bainhonhat) throws IOException {
@@ -57,7 +55,7 @@ import java.util.logging.Logger;
             dapanmaxlength=cardbot.get(i).sola+"$"+cardbot.get(i).loaibai+"$"+
   cardbot.get(i).daycard;
             }
-        } 
+        }
      if(lengthmax==1) {return "koco";}
         return dapanmaxlength;
   }
@@ -99,19 +97,17 @@ import java.util.logging.Logger;
        int lengthmax=0;
        int sumsohieulengthmax=0;
         String sanhdep="koco";
-      for(int i=0;i<cardbot.size();i++)
-        {
-            if(((cardbot.get(i).loaibai.equals("sanh")
-             &&cardbot.get(i).sola>lengthmax&&
-               khongAnhHuongDenBaiBoBaiTop(cardbot.get(i).daycard)==true)||  
-               (((cardbot.get(i).loaibai.equals("badoithong")||cardbot.get(i).loaibai.equals("bondoithong"))
-               &&SoLaConLaiCuaActor[index_actor]-cardbot.get(i).sola==1)))&&cardbot.get(i).sola>lengthmax)
-            {
-                lengthmax=cardbot.get(i).sola;
-                sanhdep=cardbot.get(i).daycard;
-                sumsohieulengthmax=cardbot.get(i).sumsohieu;
-            }
-        } 
+      for (CardBot_ver_end cardBotVerEnd : cardbot) {
+          if (((cardBotVerEnd.loaibai.equals("sanh")
+                  && cardBotVerEnd.sola > lengthmax &&
+                  khongAnhHuongDenBaiBoBaiTop(cardBotVerEnd.daycard)) ||
+                  (((cardBotVerEnd.loaibai.equals("badoithong") || cardBotVerEnd.loaibai.equals("bondoithong"))
+                          && SoLaConLaiCuaActor[index_actor] - cardBotVerEnd.sola == 1))) && cardBotVerEnd.sola > lengthmax) {
+              lengthmax = cardBotVerEnd.sola;
+              sanhdep = cardBotVerEnd.daycard;
+              sumsohieulengthmax = cardBotVerEnd.sumsohieu;
+          }
+      }
        if(SoLaConLaiCuaActor[index_actor]-lengthmax<=3)
        {
        return  sanhdep;}
@@ -126,17 +122,15 @@ import java.util.logging.Logger;
   {
        int sohieumax=0;
         String dapanmaxsohieu="koco";
-      for(int i=0;i<cardbot.size();i++)
-        {
-           
-            if((cardbot.get(i).loaibai.equals("doi")||cardbot.get(i).loaibai.equals("coc"))
-             &&cardbot.get(i).sumsohieu>sohieumax)
-            {
-                sohieumax=cardbot.get(i).sumsohieu;
-                dapanmaxsohieu=cardbot.get(i).sola+"$"+cardbot.get(i).loaibai+"$"+
-  cardbot.get(i).daycard;
-            }
-        } 
+      for (CardBot_ver_end cardBotVerEnd : cardbot) {
+
+          if ((cardBotVerEnd.loaibai.equals("doi") || cardBotVerEnd.loaibai.equals("coc"))
+                  && cardBotVerEnd.sumsohieu > sohieumax) {
+              sohieumax = cardBotVerEnd.sumsohieu;
+              dapanmaxsohieu = cardBotVerEnd.sola + "$" + cardBotVerEnd.loaibai + "$" +
+                      cardBotVerEnd.daycard;
+          }
+      }
       return dapanmaxsohieu;
   }
     public String dapAnDiTruocMaxSoHieuGiuTop()

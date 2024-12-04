@@ -14,7 +14,7 @@ import java.util.ArrayList;
  *
  * @author Admin
  */
-public class GT_TLMN_Player_ver_end extends GT_TLMN_General_ver_end{
+public class GT_TLMN_Player_ver_end extends GT_TLMB{
  int solabaibotra;
  boolean coDapAn;
    int[] baibotra=new int[30];

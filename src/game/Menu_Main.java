@@ -19,8 +19,7 @@ public class Menu_Main extends JFrame {
     ConnectDataBaseTLMN_NetBeans kn = new ConnectDataBaseTLMN_NetBeans();
     Connection cn = kn.getConnectdatabase();
     Statement stm = cn.createStatement();
-    private JPanel panel;
-
+    JLabel nhanchoingay = new JLabel();
     JLabel nhanhuongdan = new JLabel();
     JLabel nhantuychon = new JLabel();
     JLabel nhanthoat = new JLabel();
@@ -32,7 +31,6 @@ public class Menu_Main extends JFrame {
         taoNutTuyChon();
         taoNutThoat();
     }
-
     public void taoCuaSo() {
         setResizable(true);
         setTitle("Tiến Lên Miền Nam");
@@ -40,25 +38,24 @@ public class Menu_Main extends JFrame {
         setLocation(300, 0);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         URL url = Menu_Main.class.getResource("/ima_TLMN/bg_menu.png");
-        ImageIcon icon = new ImageIcon(url);
-        panel = new BackgroundGame(new ImageIcon(url).getImage());
+        assert url != null;
+//        ImageIcon icon = new ImageIcon(url);
+        JPanel panel = new BackgroundGame(new ImageIcon(url).getImage());
         setContentPane(panel);
         panel.setLayout(null);
     }
-
-    JLabel nhanchoingay = new JLabel();
-
     public void taoNutChoiNgay() {
         URL url = Menu_Main.class.getResource("/ima_TLMN/choingay.png");
+        assert url != null;
         ImageIcon icon = new ImageIcon(url);
         nhanchoingay.setIcon(icon);
         nhanchoingay.setBounds(270, 430, icon.getIconWidth(), icon.getIconHeight());
         add(nhanchoingay);
         nhanchoingay.addMouseListener(mouseAdapterUserChonOptionMenu);
     }
-
     public void taoNutHuongDan() {
         URL url = Menu_Main.class.getResource("/ima_TLMN/huongdan.png");
+        assert url != null;
         ImageIcon icon = new ImageIcon(url);
         nhanhuongdan.setIcon(icon);
         nhanhuongdan.setBounds(270, 500, icon.getIconWidth(), icon.getIconHeight());
@@ -68,6 +65,7 @@ public class Menu_Main extends JFrame {
 
     public void taoNutTuyChon() {
         URL url = Menu_Main.class.getResource("/ima_TLMN/tuychon.png");
+        assert url != null;
         ImageIcon icon = new ImageIcon(url);
         nhantuychon.setIcon(icon);
         nhantuychon.setBounds(400, 430, icon.getIconWidth(), icon.getIconHeight());
@@ -77,6 +75,7 @@ public class Menu_Main extends JFrame {
 
     public void taoNutThoat() {
         URL url = Menu_Main.class.getResource("/ima_TLMN/thoat.png");
+        assert url != null;
         ImageIcon icon = new ImageIcon(url);
         nhanthoat.setIcon(icon);
         nhanthoat.setBounds(400, 500, icon.getIconWidth(), icon.getIconHeight());
@@ -124,8 +123,10 @@ public class Menu_Main extends JFrame {
                             Integer.parseInt(temp[3]), temp[4], temp[5], Integer.parseInt(temp[6]));
                     frame.setVisible(true);
                 } catch (SQLException ex) {
-                    System.out.println(ex);
+                    Logger logger = Logger.getLogger(getClass().getName());
+                    logger.log(Level.SEVERE, "An SQL exception occurred", ex); // Log lỗi thay vì in stack trace
                 }
+
             } else if (e.getSource() == nhanthoat) {
                 System.exit(WIDTH);
             } else if (e.getSource() == nhanhuongdan) {
@@ -152,8 +153,10 @@ public class Menu_Main extends JFrame {
                     Menu_Main frame = new Menu_Main();
                     frame.setVisible(true);
                 } catch (Exception e) {
-                    e.printStackTrace();
+                    Logger logger = Logger.getLogger(getClass().getName());
+                    logger.log(Level.SEVERE, "An SQL exception occurred", e); // Log lỗi thay vì in stack trace
                 }
+
             }
         });
     }
