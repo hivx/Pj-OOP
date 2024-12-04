@@ -9,7 +9,7 @@ import java.awt.event.MouseEvent;
 //import java.io.File;
 //import java.io.FileInputStream;
 //import java.io.FileWriter;
-import java.io.IOException;
+//import java.io.IOException;
 
 import java.io.InputStream;
 import java.net.URL;
@@ -35,9 +35,11 @@ import javax.swing.Timer;
 import javazoom.jl.player.Player;
 
 public class InGame extends JFrame{
-    ArrayList<Card_Player_ver_end> theyCard=new ArrayList<Card_Player_ver_end>();
-    Bot_ver_end bot1,bot2,bot3;
+    ArrayList<Card_Player_ver_end> theyCard=new ArrayList<>();
     Player_ver_end player;
+    Player_ver_end2 player2;
+    Player_ver_end2 player3;
+    Player_ver_end2 player4;
     private ChiaBai_Avatar_NgauNhien_ver_end cbnn;
     private GT_TLMN_PhanNhomBai_ver_end gtbot_pnb;
 //    private NaiveBayes_Bot_LearnData_ver_end nbbl;
@@ -76,13 +78,14 @@ public class InGame extends JFrame{
         chiaAvatar();
         taoCacActor();
         setUpOptionPlayerLenBackground(player);
+
         chonSoBotDeSetupOption();
         isKETTHUC=false;
         isToiTrang=false;
         isTurn=0;
         theyCard.removeAll(theyCard);
         tatCaPlayerDuocMoKhoaLuot();
-         dkbatdauketthucgame=new DieuKhienBatDauVaKetThucGame_ver_end(SONGUOICHOI,player,bot1,bot2,bot3);
+         dkbatdauketthucgame=new DieuKhienBatDauVaKetThucGame_ver_end(SONGUOICHOI,player,player2,player3,player4);
          dkbatdauketthucgame.thongBaoChuanBi();
       
          dkbatdauketthucgame.timeChuanBi();
@@ -125,14 +128,15 @@ cbnn.phanbai4= "1$4$5$14$15$16$23$27$29$41$47$50$52$";*/
 
 
 
-   player=new Player_ver_end(1,cbnn.phanbai1,400,440,416,455,
-    450,490,550,630,400,450,340,550,450,450,550,450,280,580,avatarplayer,    13    ,150,500);
-   bot1=new Bot_ver_end(2,cbnn.phanbai2,70,370,50,205,63,225,100,
-   220,120,310,170,250,125,325,20,320,cbnn.avatarnv[2],chedochoi,      13    ,50,240);
-   bot2=new Bot_ver_end(3,cbnn.phanbai3,650,100,400,140,416,155,
-  500,20,500,90,500,20,505,110,560,120,cbnn.avatarnv[3],chedochoi,    13       ,600,40);
-   bot3=new Bot_ver_end(4,cbnn.phanbai4,950,370,800,205,815,225,870,220
-   ,880,310,900,250,885,325,950,310,cbnn.avatarnv[4],chedochoi,    13      ,800,240);
+   player=new Player_ver_end(1,cbnn.phanbai1,400,440,416,455, 450,490,550,630,400,450,340,550,450,450,550,450,280,580,avatarplayer,    13    ,150,500);
+   /*bot1=new Bot_ver_end     (2,cbnn.phanbai2,70,370,50,205,63,225,100, 220,120,310,170,250,125,325,20,320,cbnn.avatarnv[2],chedochoi,      13    ,50,240);
+   bot2=new Bot_ver_end     (3,cbnn.phanbai3,650,100,400,140,416,155, 500,20,500,90,500,20,505,110,560,120,cbnn.avatarnv[3],chedochoi,    13       ,600,40);
+   bot3=new Bot_ver_end     (4,cbnn.phanbai4,950,370,800,205,815,225,870,220,880,310,900,250,885,325,950,310,cbnn.avatarnv[4],chedochoi,    13      ,800,240);*/
+
+   player2=new Player_ver_end2(2,cbnn.phanbai2,50,205,63,225,100,220,120, 310,170,250,70,370,450,450,100,180,20,320, avatarplayer,    13    ,50,240,chedochoi);
+   player3=new Player_ver_end2(3,cbnn.phanbai3,400,140,416,155,500,20, 500,90,500,20,650,100,450,450,600,0,560,120, avatarplayer,    13       ,600,40,chedochoi);
+   player4=new Player_ver_end2(4,cbnn.phanbai4,800,205,815,225,870,220,880,310,900,250,950,370,450,450,970,180,950,310, avatarplayer,    13      ,800,240,chedochoi);
+
    for(int i=1;i<=SONGUOICHOI;i++)
    {
        soluonglaconlaicuaActor[i]=13;
@@ -143,18 +147,24 @@ cbnn.phanbai4= "1$4$5$14$15$16$23$27$29$41$47$50$52$";*/
     {
         if(SONGUOICHOI==2)
         {
-         setUpOptionBotLenBackground(bot1);
+            setUpOptionPlayerLenBackground2(player2);
+            //setUpOptionBotLenBackground(bot1);
         }
         else if(SONGUOICHOI==3)
         {
-        setUpOptionBotLenBackground(bot1);
-        setUpOptionBotLenBackground(bot2);
+            setUpOptionPlayerLenBackground2(player2);
+            setUpOptionPlayerLenBackground2(player3);
+        //setUpOptionBotLenBackground(bot1);
+        //setUpOptionBotLenBackground(bot2);
         }
         else if(SONGUOICHOI==4)
          {
-        setUpOptionBotLenBackground(bot1);
-        setUpOptionBotLenBackground(bot2);
-        setUpOptionBotLenBackground(bot3);
+             setUpOptionPlayerLenBackground2(player2);
+             setUpOptionPlayerLenBackground2(player3);
+             setUpOptionPlayerLenBackground2(player4);
+        //setUpOptionBotLenBackground(bot1);
+        //setUpOptionBotLenBackground(bot2);
+        //setUpOptionBotLenBackground(bot3);
          }
     }
    public void taoKhungOption()
@@ -165,7 +175,7 @@ ImageIcon icon = new ImageIcon(url);
      khungoption.setIcon(icon);
      khungoption.setBounds(0,0  ,icon.getIconWidth(), icon.getIconHeight());
     }
-    public void setUpOptionBotLenBackground(Bot_ver_end bot)
+    /*public void setUpOptionBotLenBackground(Bot_ver_end bot)
     {    add(bot.winner);
         add(bot.nhanthoigian); 
         add(bot.nhanclock);
@@ -180,7 +190,7 @@ ImageIcon icon = new ImageIcon(url);
             add(bot.cardhide);
             add(bot.nhanthongbao3bichditruoc);
             add(bot.nhanthongbaobainhoditruoc);
-    }
+    }*/
      public void setUpOptionPlayerLenBackground(Player_ver_end pl)
     {   add(pl.winner);
         add(pl.nhansoundon);
@@ -214,6 +224,40 @@ ImageIcon icon = new ImageIcon(url);
        pl.nhanmycard[j].addMouseListener(pl.mouseAdapterPlayerChonBai);
        //pl.nhanmycard[j].setVisible(true);
        }
+    }
+    public void setUpOptionPlayerLenBackground2(Player_ver_end2 pl2)
+    {   add(pl2.winner);
+        add(pl2.nhansoundon);
+        add(pl2.nhansoundoff);
+        pl2.nhansoundon.addMouseListener(mouseAdapterPlayerChonOptionKhac);
+        pl2.nhansoundoff.addMouseListener(mouseAdapterPlayerChonOptionKhac);
+        add(pl2.nhanquestion);
+        pl2.nhanquestion.addMouseListener(mouseAdapterPlayerChonOptionKhac);
+        add(pl2.nhanbackhome);
+        pl2.nhanbackhome.addMouseListener(mouseAdapterPlayerChonOptionKhac);
+        add(pl2.nhannewgame);
+        pl2.nhannewgame.addMouseListener(mouseAdapterPlayerChonOptionKhac);
+        add(pl2.nhanthoigian);
+        add(pl2.nhanclock);
+        add(pl2.cardhide);
+        add(pl2.nhankhongtheo);
+        add(pl2.nhanthongbao3bichditruoc);
+        add(pl2.nhanthongbaobainhoditruoc);
+        add(pl2.nutrabai);
+        add(pl2.nhanrabaian);
+        add(pl2.avatar);
+        add(khungoption);
+        pl2.nutrabai.addMouseListener(mouseAdapterPlayerRaQuyetDinh);
+        add(pl2.nutkhongtheo);
+        pl2.nutkhongtheo.addMouseListener(mouseAdapterPlayerRaQuyetDinh);
+        pl2.nutkhongtheo.setVisible(false);
+        for(int i=pl2.mycard.size()-1;i>=0;i--)
+        {
+            int j=pl2.mycard.get(i).vitri;
+            add(pl2.nhanmycard[j]);
+            pl2.nhanmycard[j].addMouseListener(pl2.mouseAdapterPlayerChonBai);
+            pl2.nhanmycard[j].setVisible(true);
+        }
     }
     public void taoCuaSo(){
          setResizable(false);//không cho phóng to
@@ -268,7 +312,7 @@ ImageIcon icon = new ImageIcon(url);
             else if((iwin==3&&SONGUOICHOI>=3)||(iwin==4&&SONGUOICHOI>=4)||(iwin==2)&&SONGUOICHOI>=2) 
    {
        isToiTrang=true;
-          try {
+          /*try {
            dkbatdauketthucgame.iwin=iwin;
            dapanbotchon=dkbatdauketthucgame.dapantoitrang;
            if(iwin==2)
@@ -283,7 +327,7 @@ ImageIcon icon = new ImageIcon(url);
            
            } catch (SQLException ex) {
                     Logger.getLogger(InGame.class.getName()).log(Level.SEVERE, null, ex);
-                }
+                }*/
    
            try {
 dkbatdauketthucgame.isTurn=iwin;
@@ -415,7 +459,7 @@ play.play();
                if(dkbatdauketthucgame.nhacDangBat()==true)
                    
                chaynhac.stop();
-                   dkbatdauketthucgame.luuTrangThaiNhac(false);
+               dkbatdauketthucgame.luuTrangThaiNhac(false);
                    
            } catch (SQLException ex) {
            }
@@ -504,9 +548,9 @@ play.play();
             daKhoaLuotActor[i]=false;
         }
        player.nhankhongtheo.setVisible(false);
-      bot1.nhankhongtheo.setVisible(false);
-       bot2.nhankhongtheo.setVisible(false);
-       bot3.nhankhongtheo.setVisible(false);
+      player2.nhankhongtheo.setVisible(false);
+       player3.nhankhongtheo.setVisible(false);
+       player4.nhankhongtheo.setVisible(false);
 }
      
      
@@ -515,6 +559,9 @@ play.play();
          if(i==1)
          {
              player.isTurnPlayer=true;
+             player2.isTurnPlayer=false;
+             player3.isTurnPlayer=false;
+             player4.isTurnPlayer=false;
              isTurn=1;
              player.nhanthoigian.setText(""+player.bodem);
              player.batOptionPlayer();
@@ -542,24 +589,96 @@ play.play();
          }
        else  if(i==2)
          {
-               isTurn=2;
              player.isTurnPlayer=false;
-             bot1.batOptionBot();
-             setTimeBot1();
+             player2.isTurnPlayer=true;
+             player3.isTurnPlayer=false;
+             player4.isTurnPlayer=false;
+             isTurn=2;
+             player.nhanthoigian.setText(""+player.bodem);
+             player2.batOptionPlayer();
+             setTimePlayer();
+             if(soPlayerBiKhoa==SONGUOICHOI-1) { theyCard.removeAll(theyCard);}
+             player.theyCard=theyCard;
+             player.soPlayerBiKhoa=soPlayerBiKhoa;
+             player.SONGUOICHOI=SONGUOICHOI;
+             player.bainhonhat=dkbatdauketthucgame.bainhonhat;
+             if((theyCard.size()==0||soPlayerBiKhoa==SONGUOICHOI-1))
+             {
+                 player.nutkhongtheo.setVisible(false);
+                 player.nhanrabaian.setVisible(true);
+             }
+             else if(theyCard.size()!=0)
+             {
+                 player.nutkhongtheo.setVisible(true);
+                 GT_TLMN_PhanNhomBai_ver_end getdata=new GT_TLMN_PhanNhomBai_ver_end(player.mycard);
+                 getdata.xayDungDataCacLoaiBoBaiChoBot();
+                 GT_TLMN_Player_ver_end gtplayer=new GT_TLMN_Player_ver_end(theyCard,player.baivuachon
+                         ,getdata.cardbot);
+                 if(gtplayer.coDapAn()==true) player.nhanrabaian.setVisible(true);
+                 else player.nhanrabaian.setVisible(false);
+             }
          }
         else if(i==3)
          {
-              isTurn=3;
              player.isTurnPlayer=false;
-             bot2.batOptionBot();
-             setTimeBot2();
+             player2.isTurnPlayer=false;
+             player3.isTurnPlayer=true;
+             player4.isTurnPlayer=false;
+             isTurn=3;
+             player.nhanthoigian.setText(""+player.bodem);
+             player3.batOptionPlayer();
+             setTimePlayer();
+             if(soPlayerBiKhoa==SONGUOICHOI-1) { theyCard.removeAll(theyCard);}
+             player.theyCard=theyCard;
+             player.soPlayerBiKhoa=soPlayerBiKhoa;
+             player.SONGUOICHOI=SONGUOICHOI;
+             player.bainhonhat=dkbatdauketthucgame.bainhonhat;
+             if((theyCard.size()==0||soPlayerBiKhoa==SONGUOICHOI-1))
+             {
+                 player.nutkhongtheo.setVisible(false);
+                 player.nhanrabaian.setVisible(true);
+             }
+             else if(theyCard.size()!=0)
+             {
+                 player.nutkhongtheo.setVisible(true);
+                 GT_TLMN_PhanNhomBai_ver_end getdata=new GT_TLMN_PhanNhomBai_ver_end(player.mycard);
+                 getdata.xayDungDataCacLoaiBoBaiChoBot();
+                 GT_TLMN_Player_ver_end gtplayer=new GT_TLMN_Player_ver_end(theyCard,player.baivuachon
+                         ,getdata.cardbot);
+                 if(gtplayer.coDapAn()==true) player.nhanrabaian.setVisible(true);
+                 else player.nhanrabaian.setVisible(false);
+             }
          }
         else if(i==4)
          {
-              isTurn=4;
              player.isTurnPlayer=false;
-             bot3.batOptionBot();
-             setTimeBot3();
+             player2.isTurnPlayer=false;
+             player3.isTurnPlayer=false;
+             player4.isTurnPlayer=true;
+             isTurn=4;
+             player.nhanthoigian.setText(""+player.bodem);
+             player4.batOptionPlayer();
+             setTimePlayer();
+             if(soPlayerBiKhoa==SONGUOICHOI-1) { theyCard.removeAll(theyCard);}
+             player.theyCard=theyCard;
+             player.soPlayerBiKhoa=soPlayerBiKhoa;
+             player.SONGUOICHOI=SONGUOICHOI;
+             player.bainhonhat=dkbatdauketthucgame.bainhonhat;
+             if((theyCard.size()==0||soPlayerBiKhoa==SONGUOICHOI-1))
+             {
+                 player.nutkhongtheo.setVisible(false);
+                 player.nhanrabaian.setVisible(true);
+             }
+             else if(theyCard.size()!=0)
+             {
+                 player.nutkhongtheo.setVisible(true);
+                 GT_TLMN_PhanNhomBai_ver_end getdata=new GT_TLMN_PhanNhomBai_ver_end(player.mycard);
+                 getdata.xayDungDataCacLoaiBoBaiChoBot();
+                 GT_TLMN_Player_ver_end gtplayer=new GT_TLMN_Player_ver_end(theyCard,player.baivuachon
+                         ,getdata.cardbot);
+                 if(gtplayer.coDapAn()==true) player.nhanrabaian.setVisible(true);
+                 else player.nhanrabaian.setVisible(false);
+             }
          }
      }
       public final void setTimePlayer()
@@ -586,7 +705,7 @@ play.play();
         player.time = new Timer(1000, aTime);      
 	player.time.start();
         }
-    public final void setTimeBot1()
+    /*public final void setTimeBot1()
          {
               ActionListener aTime = new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -645,32 +764,32 @@ play.play();
         };
          bot3.time = new Timer(1000, aTime);      
 	bot3.time.start();
-        }
-    public void timIndexActorTruocSau(Bot_ver_end bot)
+        }*/
+    public void timIndexActorTruocSau(Player_ver_end2 player)
     {
           DieuKhienLuotDanh_ver_end timactortruocsau;
           if(chieucualuot.equals("cungchieu"))
           {
           timactortruocsau=new 
-        DieuKhienLuotDanh_ver_end(SONGUOICHOI,bot.indexActor,daKhoaLuotActor,"cungchieu");
+        DieuKhienLuotDanh_ver_end(SONGUOICHOI,player.indexActor,daKhoaLuotActor,"cungchieu");
          index_actor_sau= timactortruocsau.nguoiDanhTiepTheoOViTri();
          timactortruocsau=new 
-         DieuKhienLuotDanh_ver_end(SONGUOICHOI,bot.indexActor,daKhoaLuotActor,"nguocchieu");
+         DieuKhienLuotDanh_ver_end(SONGUOICHOI,player.indexActor,daKhoaLuotActor,"nguocchieu");
          index_actor_truoc= timactortruocsau.nguoiDanhTiepTheoOViTri();
         
           }
           else 
           {
           timactortruocsau=new 
-        DieuKhienLuotDanh_ver_end(SONGUOICHOI,bot.indexActor,daKhoaLuotActor,"nguocchieu");
+        DieuKhienLuotDanh_ver_end(SONGUOICHOI,player.indexActor,daKhoaLuotActor,"nguocchieu");
          index_actor_sau= timactortruocsau.nguoiDanhTiepTheoOViTri();
          timactortruocsau=new 
-         DieuKhienLuotDanh_ver_end(SONGUOICHOI,bot.indexActor,daKhoaLuotActor,"cungchieu");
+         DieuKhienLuotDanh_ver_end(SONGUOICHOI,player.indexActor,daKhoaLuotActor,"cungchieu");
          index_actor_truoc= timactortruocsau.nguoiDanhTiepTheoOViTri();
           }
      // System.out.println("Tôi là "+bot.indexActor+"vị trí SAUU tôi là actor "+": "+index_actor_sau);
     }
-    public void actionBotMain(Bot_ver_end bot) throws SQLException, IOException
+    /*public void actionBotMain(Bot_ver_end bot) throws SQLException, IOException
     {
          gtbot_pnb=new GT_TLMN_PhanNhomBai_ver_end(bot.mycard);
          gtbot_pnb.xayDungDataCacLoaiBoBaiChoBot(); 
@@ -678,9 +797,9 @@ play.play();
              if(soPlayerBiKhoa==SONGUOICHOI-1||theyCard.size()==0)
              {
         soluonglaconlaicuaActor[1]=player.solabaiconlai;
-        soluonglaconlaicuaActor[2]=bot1.solabaiconlai;
-        soluonglaconlaicuaActor[3]=bot2.solabaiconlai;
-        soluonglaconlaicuaActor[4]=bot3.solabaiconlai;
+        soluonglaconlaicuaActor[2]=player2.solabaiconlai;
+        soluonglaconlaicuaActor[3]=player3.solabaiconlai;
+        soluonglaconlaicuaActor[4]=player4.solabaiconlai;
                 theyCard.removeAll(theyCard);
                  tatCaPlayerDuocMoKhoaLuot();
                  timIndexActorTruocSau(bot);
@@ -694,9 +813,9 @@ play.play();
              {
                  timIndexActorTruocSau(bot);
                  soluonglaconlaicuaActor[1]=player.solabaiconlai;
-        soluonglaconlaicuaActor[2]=bot1.solabaiconlai;
-        soluonglaconlaicuaActor[3]=bot2.solabaiconlai;
-        soluonglaconlaicuaActor[4]=bot3.solabaiconlai;
+        soluonglaconlaicuaActor[2]=player2.solabaiconlai;
+        soluonglaconlaicuaActor[3]=player3.solabaiconlai;
+        soluonglaconlaicuaActor[4]=player4.solabaiconlai;
                  gtbot_ttvrqd=new GT_TLMN_BOT_TinhToan_va_RaQuyetDinh_ver_end
     (theyCard,gtbot_pnb.cardbot,soluonglaconlaicuaActor,SONGUOICHOI,
             bot.indexActor,index_actor_truoc,index_actor_sau,
@@ -706,15 +825,15 @@ play.play();
       if(isKETTHUC==false) botChuyenLuot(bot);
       else {
           dkbatdauketthucgame.xuLyKetThucGame();return;}
-    }
-    public void botMoComBat(Bot_ver_end bot) throws IOException, SQLException
+    }*/
+    /*public void botMoComBat(Bot_ver_end bot) throws IOException, SQLException
     {
          bot.nhanthongbaobainhoditruoc.setVisible(false);
      
          int uutien=gtbot_ttvrqd.mucDoUuTienRaBai();
          
-      /*  System.out.println("Tôi là "+bot.indexActor+" ,là người mở combat, mức ưu tiên: "
-                 +uutien+", ưu tiên xác đinh tại: "+gtbot_ttvrqd.indexuutien);*/
+      *//*  System.out.println("Tôi là "+bot.indexActor+" ,là người mở combat, mức ưu tiên: "
+                 +uutien+", ưu tiên xác đinh tại: "+gtbot_ttvrqd.indexuutien);*//*
         if(uutien==999)
          {
              bot.nhanthongbao3bichditruoc.setVisible(false);
@@ -740,12 +859,12 @@ play.play();
                   dapanbotchon=gtbot_ttvrqd.dapAnBotChonRanDom();
            }
                   raBaiMain(bot);
-    }
-    public void botDoBai(Bot_ver_end bot) throws SQLException
+    }*/
+    /*public void botDoBai(Bot_ver_end bot) throws SQLException
     {
         int uutien=gtbot_ttvrqd.mucDoUuTienRaBai();
-      /*System.out.println("Tôi là "+bot.indexActor+" ,là người đỡ bài, mức ưu tiên: "
-                 +uutien+", ưu tiên xác đinh tại: "+gtbot_ttvrqd.indexuutien);*/
+      *//*System.out.println("Tôi là "+bot.indexActor+" ,là người đỡ bài, mức ưu tiên: "
+                 +uutien+", ưu tiên xác đinh tại: "+gtbot_ttvrqd.indexuutien);*//*
                  if(uutien==98||uutien==99)
                  {
                    dapanbotchon= gtbot_ttvrqd.dapChanBaiKhongDieuKien();
@@ -769,8 +888,8 @@ play.play();
                 {
                 raBaiMain(bot);
                 }
-    }
-    public void raBaiMain(Bot_ver_end bot) throws SQLException
+    }*/
+    /*public void raBaiMain(Bot_ver_end bot) throws SQLException
     {
         //System.out.println("Đáp án bot "+bot.indexActor+": "+dapanbotchon);
           bot.xuLyRaBai(dapanbotchon);
@@ -817,13 +936,20 @@ play.play();
         dkbatdauketthucgame.iwin=bot.indexActor;
     
             }
-    }
-    public void botChuyenLuot(Bot_ver_end bot)
+    }*/
+    /*public void botChuyenLuot(Bot_ver_end bot)
     {
       
             bot.tatOptionBot();
             dkluot=new DieuKhienLuotDanh_ver_end(SONGUOICHOI,bot.indexActor,daKhoaLuotActor,chieucualuot);
             chuyenToiLuotActor(dkluot.nguoiDanhTiepTheoOViTri());
+    }*/
+    public void player2ChuyenLuot(Player_ver_end2 player)
+    {
+
+        dkluot=new DieuKhienLuotDanh_ver_end(SONGUOICHOI,player.indexActor,daKhoaLuotActor,chieucualuot);
+        chuyenToiLuotActor(dkluot.nguoiDanhTiepTheoOViTri());
+        player.time.stop();
     }
     public void playerChuyenLuot()
     {
@@ -832,6 +958,8 @@ play.play();
             chuyenToiLuotActor(dkluot.nguoiDanhTiepTheoOViTri());
              player.time.stop();  
     }
+
+
     public static void main(String[] args) {
 EventQueue.invokeLater(new Runnable() {
 public void run() {

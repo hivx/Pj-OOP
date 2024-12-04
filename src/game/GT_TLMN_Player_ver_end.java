@@ -10,6 +10,8 @@ import game.CardBot_ver_end;
 import game.Card_Player_ver_end;
 import java.util.ArrayList;
 
+import static java.lang.Integer.parseInt;
+
 /**
  *
  * @author Admin
@@ -74,7 +76,7 @@ public class GT_TLMN_Player_ver_end extends GT_TLMN_General_ver_end{
     {
         for(int i=0;i<cardbot.size();i++)
         {
-            if(cardbot.get(i).sumsohieu==Integer.parseInt(bainhonhat))
+            if(cardbot.get(i).sumsohieu== parseInt(bainhonhat))
             {
                 return true;
             }

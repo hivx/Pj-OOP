@@ -22,7 +22,7 @@ public class DieuKhienBatDauVaKetThucGame_ver_end {
 
     int SONGUOICHOI,iwin,isTurn,bodem=3;
      JLabel timechuanbivaogame=new JLabel("3");
-    Bot_ver_end bot1,bot2,bot3;
+    Player_ver_end2 player2,player3,player4;
     Player_ver_end player;
     Timer time;
     GT_TLMN_PhanNhomBai_ver_end gtpnpl,gtpnbot1,gtpnbot2,gtpnbot3;
@@ -34,7 +34,7 @@ public class DieuKhienBatDauVaKetThucGame_ver_end {
         Connection cn=kn.getConnectdatabase();
              Statement stm=cn.createStatement(); 
     public boolean nhac_on,istoitrang;
-    public DieuKhienBatDauVaKetThucGame_ver_end(int SONGUOICHOI,
+    /*public DieuKhienBatDauVaKetThucGame_ver_end(int SONGUOICHOI,
             Player_ver_end player,Bot_ver_end bot1,Bot_ver_end bot2,Bot_ver_end bot3) throws SQLException{
         this.SONGUOICHOI=SONGUOICHOI;
         this.bot1=bot1;
@@ -49,6 +49,21 @@ public class DieuKhienBatDauVaKetThucGame_ver_end {
            gtpnbot2.xayDungDataCacLoaiBoBaiChoBot();
            gtpnbot3= new GT_TLMN_PhanNhomBai_ver_end(bot3.mycard);
            gtpnbot3.xayDungDataCacLoaiBoBaiChoBot();
+    }*/
+    public DieuKhienBatDauVaKetThucGame_ver_end(int SONGUOICHOI, Player_ver_end player,Player_ver_end2 player2,Player_ver_end2 player3,Player_ver_end2 player4) throws SQLException{
+        this.SONGUOICHOI=SONGUOICHOI;
+        this.player2=player2;
+        this.player3=player3;
+        this.player4=player4;
+        this.player=player;
+        gtpnpl= new GT_TLMN_PhanNhomBai_ver_end(player.mycard);
+        gtpnpl.xayDungDataCacLoaiBoBaiChoBot();
+        gtpnbot1= new GT_TLMN_PhanNhomBai_ver_end(player2.mycard);
+        gtpnbot1.xayDungDataCacLoaiBoBaiChoBot();
+        gtpnbot2= new GT_TLMN_PhanNhomBai_ver_end(player3.mycard);
+        gtpnbot2.xayDungDataCacLoaiBoBaiChoBot();
+        gtpnbot3= new GT_TLMN_PhanNhomBai_ver_end(player4.mycard);
+        gtpnbot3.xayDungDataCacLoaiBoBaiChoBot();
     }
      public void thongBaoChuanBi()
     {
@@ -70,9 +85,9 @@ public class DieuKhienBatDauVaKetThucGame_ver_end {
         if(SONGUOICHOI==4)
         {
         String temp1[]=player.listBaiDuocChia.split("\\$");
-        String temp2[]=bot1.listBaiDuocChia.split("\\$");
-        String temp3[]=bot2.listBaiDuocChia.split("\\$");
-         String temp4[]=bot3.listBaiDuocChia.split("\\$");
+        String temp2[]=player2.listBaiDuocChia.split("\\$");
+        String temp3[]=player3.listBaiDuocChia.split("\\$");
+         String temp4[]=player4.listBaiDuocChia.split("\\$");
          int min=1000;
        int tempmin[]={Integer.parseInt(temp1[0]),Integer.parseInt(temp2[0]),
              Integer.parseInt(temp3[0]),Integer.parseInt(temp4[0])};
@@ -96,32 +111,32 @@ public class DieuKhienBatDauVaKetThucGame_ver_end {
            else if(temp2[0].equals(String.valueOf(min)))
             {
                 if(min==1)
-                bot1.nhanthongbao3bichditruoc.setVisible(true);
-                else  bot1.nhanthongbaobainhoditruoc.setVisible(true);
+                player2.nhanthongbao3bichditruoc.setVisible(true);
+                else  player2.nhanthongbaobainhoditruoc.setVisible(true);
                 return 2;
             }
           
            else if(temp3[0].equals(String.valueOf(min)))
             {
                if(min==1)
-                bot2.nhanthongbao3bichditruoc.setVisible(true);
-                else  bot2.nhanthongbaobainhoditruoc.setVisible(true);
+                player3.nhanthongbao3bichditruoc.setVisible(true);
+                else  player3.nhanthongbaobainhoditruoc.setVisible(true);
                 return 3;
             }
         
            else if(temp4[0].equals(String.valueOf(min)))
             {
                if(min==1)
-                bot3.nhanthongbao3bichditruoc.setVisible(true);
-                else  bot3.nhanthongbaobainhoditruoc.setVisible(true);
+                player4.nhanthongbao3bichditruoc.setVisible(true);
+                else  player4.nhanthongbaobainhoditruoc.setVisible(true);
                 return 4;
             }
         }
         else if(SONGUOICHOI==3)
         {
        String temp1[]=player.listBaiDuocChia.split("\\$");
-        String temp2[]=bot1.listBaiDuocChia.split("\\$");
-        String temp3[]=bot2.listBaiDuocChia.split("\\$");
+        String temp2[]=player2.listBaiDuocChia.split("\\$");
+        String temp3[]=player3.listBaiDuocChia.split("\\$");
          int min=1000;
        int tempmin[]={Integer.parseInt(temp1[0]),Integer.parseInt(temp2[0]),
              Integer.parseInt(temp3[0])};
@@ -145,16 +160,16 @@ public class DieuKhienBatDauVaKetThucGame_ver_end {
            else if(temp2[0].equals(String.valueOf(min)))
             {
                 if(min==1)
-                bot1.nhanthongbao3bichditruoc.setVisible(true);
-                else  bot1.nhanthongbaobainhoditruoc.setVisible(true);
+                player2.nhanthongbao3bichditruoc.setVisible(true);
+                else  player2.nhanthongbaobainhoditruoc.setVisible(true);
                 return 2;
             }
           
            else if(temp3[0].equals(String.valueOf(min)))
             {
                 if(min==1)
-                bot2.nhanthongbao3bichditruoc.setVisible(true);
-                else  bot2.nhanthongbaobainhoditruoc.setVisible(true);
+                player3.nhanthongbao3bichditruoc.setVisible(true);
+                else  player3.nhanthongbaobainhoditruoc.setVisible(true);
                 return 3;
             }
         
@@ -163,7 +178,7 @@ public class DieuKhienBatDauVaKetThucGame_ver_end {
         else if(SONGUOICHOI==2)
         {
         String temp1[]=player.listBaiDuocChia.split("\\$");
-        String temp2[]=bot1.listBaiDuocChia.split("\\$");
+        String temp2[]=player2.listBaiDuocChia.split("\\$");
    
          int min=1000;
        int tempmin[]={Integer.parseInt(temp1[0]),Integer.parseInt(temp2[0]),
@@ -187,8 +202,8 @@ public class DieuKhienBatDauVaKetThucGame_ver_end {
            else if(temp2[0].equals(String.valueOf(min)))
             {
                if(min==1)
-                bot1.nhanthongbao3bichditruoc.setVisible(true);
-                else  bot1.nhanthongbaobainhoditruoc.setVisible(true);
+                player2.nhanthongbao3bichditruoc.setVisible(true);
+                else  player2.nhanthongbaobainhoditruoc.setVisible(true);
                 return 2;
             }
         }
@@ -201,29 +216,29 @@ public class DieuKhienBatDauVaKetThucGame_ver_end {
         int count=0;
         if(SONGUOICHOI==2)
          {
-   for(int i=bot1.mycard.size()-1;i>=0;i--)
-  {int j=bot1.mycard.get(i).vitri;bot1.nhanmycard[j].setVisible(true);}
+   for(int i=player2.mycard.size()-1;i>=0;i--)
+  {int j=player2.mycard.get(i).vitri;player2.nhanmycard[j].setVisible(true);}
          }
        else if(SONGUOICHOI==3)
         {
-for(int i=bot1.mycard.size()-1;i>=0;i--)
-{int j=bot1.mycard.get(i).vitri;bot1.nhanmycard[j].setVisible(true);}
-for(int i=0;i<bot2.mycard.size();i++)
-{int j=bot2.mycard.get(i).vitri;bot2.nhanmycard[j].setVisible(true);}
+for(int i=player2.mycard.size()-1;i>=0;i--)
+{int j=player2.mycard.get(i).vitri;player2.nhanmycard[j].setVisible(true);}
+for(int i=0;i<player3.mycard.size();i++)
+{int j=player3.mycard.get(i).vitri;player3.nhanmycard[j].setVisible(true);}
         }
        else if(SONGUOICHOI==4)
         {
-for(int i=bot1.mycard.size()-1;i>=0;i--)
-{int j=bot1.mycard.get(i).vitri;bot1.nhanmycard[j].setVisible(true);}
-for(int i=0;i<bot2.mycard.size();i++)
-{int j=bot2.mycard.get(i).vitri;bot2.nhanmycard[j].setVisible(true);}
-for(int i=bot3.mycard.size()-1;i>=0;i--)
-{int j=bot3.mycard.get(i).vitri;bot3.nhanmycard[j].setVisible(true);}}
+for(int i=player2.mycard.size()-1;i>=0;i--)
+{int j=player2.mycard.get(i).vitri;player2.nhanmycard[j].setVisible(true);}
+for(int i=0;i<player3.mycard.size();i++)
+{int j=player3.mycard.get(i).vitri;player3.nhanmycard[j].setVisible(true);}
+for(int i=player4.mycard.size()-1;i>=0;i--)
+{int j=player4.mycard.get(i).vitri;player4.nhanmycard[j].setVisible(true);}}
           player.tatOptionPlayer();
           if(iwin==1) player.winner.setVisible(true);
-          else if(iwin==2)  bot1.winner.setVisible(true);
-           else if(iwin==3)  bot2.winner.setVisible(true);
-           else if(iwin==4)  bot3.winner.setVisible(true);
+          else if(iwin==2)  player2.winner.setVisible(true);
+           else if(iwin==3)  player3.winner.setVisible(true);
+           else if(iwin==4)  player4.winner.setVisible(true);
               if(istoitrang==false)
               {
           if(isTurn==1)
@@ -232,11 +247,11 @@ for(int i=bot3.mycard.size()-1;i>=0;i--)
            player.time.stop();
           }
             if(isTurn==2)
-          bot1.time.stop();
+          player2.time.stop();
              if(isTurn==3)
-          bot2.time.stop();
+          player3.time.stop();
               if(isTurn==4)
-          bot3.time.stop();
+          player4.time.stop();
           }
               time.stop();
     }
