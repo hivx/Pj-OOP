@@ -1,13 +1,3 @@
-
-
-
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package game;
 
 import java.io.BufferedWriter;
@@ -28,7 +18,6 @@ String thongbaokieubairahople;
      boolean NOT_LEARNED;
     public NaiveBayes_player_tranningData_ditruoc_ver_end(Player_ver_end player) {
         this.player=player;
-        
     }
     public void run() throws IOException
     {

@@ -33,7 +33,7 @@ public class Menu_Main extends JFrame {
     }
     public void taoCuaSo() {
         setResizable(true);
-        setTitle("Tiến Lên Miền Nam");
+        setTitle("Game chơi bài 52 lá");
         setBounds(50, 0, 650, 697);
         setLocation(300, 0);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -88,7 +88,7 @@ public class Menu_Main extends JFrame {
             if (e.getSource() == nhanchoingay) {
                 setVisible(false);
                 try {
-                    String temp2 = "UPDATE OTHER SET SOUND = 'off'";
+                    String temp2 = "UPDATE OTHER SET SOUND = 'on'";
                     stm.executeUpdate(temp2);
                     ResultSet rs;
                     String[] temp = new String[30];
@@ -145,7 +145,6 @@ public class Menu_Main extends JFrame {
             }
         }
     };
-
     public static void main(String[] args) {
         EventQueue.invokeLater(new Runnable() {
             public void run() {
