@@ -1,41 +1,24 @@
 package game;
-import static game.AmThanh.chaynhac;
+
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-//import java.io.BufferedWriter;
-//import java.io.File;
-//import java.io.FileInputStream;
-//import java.io.FileWriter;
 import java.io.IOException;
-
 import java.io.InputStream;
 import java.net.URL;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-//import java.util.Arrays;
-//import java.util.Collection;
-//import java.util.Collections;
 import java.util.Date;
-//import java.util.List;
-//import java.util.Random;
-//import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.ImageIcon;
-import javax.swing.JComponent;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.Timer;
+import javax.swing.*;
 import javazoom.jl.player.Player;
 
 public class InGame extends JFrame{
-    ArrayList<Card_Player_ver_end> theyCard=new ArrayList<Card_Player_ver_end>();
+    ArrayList<Card_Player_ver_end> theyCard=new ArrayList<>();
     Bot_ver_end bot1,bot2,bot3;
     Player_ver_end player;
     private ChiaBai_Avatar_NgauNhien_ver_end cbnn;
@@ -56,6 +39,7 @@ public class InGame extends JFrame{
     int index_actor_truoc=0,index_actor_sau=0;
     private  int BOTRABAI_O_GIAY;
     private int THOIGIANBATDAUGAME_O_GIAY=0;
+    private final SoundPlayer soundPlayer = new SoundPlayer();
     public InGame(String avatar,String chieucualuot,int soluongmay,
           String chedochoi,String nhac,int thoigiantremayrabai) throws SQLException {
 
@@ -183,7 +167,7 @@ public class InGame extends JFrame{
     }
     public void taoCuaSo(){
          setResizable(false);//không cho phóng to
-         setTitle("Tiến Lên Miền Nam");
+         setTitle("Game chơi bài 52 lá");
          setBounds(50, 0, 1050, 700);
          setLocation(180, 0);//vị trí mặc định
          setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -324,28 +308,57 @@ return;
        if(isKETTHUC==false) playerChuyenLuot();
      }
     };
-    public void playSound() {
-chaynhac = new Thread(new Runnable() {
-@Override
-public void run() {
-try{
-  String url = "/sound_TLMN/"+nhac+".mp3";
-InputStream fis =  InGame.class.getResourceAsStream(url);
-Player play = new Player(fis);
-play.play();
-} catch(Exception e){
-}
-}
-});
-}
-      public MouseAdapter mouseAdapterPlayerChonOptionKhac = new MouseAdapter()
+    public static class SoundPlayer {
+        private static final Logger LOGGER = Logger.getLogger(SoundPlayer.class.getName());
+        private volatile boolean running = false; // Cờ dừng cho việc phát nhạc
+        private SwingWorker<Void, Void> currentWorker; // Để lưu trữ SwingWorker hiện tại
+
+        public void playSound(String nhactest) {
+            // Kiểm tra trạng thái trước khi phát nhạc
+            if (running) {
+                stopSound(); // Dừng nhạc hiện tại nếu có
+            }
+
+            running = true; // Bắt đầu chạy nhạc
+
+            // Tạo một SwingWorker để chạy nhạc trong background
+            currentWorker = new SwingWorker<Void, Void>() {
+                @Override
+                protected Void doInBackground() throws Exception {
+                    try (InputStream fis = InGame.class.getResourceAsStream("/sound_TLMN/" + nhactest + ".mp3")) {
+                        if (fis == null) {
+                            LOGGER.warning("File not found: /sound_TLMN/" + nhactest + ".mp3");
+                            return null;
+                        }
+                        Player play = new Player(fis);
+                        play.play(); // Phát nhạc một lần
+                    } catch (Exception e) {
+                        LOGGER.severe("Error while playing sound: " + e.getMessage());
+                    } finally {
+                        running = false; // Đặt cờ dừng khi hoàn thành
+                    }
+                    return null;
+                }
+            };
+
+            currentWorker.execute(); // Khởi chạy SwingWorker
+        }
+
+        // Dừng nhạc
+        public void stopSound() {
+            if (currentWorker != null && !currentWorker.isDone()) {
+                running = false; // Đặt cờ dừng nhạc
+                currentWorker.cancel(true); // Hủy SwingWorker nếu nó đang chạy
+            }
+        }
+    }
+    public MouseAdapter mouseAdapterPlayerChonOptionKhac = new MouseAdapter()
 {
   public void mousePressed(MouseEvent e) {
        if(e.getSource()==player.nhansoundon)
         {
  player.nhansoundon.setVisible(false);player.nhansoundoff.setVisible(true);
- playSound();
-   chaynhac.start();
+            soundPlayer.playSound(nhac);
            try {  
                dkbatdauketthucgame.luuTrangThaiNhac(true);
            } catch (SQLException ex) {
@@ -354,7 +367,7 @@ play.play();
        
        else if(e.getSource()==player.nhansoundoff)
         {
-            chaynhac.stop();
+            soundPlayer.stopSound();
  player.nhansoundoff.setVisible(false);player.nhansoundon.setVisible(true);
            try {
                dkbatdauketthucgame.luuTrangThaiNhac(false);
@@ -380,7 +393,7 @@ play.play();
            try {
                if(dkbatdauketthucgame.nhacDangBat()==true)
                    
-               chaynhac.stop();
+               soundPlayer.stopSound();
                    dkbatdauketthucgame.luuTrangThaiNhac(false);
                    
            } catch (SQLException ex) {
