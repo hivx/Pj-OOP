@@ -8,16 +8,14 @@ package game;
 
 
 /**
- *
  * @author Admin
  */
 public class Card_Player_ver_end {
     int vitri;
     int sohieu;
-    public Card_Player_ver_end(int vitri,int sohieu)
-    {
-       this.vitri=vitri;
-       this.sohieu=sohieu;
+
+    public Card_Player_ver_end(int vitri, int sohieu) {
+        this.vitri = vitri;
+        this.sohieu = sohieu;
     }
-    
 }

@@ -31,6 +31,7 @@ public class Menu_Main extends JFrame {
         taoNutTuyChon();
         taoNutThoat();
     }
+
     public void taoCuaSo() {
         setResizable(true);
         setTitle("Game chơi bài 52 lá");
@@ -44,6 +45,7 @@ public class Menu_Main extends JFrame {
         setContentPane(panel);
         panel.setLayout(null);
     }
+
     public void taoNutChoiNgay() {
         URL url = Menu_Main.class.getResource("/ima_TLMN/choingay.png");
         assert url != null;
@@ -53,6 +55,7 @@ public class Menu_Main extends JFrame {
         add(nhanchoingay);
         nhanchoingay.addMouseListener(mouseAdapterUserChonOptionMenu);
     }
+
     public void taoNutHuongDan() {
         URL url = Menu_Main.class.getResource("/ima_TLMN/huongdan.png");
         assert url != null;
@@ -145,6 +148,7 @@ public class Menu_Main extends JFrame {
             }
         }
     };
+
     public static void main(String[] args) {
         EventQueue.invokeLater(new Runnable() {
             public void run() {

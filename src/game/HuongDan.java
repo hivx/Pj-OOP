@@ -1,9 +1,11 @@
 package game;
+
 import java.awt.*;
 import java.awt.event.*;
 import java.net.URL;
 import java.sql.SQLException;
 import javax.swing.*;
+
 public class HuongDan extends JFrame {
     JPanel card1;
     JPanel card2;
@@ -11,6 +13,7 @@ public class HuongDan extends JFrame {
     JPanel card4;
     JPanel card5;
     JFrame frame;
+
     public void m() {
         final JPanel cards; //a panel that uses CardLayout
         final String FIRST = "FIRST";
@@ -21,29 +24,29 @@ public class HuongDan extends JFrame {
         frame = new JFrame("CardLayout Demo");
         URL url = HuongDan.class.getResource("/ima_TLMN/luatgame1.png");
         assert url != null;
-        card1=new BackgroundGame(new ImageIcon(url).getImage());
+        card1 = new BackgroundGame(new ImageIcon(url).getImage());
         setContentPane(card1);
-         
+
         url = HuongDan.class.getResource("/ima_TLMN/luatgame2.png");
         assert url != null;
-        card2=new BackgroundGame(new ImageIcon(url).getImage());
+        card2 = new BackgroundGame(new ImageIcon(url).getImage());
         setContentPane(card2);
-         
+
         url = HuongDan.class.getResource("/ima_TLMN/luatgame3.png");
         assert url != null;
-        card3=new BackgroundGame(new ImageIcon(url).getImage());
+        card3 = new BackgroundGame(new ImageIcon(url).getImage());
         setContentPane(card3);
-         
+
         url = HuongDan.class.getResource("/ima_TLMN/luatgame4.png");
         assert url != null;
-        card4=new BackgroundGame(new ImageIcon(url).getImage());
+        card4 = new BackgroundGame(new ImageIcon(url).getImage());
         setContentPane(card4);
-         
+
         url = HuongDan.class.getResource("/ima_TLMN/luatgame5.png");
         assert url != null;
-        card5=new BackgroundGame(new ImageIcon(url).getImage());
+        card5 = new BackgroundGame(new ImageIcon(url).getImage());
         setContentPane(card5);
-      
+
         cards = new JPanel(new CardLayout());
         cards.add(card1);
         cards.add(card2);
@@ -87,7 +90,7 @@ public class HuongDan extends JFrame {
         JButton btn4 = new JButton("Trang cuối");
         btn4.setActionCommand(LAST);
         btn4.addActionListener(cal);
-        
+
         JButton btn5 = new JButton("Quay lại menu");
         btn5.setActionCommand(BACK);
         btn5.addActionListener(cal);
@@ -108,7 +111,8 @@ public class HuongDan extends JFrame {
         frame.setLocation(240, 30);
         frame.setVisible(true);
     }
+
     public static void main(String[] args) {
-      
+
     }
 }

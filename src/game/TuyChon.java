@@ -1,4 +1,5 @@
 package game;
+
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.GridBagConstraints;
@@ -14,26 +15,28 @@ import java.util.Objects;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.*;
+
 import javazoom.jl.player.Player;
 
-public class TuyChon extends JFrame{
-    JLabel nhanoktab1=new JLabel();
-    JLabel nhanoktab2=new JLabel();
-    JLabel nhanoktab3=new JLabel();
+public class TuyChon extends JFrame {
+    JLabel nhanoktab1 = new JLabel();
+    JLabel nhanoktab2 = new JLabel();
+    JLabel nhanoktab3 = new JLabel();
     int indexgreen;
-    JPanel jp3=new JPanel();
-    JPanel jp4=new JPanel();
-    JLabel[] avtnv=new JLabel[31];
-    JLabel[] tickgreen=new JLabel[31];
-    JRadioButton cb1,cb2,cb3,cb4,cb5,cb6,cb7;
-    ConnectDataBaseTLMN_NetBeans kn=new ConnectDataBaseTLMN_NetBeans();
-    Connection cn=kn.getConnectdatabase();
-    Statement stm=cn.createStatement();
-    JLabel nhantestnow=new JLabel();
+    JPanel jp3 = new JPanel();
+    JPanel jp4 = new JPanel();
+    JLabel[] avtnv = new JLabel[31];
+    JLabel[] tickgreen = new JLabel[31];
+    JRadioButton cb1, cb2, cb3, cb4, cb5, cb6, cb7;
+    ConnectDataBaseTLMN_NetBeans kn = new ConnectDataBaseTLMN_NetBeans();
+    Connection cn = kn.getConnectdatabase();
+    Statement stm = cn.createStatement();
+    JLabel nhantestnow = new JLabel();
     JComboBox<String> jcb;
     String nhactest;
     boolean nhac_on;
     int indexnhactemp;
+
     public TuyChon() throws SQLException {
         setTitle("Game chơi bài 52 lá");
         setBounds(50, 0, 700, 697);
@@ -43,19 +46,19 @@ public class TuyChon extends JFrame{
         JTabbedPane jtp = new JTabbedPane();
         jtp.addTab("Avatar", caiDatNhanVat());
         jtp.addTab("Tùy Chỉnh Game", tuyChinhGame());
-        jtp.addTab("Tùy Chỉnh Nhạc",caiDatAmThanh());
-        jtp.addTab("Copyright",copyRight());
+        jtp.addTab("Tùy Chỉnh Nhạc", caiDatAmThanh());
+        jtp.addTab("Copyright", copyRight());
         getContentPane().add(jtp);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
-              
-    public JPanel caiDatNhanVat() throws SQLException{
-        ResultSet rs=stm.executeQuery("SELECT AVATAR FROM TABLETLMNTUYCHON");
-        while(rs.next()) {
-            indexgreen=rs.getInt(1);
+
+    public JPanel caiDatNhanVat() throws SQLException {
+        ResultSet rs = stm.executeQuery("SELECT AVATAR FROM TABLETLMNTUYCHON");
+        while (rs.next()) {
+            indexgreen = rs.getInt(1);
         }
-        System.out.println("--"+indexgreen);
-        for(int i=1;i<=30;i++) {
+        System.out.println("--" + indexgreen);
+        for (int i = 1; i <= 30; i++) {
             avtnv[i] = new JLabel();
             tickgreen[i] = new JLabel();
         }
@@ -65,29 +68,29 @@ public class TuyChon extends JFrame{
         GridBagConstraints gbc = new GridBagConstraints();
 
         gbc.fill = GridBagConstraints.HORIZONTAL;
-        gbc.ipady=100;
+        gbc.ipady = 100;
         gbc.gridx = 2;
         gbc.gridy = 0;
         panel.add(new JLabel("Chọn nhân vật"), gbc);
-        
+
         gbc.fill = GridBagConstraints.HORIZONTAL;
-        gbc.ipady=20;
-        gbc.ipadx=20;
+        gbc.ipady = 20;
+        gbc.ipadx = 20;
         gbc.gridx = 1;
         gbc.gridy = 1;
         panel.add(tickgreen[1], gbc);
         panel.add(NhanNV(1), gbc);
- 
+
         gbc.gridx = 2;
         gbc.gridy = 1;
         panel.add(tickgreen[2], gbc);
         panel.add(NhanNV(2), gbc);
- 
+
         gbc.gridx = 3;
         gbc.gridy = 1;
         panel.add(tickgreen[3], gbc);
         panel.add(NhanNV(3), gbc);
-        
+
         gbc.fill = GridBagConstraints.HORIZONTAL;
         gbc.gridx = 1;
         gbc.gridy = 2;
@@ -101,7 +104,7 @@ public class TuyChon extends JFrame{
         gbc.gridy = 2;
         panel.add(tickgreen[6], gbc);
         panel.add(NhanNV(6), gbc);
-        
+
         gbc.fill = GridBagConstraints.HORIZONTAL;
         gbc.gridx = 1;
         gbc.gridy = 3;
@@ -115,7 +118,7 @@ public class TuyChon extends JFrame{
         gbc.gridy = 3;
         panel.add(tickgreen[9], gbc);
         panel.add(NhanNV(9), gbc);
-        
+
         tickgreen[indexgreen].setVisible(true);
         gbc.fill = GridBagConstraints.HORIZONTAL;
         gbc.gridx = 2;
@@ -125,8 +128,9 @@ public class TuyChon extends JFrame{
 
         return panel;
     }
+
     public JLabel NhanNV(int i) {
-        ImageIcon Iconavt= new ImageIcon(Objects.requireNonNull(getClass().getResource("/ima_TLMN/nhanvat/" + i + ".png")));
+        ImageIcon Iconavt = new ImageIcon(Objects.requireNonNull(getClass().getResource("/ima_TLMN/nhanvat/" + i + ".png")));
         ImageIcon Icontickgreen = new ImageIcon(Objects.requireNonNull(getClass().getResource("/ima_TLMN/tickgreen.png")));
         avtnv[i].setIcon(Iconavt);
         avtnv[i].addMouseListener(mouseAdapterUserClickTab1);
@@ -135,16 +139,18 @@ public class TuyChon extends JFrame{
 
         return avtnv[i];
     }
+
     public JLabel taoNutOK() {
         ImageIcon Iconplay = new ImageIcon(Objects.requireNonNull(getClass().getResource("/ima_TLMN/ok.png")));
         nhanoktab1.setIcon(Iconplay);
         nhanoktab1.setBounds(200, 200, Iconplay.getIconWidth(), Iconplay.getIconHeight());
-    
+
         add(nhanoktab1);
         nhanoktab1.addMouseListener(mouseAdapterUserClickTab1);
 
         return nhanoktab1;
     }
+
     private final SoundPlayer soundPlayer = new SoundPlayer();
     public MouseAdapter mouseAdapterUserClickTab1 = new MouseAdapter() {
         public void mousePressed(MouseEvent e) {
@@ -179,6 +185,7 @@ public class TuyChon extends JFrame{
             }
         }
     };
+
     private void handleAvatarSelection(int avatarIndex) {
         setLayout(null);
         tickgreen[indexgreen].setVisible(false);
@@ -192,118 +199,120 @@ public class TuyChon extends JFrame{
                     "Lỗi", JOptionPane.ERROR_MESSAGE);
         }
     }
-    JButton nuttang,nutgiam;
+
+    JButton nuttang, nutgiam;
     JLabel textthoigiantre;
+
     public JPanel tuyChinhGame() throws SQLException {
-        JLabel text1,text2,text3;
+        JLabel text1, text2, text3;
         JPanel panel = new JPanel();
         GridBagLayout layout = new GridBagLayout();
         panel.setLayout(layout);
         GridBagConstraints gbc = new GridBagConstraints();
 
         gbc.fill = GridBagConstraints.HORIZONTAL;
-        gbc.ipady=50;
+        gbc.ipady = 50;
         gbc.gridx = 1;
         gbc.gridy = 6;
-        text1 =new JLabel("Chọn chiều của lượt");
+        text1 = new JLabel("Chọn chiều của lượt");
         text1.setFont(new Font("Arial", Font.BOLD, 20));
         panel.add(text1, gbc);
 
         gbc.fill = GridBagConstraints.HORIZONTAL;
-        gbc.ipady=50;
+        gbc.ipady = 50;
         gbc.gridx = 1;
         gbc.gridy = 7;
         cb1 = new JRadioButton("Cùng kim đồng hồ");
-        panel.add(cb1,gbc);
+        panel.add(cb1, gbc);
 
         gbc.fill = GridBagConstraints.HORIZONTAL;
-        gbc.ipady=50;
+        gbc.ipady = 50;
         gbc.gridx = 2;
         gbc.gridy = 7;
         cb2 = new JRadioButton("Ngược kim đồng hồ");
-        panel.add(cb2,gbc);
+        panel.add(cb2, gbc);
         ButtonGroup bg = new ButtonGroup();
         bg.add(cb1);
         bg.add(cb2);
-                  
+
         gbc.fill = GridBagConstraints.HORIZONTAL;
-        gbc.ipady=50;
+        gbc.ipady = 50;
         gbc.gridx = 1;
         gbc.gridy = 2;
-        text2 =new JLabel("Chọn số lượng máy");
+        text2 = new JLabel("Chọn số lượng máy");
         text2.setFont(new Font("Arial", Font.BOLD, 20));
         panel.add(text2, gbc);
 
         gbc.fill = GridBagConstraints.HORIZONTAL;
-        gbc.ipady=50;
+        gbc.ipady = 50;
         gbc.gridx = 1;
         gbc.gridy = 3;
         cb3 = new JRadioButton("1 máy");
-        panel.add(cb3,gbc);
+        panel.add(cb3, gbc);
 
         gbc.fill = GridBagConstraints.HORIZONTAL;
-        gbc.ipady=50;
+        gbc.ipady = 50;
         gbc.gridx = 2;
         gbc.gridy = 3;
         cb4 = new JRadioButton("2 máy");
-        panel.add(cb4,gbc);
+        panel.add(cb4, gbc);
 
         gbc.fill = GridBagConstraints.HORIZONTAL;
-        gbc.ipady=50;
+        gbc.ipady = 50;
         gbc.gridx = 3;
         gbc.gridy = 3;
         cb5 = new JRadioButton("3 máy");
-        panel.add(cb5,gbc);
+        panel.add(cb5, gbc);
         ButtonGroup slmay = new ButtonGroup();
         slmay.add(cb3);
         slmay.add(cb4);
         slmay.add(cb5);
 
         gbc.fill = GridBagConstraints.HORIZONTAL;
-        gbc.ipady=50;
+        gbc.ipady = 50;
         gbc.gridx = 1;
         gbc.gridy = 4;
-        text3 =new JLabel("Chọn chế độ chơi");
+        text3 = new JLabel("Chọn chế độ chơi");
         text3.setFont(new Font("Arial", Font.BOLD, 20));
         panel.add(text3, gbc);
 
         gbc.fill = GridBagConstraints.HORIZONTAL;
-        gbc.ipady=50;
+        gbc.ipady = 50;
         gbc.gridx = 1;
         gbc.gridy = 5;
         cb6 = new JRadioButton("Chơi tập luyện (máy công khai)");
-        panel.add(cb6,gbc);
+        panel.add(cb6, gbc);
         gbc.fill = GridBagConstraints.HORIZONTAL;
-        gbc.ipady=50;
+        gbc.ipady = 50;
         gbc.gridx = 2;
         gbc.gridy = 5;
         cb7 = new JRadioButton("Chơi thực chiến (máy bí mật)");
-        panel.add(cb7,gbc);
+        panel.add(cb7, gbc);
         ButtonGroup chedochoi = new ButtonGroup();
         chedochoi.add(cb6);
         chedochoi.add(cb7);
 
         gbc.fill = GridBagConstraints.HORIZONTAL;
-        gbc.ipady=50;
+        gbc.ipady = 50;
         gbc.gridx = 1;
         gbc.gridy = 0;
-        ResultSet rs=null;
+        ResultSet rs = null;
         try {
-            rs=stm.executeQuery("SELECT thoigiantremayrabai FROM TABLETLMNTUYCHON");
-            while(rs.next()) {
-                thoigiantre=rs.getInt(1);
+            rs = stm.executeQuery("SELECT thoigiantremayrabai FROM TABLETLMNTUYCHON");
+            while (rs.next()) {
+                thoigiantre = rs.getInt(1);
                 //System.out.println("chieu: "+temp);
             }
         } catch (SQLException ignored) {
         }
-        textthoigiantre =new JLabel("Thời gian trễ máy ra bài (rcm 2s): "+thoigiantre+" giây");
+        textthoigiantre = new JLabel("Thời gian trễ máy ra bài (rcm 2s): " + thoigiantre + " giây");
         textthoigiantre.setFont(new Font("Arial", Font.BOLD, 14));
         panel.add(textthoigiantre, gbc);
-                
+
         gbc.fill = GridBagConstraints.HORIZONTAL;
         gbc.gridx = 1;
         gbc.gridy = 1;
-        nuttang=new JButton("Tăng ");
+        nuttang = new JButton("Tăng ");
         // nuttang.addMouseListener(mouseAdapterUserClickTangGiam);
         panel.add(nuttang);
         nuttang.addMouseListener(mouseAdapterUserClickTangGiam);
@@ -311,44 +320,43 @@ public class TuyChon extends JFrame{
         gbc.fill = GridBagConstraints.HORIZONTAL;
         gbc.gridx = 2;
         gbc.gridy = 1;
-        nutgiam=new JButton("Giảm "); 
+        nutgiam = new JButton("Giảm ");
         panel.add(nutgiam);
         nutgiam.addMouseListener(mouseAdapterUserClickTangGiam);
         // nuttang.addMouseListener(mouseAdapterUserClickTangGiam);
 
         gbc.fill = GridBagConstraints.HORIZONTAL;
-        gbc.ipady=50;
+        gbc.ipady = 50;
         gbc.gridx = 1;
         gbc.gridy = 8;
         try {
-            panel.add(taoNutOKTab2(),gbc) ;
+            panel.add(taoNutOKTab2(), gbc);
         } catch (SQLException ex) {
             //System.out.println(ex);
         }
         add(panel);
-        String temp="";
+        String temp = "";
         try {
-            rs=stm.executeQuery("SELECT chieucualuot FROM TABLETLMNTUYCHON");
+            rs = stm.executeQuery("SELECT chieucualuot FROM TABLETLMNTUYCHON");
         } catch (SQLException ex) {
             //System.out.println(ex);
         }
         try {
-            while(true) {
+            while (true) {
                 assert rs != null;
                 if (!rs.next()) break;
-                temp=rs.getString(1).trim();
+                temp = rs.getString(1).trim();
                 //System.out.println("chieu: "+temp);
             }
         } catch (SQLException ex) {
             Logger.getLogger(TuyChon.class.getName()).log(Level.SEVERE, null, ex);
         }
-        if(temp.equals("cungchieu")) {
+        if (temp.equals("cungchieu")) {
             cb1.setSelected(true);
-        }
-        else cb2.setSelected(true);
-        rs=stm.executeQuery("SELECT soluongmay FROM TABLETLMNTUYCHON");
-        while(rs.next()) {
-            temp=rs.getString(1).trim();
+        } else cb2.setSelected(true);
+        rs = stm.executeQuery("SELECT soluongmay FROM TABLETLMNTUYCHON");
+        while (rs.next()) {
+            temp = rs.getString(1).trim();
             //System.out.println("chieu: "+temp);
         }
         switch (temp) {
@@ -356,63 +364,66 @@ public class TuyChon extends JFrame{
             case "2" -> cb4.setSelected(true);
             case "3" -> cb5.setSelected(true);
         }
-        rs=stm.executeQuery("SELECT chedochoi FROM TABLETLMNTUYCHON");
-        while(rs.next()) {
-            temp=rs.getString(1).trim();
+        rs = stm.executeQuery("SELECT chedochoi FROM TABLETLMNTUYCHON");
+        while (rs.next()) {
+            temp = rs.getString(1).trim();
             //System.out.println("chieu: "+temp);
         }
-        if(temp.equals("tapluyen")) {
+        if (temp.equals("tapluyen")) {
             cb6.setSelected(true);
-        } else if(temp.equals("thucchien")) {
+        } else if (temp.equals("thucchien")) {
             cb7.setSelected(true);
         }
         return panel;
     }
+
     int thoigiantre;
-    public MouseAdapter mouseAdapterUserClickTangGiam= new MouseAdapter() {
+    public MouseAdapter mouseAdapterUserClickTangGiam = new MouseAdapter() {
         public void mousePressed(MouseEvent e) {
-            if(e.getSource()==nuttang) {
-                if(thoigiantre+1>10) return;
+            if (e.getSource() == nuttang) {
+                if (thoigiantre + 1 > 10) return;
                 thoigiantre++;
-                textthoigiantre.setText("Thời gian trễ máy ra bài (rcm 2s): "+thoigiantre+" giây");
+                textthoigiantre.setText("Thời gian trễ máy ra bài (rcm 2s): " + thoigiantre + " giây");
                 try {
-                    stm.executeUpdate("UPDATE TABLETLMNTUYCHON SET thoigiantremayrabai = "+(thoigiantre));
+                    stm.executeUpdate("UPDATE TABLETLMNTUYCHON SET thoigiantremayrabai = " + (thoigiantre));
                 } catch (SQLException ex) {
                     Logger.getLogger(TuyChon.class.getName()).log(Level.SEVERE, null, ex);
                 }
-            } else if(e.getSource()==nutgiam) {
-                if(thoigiantre-1<1) return;
+            } else if (e.getSource() == nutgiam) {
+                if (thoigiantre - 1 < 1) return;
                 thoigiantre--;
-                textthoigiantre.setText("Thời gian trễ máy ra bài (rcm 2s): "+thoigiantre+" giây");
+                textthoigiantre.setText("Thời gian trễ máy ra bài (rcm 2s): " + thoigiantre + " giây");
                 try {
-                    stm.executeUpdate("UPDATE TABLETLMNTUYCHON SET thoigiantremayrabai = "+(thoigiantre));
+                    stm.executeUpdate("UPDATE TABLETLMNTUYCHON SET thoigiantremayrabai = " + (thoigiantre));
                 } catch (SQLException ex) {
                     Logger.getLogger(TuyChon.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
         }
     };
+
     public JLabel taoNutOKTab2() throws SQLException {
         ImageIcon Iconplay = new ImageIcon(Objects.requireNonNull(getClass().getResource("/ima_TLMN/ok.png")));
         nhanoktab2.setIcon(Iconplay);
         nhanoktab2.addMouseListener(mouseAdapterUserClickTab2);
         return nhanoktab2;
     }
-    public MouseAdapter mouseAdapterUserClickTab2= new MouseAdapter(){
+
+    public MouseAdapter mouseAdapterUserClickTab2 = new MouseAdapter() {
         public void mousePressed(MouseEvent e) {
-            if(e.getSource()==nhanoktab2) {
+            if (e.getSource() == nhanoktab2) {
                 try {
                     SetOKCheDoChoi();
                     setOKSound();
                 } catch (SQLException ignored) {
 
                 }
-                if(nhac_on) {
+                if (nhac_on) {
                     soundPlayer.stopSound(); // Dừng nhạc an toàn
-                    nhac_on=false;
+                    nhac_on = false;
                 }
                 try {
-                    Menu_Main  m = new Menu_Main();
+                    Menu_Main m = new Menu_Main();
                     setVisible(false);
                     m.setVisible(true);
                 } catch (SQLException ignore) {
@@ -421,17 +432,18 @@ public class TuyChon extends JFrame{
             }
         }
     };
+
     public void SetOKCheDoChoi() throws SQLException {
-        if(cb1.isSelected()) {
-            String temp="UPDATE TABLETLMNTUYCHON SET chieucualuot = 'cungchieu'";
+        if (cb1.isSelected()) {
+            String temp = "UPDATE TABLETLMNTUYCHON SET chieucualuot = 'cungchieu'";
             try {
                 stm.executeUpdate(temp);
             } catch (SQLException ex) {
                 Logger.getLogger(TuyChon.class.getName()).log(Level.SEVERE, null, ex);
             }
             //System.out.println("update chieu: "+temp);
-        } else if(cb2.isSelected()) {
-            String temp="UPDATE TABLETLMNTUYCHON SET chieucualuot = 'nguocchieu'";
+        } else if (cb2.isSelected()) {
+            String temp = "UPDATE TABLETLMNTUYCHON SET chieucualuot = 'nguocchieu'";
             try {
                 stm.executeUpdate(temp);
             } catch (SQLException ex) {
@@ -439,51 +451,53 @@ public class TuyChon extends JFrame{
             }
             //System.out.println("update chieu: "+temp);
         }
-        if(cb3.isSelected()) {
-            String temp="UPDATE TABLETLMNTUYCHON SET soluongmay = '1'";
+        if (cb3.isSelected()) {
+            String temp = "UPDATE TABLETLMNTUYCHON SET soluongmay = '1'";
             stm.executeUpdate(temp);
-        } else if(cb4.isSelected()) {
-            String temp="UPDATE TABLETLMNTUYCHON SET soluongmay = '2'";
+        } else if (cb4.isSelected()) {
+            String temp = "UPDATE TABLETLMNTUYCHON SET soluongmay = '2'";
             stm.executeUpdate(temp);
-        } else if(cb5.isSelected()) {
-            String temp="UPDATE TABLETLMNTUYCHON SET soluongmay = '3'";
+        } else if (cb5.isSelected()) {
+            String temp = "UPDATE TABLETLMNTUYCHON SET soluongmay = '3'";
             stm.executeUpdate(temp);
         }
-        if(cb6.isSelected()) {
-            String temp="UPDATE TABLETLMNTUYCHON SET chedochoi = 'tapluyen'";
+        if (cb6.isSelected()) {
+            String temp = "UPDATE TABLETLMNTUYCHON SET chedochoi = 'tapluyen'";
             stm.executeUpdate(temp);
-        } else if(cb7.isSelected()) {
-            String temp="UPDATE TABLETLMNTUYCHON SET chedochoi= 'thucchien'";
+        } else if (cb7.isSelected()) {
+            String temp = "UPDATE TABLETLMNTUYCHON SET chedochoi= 'thucchien'";
             stm.executeUpdate(temp);
             //System.out.println("update SL may "+temp);
         }
     }
+
     public void setOKSound() throws SQLException {
-        if(jcb.getSelectedIndex()==0) {
-            String temp="UPDATE TABLETLMNTUYCHON SET nhac= 'sound1'";
+        if (jcb.getSelectedIndex() == 0) {
+            String temp = "UPDATE TABLETLMNTUYCHON SET nhac= 'sound1'";
             stm.executeUpdate(temp);
-        } else if(jcb.getSelectedIndex()==1) {
-            String temp="UPDATE TABLETLMNTUYCHON SET nhac = 'sound2'";
+        } else if (jcb.getSelectedIndex() == 1) {
+            String temp = "UPDATE TABLETLMNTUYCHON SET nhac = 'sound2'";
             stm.executeUpdate(temp);
-        } else if(jcb.getSelectedIndex()==2) {
-            String temp="UPDATE TABLETLMNTUYCHON SET nhac = 'sound3'";
+        } else if (jcb.getSelectedIndex() == 2) {
+            String temp = "UPDATE TABLETLMNTUYCHON SET nhac = 'sound3'";
             stm.executeUpdate(temp);
-        } else if(jcb.getSelectedIndex()==3) {
-            String temp="UPDATE TABLETLMNTUYCHON SET nhac = 'sound4'";
+        } else if (jcb.getSelectedIndex() == 3) {
+            String temp = "UPDATE TABLETLMNTUYCHON SET nhac = 'sound4'";
             stm.executeUpdate(temp);
-        } else if(jcb.getSelectedIndex()==4) {
-            String temp="UPDATE TABLETLMNTUYCHON SET nhac = 'sound5'";
+        } else if (jcb.getSelectedIndex() == 4) {
+            String temp = "UPDATE TABLETLMNTUYCHON SET nhac = 'sound5'";
             stm.executeUpdate(temp);
-        } else if(jcb.getSelectedIndex()==5) {
-            String temp="UPDATE TABLETLMNTUYCHON SET nhac = 'sound6'";
+        } else if (jcb.getSelectedIndex() == 5) {
+            String temp = "UPDATE TABLETLMNTUYCHON SET nhac = 'sound6'";
             stm.executeUpdate(temp);
         }
     }
+
     public JPanel caiDatAmThanh() {
         try {
-            JLabel text=new JLabel("Chọn nhạc nền trong game");
+            JLabel text = new JLabel("Chọn nhạc nền trong game");
             text.setFont(new Font("Arial", Font.BOLD, 20));
-            text.setBounds(200,50,500,30);
+            text.setBounds(200, 50, 500, 30);
             jp3.add(text);
             jcb = new JComboBox<>();
             jcb.addItem("sound 1");
@@ -493,10 +507,10 @@ public class TuyChon extends JFrame{
             jcb.addItem("sound 5");
             jcb.addItem("sound 6");
             ResultSet rs;
-            rs=stm.executeQuery("SELECT nhac FROM TABLETLMNTUYCHON");
-            String temp="";
-            while(rs.next()) {
-                temp=rs.getString(1).trim();
+            rs = stm.executeQuery("SELECT nhac FROM TABLETLMNTUYCHON");
+            String temp = "";
+            while (rs.next()) {
+                temp = rs.getString(1).trim();
             }
             switch (temp) {
                 case "sound1" -> jcb.setSelectedIndex(0);
@@ -517,6 +531,7 @@ public class TuyChon extends JFrame{
         }
         return null;
     }
+
     public JLabel taoNutTestNow() {
         ImageIcon Iconplay = new ImageIcon(Objects.requireNonNull(getClass().getResource("/ima_TLMN/testsound.png")));
         nhantestnow.setIcon(Iconplay);
@@ -524,6 +539,7 @@ public class TuyChon extends JFrame{
         nhantestnow.addMouseListener(mouseAdapterUserClickTab3);
         return nhantestnow;
     }
+
     public JLabel taoNutOKTab3() {
         ImageIcon Iconplay = new ImageIcon(Objects.requireNonNull(getClass().getResource("/ima_TLMN/ok.png")));
         nhanoktab3.setIcon(Iconplay);
@@ -531,33 +547,35 @@ public class TuyChon extends JFrame{
         nhanoktab3.addMouseListener(mouseAdapterUserClickTab3);
         return nhanoktab3;
     }
+
     public void ganNhac() {
 //        SoundPlayer soundPlayer = new SoundPlayer(); // Tạo đối tượng SoundPlayer
-        if(jcb.getSelectedIndex()==0) nhactest="sound1";
-        else if(jcb.getSelectedIndex()==1) nhactest="sound2";
-        else if(jcb.getSelectedIndex()==2) nhactest="sound3";
-        else if(jcb.getSelectedIndex()==3) nhactest="sound4";
-        else if(jcb.getSelectedIndex()==4) nhactest="sound5";
-        else if(jcb.getSelectedIndex()==5) nhactest="sound6";
+        if (jcb.getSelectedIndex() == 0) nhactest = "sound1";
+        else if (jcb.getSelectedIndex() == 1) nhactest = "sound2";
+        else if (jcb.getSelectedIndex() == 2) nhactest = "sound3";
+        else if (jcb.getSelectedIndex() == 3) nhactest = "sound4";
+        else if (jcb.getSelectedIndex() == 4) nhactest = "sound5";
+        else if (jcb.getSelectedIndex() == 5) nhactest = "sound6";
         soundPlayer.stopSound();  // Dừng nhạc cũ trước khi phát nhạc mới
         soundPlayer.playSound(nhactest);
     }
-    public MouseAdapter mouseAdapterUserClickTab3= new MouseAdapter() {
+
+    public MouseAdapter mouseAdapterUserClickTab3 = new MouseAdapter() {
         public void mousePressed(MouseEvent e) {
-            if(e.getSource()==nhanoktab3) {
+            if (e.getSource() == nhanoktab3) {
                 try {
-                    if(nhac_on) {
+                    if (nhac_on) {
                         soundPlayer.stopSound(); // Dừng nhạc an toàn
-                        nhac_on=false;
+                        nhac_on = false;
                     }
                     SetOKCheDoChoi();
                     setOKSound();
                     Menu_Main m = new Menu_Main();
                     setVisible(false);
                     m.setVisible(true);
-                }catch(Exception ignore) {
+                } catch (Exception ignore) {
                 }
-            } else if(e.getSource() == nhantestnow) {
+            } else if (e.getSource() == nhantestnow) {
                 if (nhac_on) {
                     if (jcb.getSelectedIndex() != indexnhactemp) {
                         soundPlayer.stopSound(); // Dừng nhạc an toàn
@@ -574,6 +592,7 @@ public class TuyChon extends JFrame{
             }
         }
     };
+
     public static class SoundPlayer {
         private static final Logger LOGGER = Logger.getLogger(SoundPlayer.class.getName());
         private volatile boolean running = false; // Cờ dừng cho việc phát nhạc
@@ -621,10 +640,11 @@ public class TuyChon extends JFrame{
             }
         }
     }
+
     public JPanel copyRight() {
-        JLabel text1=new JLabel("GAME CHƠI BÀI 52 LÁ");
-        JLabel text2=new JLabel("Chào mừng mọi người đến với phòng chơi bài của team OOP.");
-        JLabel text3=new JLabel("Tạo bởi: TEAM-OOP");
+        JLabel text1 = new JLabel("GAME CHƠI BÀI 52 LÁ");
+        JLabel text2 = new JLabel("Chào mừng mọi người đến với phòng chơi bài của team OOP.");
+        JLabel text3 = new JLabel("Tạo bởi: TEAM-OOP");
         text1.setFont(new Font("Arial", Font.BOLD, 24));
         text2.setFont(new Font("Arial", Font.PLAIN, 18));
         text3.setFont(new Font("Arial", Font.PLAIN, 24));
@@ -632,17 +652,18 @@ public class TuyChon extends JFrame{
         text2.setForeground(Color.blue);
         text3.setForeground(Color.black);
         jp4.setLayout(null);
-        text1.setBounds(50,50,500,30);
-        text2.setBounds(50,100,5000,30);
-        text3.setBounds(50,150,500,30);
+        text1.setBounds(50, 50, 500, 30);
+        text2.setBounds(50, 100, 5000, 30);
+        text3.setBounds(50, 150, 500, 30);
         jp4.add(text1);
         jp4.add(text2);
         jp4.add(text3);
         add(jp4);
         return jp4;
     }
+
     public static void main(String[] args) throws SQLException {
-        TuyChon a=new TuyChon();
+        TuyChon a = new TuyChon();
         a.setVisible(true);
     }
 }

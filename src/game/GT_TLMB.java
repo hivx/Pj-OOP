@@ -52,8 +52,21 @@ public class GT_TLMB {
                 return false;
             }
         }
-        return true; // Tất cả các lá bài đều liền kề và cùng chất
-    }
+        return true;} // Tất cả các lá bài đều liền kề và cùng chất
+//    public boolean LaSanh() {
+//        if (countcard < 3) return false; // Sảnh phải có ít nhất 3 lá
+//        for (int i = 0; i < countcard - 1; i++) { // Tránh lỗi vượt giới hạn mảng
+//            // Kiểm tra các lá bài phải liền kề về số và cùng chất
+//            if ((int) Math.ceil((float) card[i + 1] / 4) - (int) Math.ceil((float) card[i] / 4) != 1
+//                    || card[i] % 4 != card[i + 1] % 4) {
+//                return false; // Không phải sảnh
+//            }
+//        }
+//
+//        // Có thể thêm logic xử lý A, 2, 3 hoặc Q, K, A (nếu cần)
+//        return true; // Tất cả các lá bài đều liền kề và cùng chất
+//    }
+
     public boolean LaBaCon()
     {
         return (lamTronLen((float) card[3] / 4) - lamTronLen((float) card[1] / 4) == 0)
@@ -69,6 +82,22 @@ public class GT_TLMB {
                 && ((card[1] - 1) % 4 / 2 == (card[2] - 1)% 4 / 2)
                 && countcard == 2;
     }
+//    public boolean LaDoi() {
+//        // Đảm bảo có đúng 2 lá bài
+//        if (countcard != 2) {
+//            return false;
+//        }
+//
+//        // Lấy giá trị số và chất của từng lá bài
+//        int card1Value = (int) Math.ceil((float) card[0] / 4); // Giá trị lá bài 1
+//        int card2Value = (int) Math.ceil((float) card[1] / 4); // Giá trị lá bài 2
+//        int card1Color = (card[0] - 1) % 4 / 2; // Màu lá bài 1
+//        int card2Color = (card[1] - 1) % 4 / 2; // Màu lá bài 2
+//
+//        // Kiểm tra cùng giá trị và cùng màu
+//        return card1Value == card2Value && card1Color == card2Color;
+//    }
+
     public boolean LaTuQuy()
     {
         return (lamTronLen((float) card[4] / 4) ==
@@ -83,19 +112,16 @@ public class GT_TLMB {
         {
             return "coc";
         }
-
         else if(LaDoi())
         {
             return "doi";
         }
-
         else if(LaBaCon())
         {
             return "bacon";
         }
         else if(LaTuQuy())
         {
-
             return "tuquy";
         }
         else if(LaSanh())
@@ -110,7 +136,7 @@ public class GT_TLMB {
 
         return (int)kqchia+1;
     }
-    public void luuDuLieuCacBoThoaManCoTinhHonSoVoi(int carddp[],int countdp)
+    public void luuDuLieuCacBoThoaManCoTinhHonSoVoi(int[] carddp,int countdp)
     {
         String kieubai=timKieuBai(countdp, carddp);
         for(int i=0;i<cardbot.size();i++)
@@ -156,9 +182,8 @@ public class GT_TLMB {
         // Read the char
         char ch = (char) System.in.read();*/
         String bien1="",bien2=B;int count1=0,count2=0;
-        for(int i=0;i<local.size();i++)
-        {
-            bien1+=local.get(i).toString();
+        for (String s : local) {
+            bien1 += s.toString();
         }
 
         int count=0;
