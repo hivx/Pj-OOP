@@ -48,20 +48,20 @@ while(count<number) {
 
 flag = false;
 value = (int)(Math.random()*tongsophantu)+1;//Gia su cac gia tri nam trong khoang tu 1 den 100
-for(int i=0; i<loca.size(); i++){
+    for (Object o : loca) {
 
 
-if(((Integer)loca.get(i)).intValue()==value){
+        if (((Integer) o).intValue() == value) {
 
 
-flag = true;
-break;
+            flag = true;
+            break;
 
 
-}
+        }
 
 
-}
+    }
 
 
 if(!flag){

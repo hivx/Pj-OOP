@@ -1,42 +1,21 @@
-
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package game;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
-
-/**
- *
- * @author Admin
- */
 public class NaiveBayes_Bot_LearnData_ver_end  {
-Bot_ver_end bot;
-
-String thongbaokieubairahople;
+    Bot_ver_end bot;
     ArrayList danhsachkieubaixacsuat=new ArrayList();
-    private int SO_COT=13;
-     boolean NOT_LEARNED;
+    boolean NOT_LEARNED;
     public NaiveBayes_Bot_LearnData_ver_end(Bot_ver_end bot) {
         this.bot=bot;
-        
     }
-    public void run() throws IOException
-    {
-           String eleCot[]=new String[30];
+    public void run() throws IOException {
+           String[] eleCot =new String[30];
         GT_TLMN_PhanNhomBai_ver_end gtbot=new GT_TLMN_PhanNhomBai_ver_end(this.bot.mycard);
         gtbot.xayDungDataCacLoaiBoBaiChoBot();
-            int sumMyCard=0,dodaisanhmax=0,tong2vaA=0,tonglabaiovitridacbiettoptren=0,countDB=0
+            int dodaisanhmax=0,countDB=0
          ,sumTuyenTren=0,sumTuyenDuoi=0,countDOIdoclap = 0,countALLDOI=0,countBACONdoclap = 0,
-          countBaiLe=0,countDoi=0,countSanh=0,count3con=0,countTuQuy=0,
+          countBaiLe=0,count3con=0,countTuQuy=0,
     countBaDoiThong=0,countBonDoiThong=0,sumDoiMax = 0,sumDoiMin=0,
            sumSanhMax = 0,sumSanhMin=0,sumBaCon=0;
         for(int i=0;i<bot.mycard.size();i++)
@@ -65,18 +44,16 @@ String thongbaokieubairahople;
         }
         // ////System.out.println("Số đôi độc lập: "+countDOIdoclap/2);
         // ////System.out.println("Số 3 con độc lập: "+countBACONdoclap/3);
-    
-  
       
         for(int i=0;i<gtbot.cardbot.size();i++)
         {
            // ////System.out.println(""+gtbot.cardbot.get(i).daycard);
             if(gtbot.cardbot.get(i).loaibai.equals("baile")) countBaiLe++;
             if(gtbot.cardbot.get(i).loaibai.equals("doi")) countALLDOI++;
-                if(gtbot.cardbot.get(i).loaibai.equals("tuquy")) countTuQuy++;
-                 if(gtbot.cardbot.get(i).loaibai.equals("badoithong")) countBaDoiThong++;
-                  if(gtbot.cardbot.get(i).loaibai.equals("bondoithong")) countBonDoiThong++;
-                  if(gtbot.cardbot.get(i).loaibai.equals("bacon")) 
+            if(gtbot.cardbot.get(i).loaibai.equals("tuquy")) countTuQuy++;
+            if(gtbot.cardbot.get(i).loaibai.equals("badoithong")) countBaDoiThong++;
+            if(gtbot.cardbot.get(i).loaibai.equals("bondoithong")) countBonDoiThong++;
+            if(gtbot.cardbot.get(i).loaibai.equals("bacon"))
                   {
                       sumBaCon+=gtbot.cardbot.get(i).sumsohieu;
                   }
@@ -102,10 +79,10 @@ String thongbaokieubairahople;
       eleCot[5]=String.valueOf(countALLDOI);
       eleCot[6]=String.valueOf(countBACONdoclap/3);
       if(sumBaCon<=50) eleCot[7]="0-50";
-      else if(sumBaCon>=51&&sumBaCon<=100) eleCot[7]="51-100";
-      else if(sumBaCon>=101&&sumBaCon<=150) eleCot[7]="101-150";
-      else if(sumBaCon>=151&&sumBaCon<=200) eleCot[7]="151-200";
-        else if(sumBaCon>=201) eleCot[7]=">=201";
+      else if(sumBaCon<=100) eleCot[7]="51-100";
+      else if(sumBaCon<=150) eleCot[7]="101-150";
+      else if(sumBaCon<=200) eleCot[7]="151-200";
+        else eleCot[7]=">=201";
          sumDoiMin=sumDoiMax;
          sumSanhMin=sumSanhMax;
         for(int i=0;i<gtbot.cardbot.size();i++)
@@ -119,19 +96,18 @@ String thongbaokieubairahople;
                sumSanhMin=gtbot.cardbot.get(i).sumsohieu;
             }
         }
-          
-          if(count3con!=0&&countTuQuy!=0) count3con=0;
-           if(countTuQuy==0&&countBaDoiThong==0&&countBonDoiThong==0) {eleCot[8]="ko";}
+
+        if(countTuQuy==0&&countBaDoiThong==0&&countBonDoiThong==0) {eleCot[8]="ko";}
  else eleCot[8]="co";
 
-           int lechtuyendaucuoi=sumTuyenTren-sumTuyenDuoi;
+ int lechtuyendaucuoi=sumTuyenTren-sumTuyenDuoi;
           if(lechtuyendaucuoi<=50)  eleCot[9]="0-50";
-          else if(lechtuyendaucuoi>=51&&lechtuyendaucuoi<=100)  eleCot[9]="50-100";
-           else if(lechtuyendaucuoi>=101&&lechtuyendaucuoi<=150)  eleCot[9]="101-150";
-          else if(lechtuyendaucuoi>=151&&lechtuyendaucuoi<=200)  eleCot[9]="151-200";
+          else if(lechtuyendaucuoi<=100)  eleCot[9]="50-100";
+           else if(lechtuyendaucuoi<=150)  eleCot[9]="101-150";
+          else if(lechtuyendaucuoi<=200)  eleCot[9]="151-200";
            int lechdoi=sumDoiMax-sumDoiMin;
           if(lechdoi<=10)  eleCot[10]="0-10";
-          else if(lechdoi>=10&&lechdoi<=20)  eleCot[10]="11-20";
+          else if(lechdoi<=20)  eleCot[10]="11-20";
            else if(lechdoi>=21&&lechdoi<=30)  eleCot[10]="21-30";
           else if(lechdoi>=31&&lechdoi<=40)  eleCot[10]="31-40";
           else if(lechdoi>=41&&lechdoi<=50)  eleCot[10]="41-50";
@@ -170,7 +146,8 @@ String thongbaokieubairahople;
          "cot4","cot5","cot6","cot7","cot8"
              ,"cot9","cot10","cot11","cot12","cot13"};
           String TENBANG="tableTLMNnaivebayes";
-         JAVA_TLMN_CSDL_Naivebayes nBayes=new JAVA_TLMN_CSDL_Naivebayes(COT,TENBANG,eleCot,SO_COT);
+        int SO_COT = 13;
+        JAVA_TLMN_CSDL_Naivebayes nBayes=new JAVA_TLMN_CSDL_Naivebayes(COT,TENBANG,eleCot, SO_COT);
          nBayes.indexActor=bot.indexActor;
          nBayes.tinhXSKetQua();
         //nBayes.luuBoDaTaTranning("lock");
