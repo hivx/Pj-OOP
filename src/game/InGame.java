@@ -14,6 +14,9 @@ import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.*;
+
+import game.menu.BackgroundGame;
+import game.menu.Menu_Main;
 import javazoom.jl.player.Player;
 
 public class InGame extends JFrame{
@@ -111,7 +114,7 @@ public class InGame extends JFrame{
         }
     }
     public void taoKhungOption() {
-        URL url = InGame.class.getResource("/ima_TLMN/khungoption.png");
+        URL url = InGame.class.getResource("/image/khungoption.png");
         assert url != null;
         ImageIcon icon = new ImageIcon(url);
         setLayout(null);
@@ -172,7 +175,7 @@ public class InGame extends JFrame{
         setBounds(50, 0, 1050, 700);
         setLocation(180, 0);//vị trí mặc định
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        URL url = InGame.class.getResource("/ima_TLMN/bg_TLMN_2.png");
+        URL url = InGame.class.getResource("/image/bg_TLMN_2.png");
         assert url != null;
         JPanel panel = new BackgroundGame(new ImageIcon(url).getImage());
         setContentPane(panel);
@@ -303,9 +306,9 @@ public class InGame extends JFrame{
             currentWorker = new SwingWorker<>() {
                 @Override
                 protected Void doInBackground() {
-                    try (InputStream fis = InGame.class.getResourceAsStream("/sound_TLMN/" + nhactest + ".mp3")) {
+                    try (InputStream fis = InGame.class.getResourceAsStream("/sound/" + nhactest + ".mp3")) {
                         if (fis == null) {
-                            LOGGER.warning("File not found: /sound_TLMN/" + nhactest + ".mp3");
+                            LOGGER.warning("File not found: /sound/" + nhactest + ".mp3");
                             return null;
                         }
                         Player play = new Player(fis);

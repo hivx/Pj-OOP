@@ -139,7 +139,7 @@ public class Player_ver_end extends Actor_ver_end{
     {
          
 setLayout(null);//cần phải dùng để thay đổi vị trí
-URL url = Player_ver_end.class.getResource("/ima_TLMN/rabai.png");
+URL url = Player_ver_end.class.getResource("/image/rabai.png");
 ImageIcon icon = new ImageIcon(url);
 nutrabai = new JButton();
 nutrabai.setIcon(icon);
@@ -150,7 +150,7 @@ nutrabai.setBounds(toadoXnutrabai, toadoYnutrabai,icon.getIconWidth() ,icon.getI
     {
          
 setLayout(null);//cần phải dùng để thay đổi vị trí
-URL url = Player_ver_end.class.getResource("/ima_TLMN/rabaian.png");
+URL url = Player_ver_end.class.getResource("/image/rabaian.png");
 ImageIcon icon = new ImageIcon(url);
 nhanrabaian = new JLabel();
 nhanrabaian.setIcon(icon);
@@ -161,7 +161,7 @@ nhanrabaian.setBounds(toadoXnutrabai, toadoYnutrabai,icon.getIconWidth() ,icon.g
     {
          
 setLayout(null);//cần phải dùng để thay đổi vị trí
-URL url = Player_ver_end.class.getResource("/ima_TLMN/khongtheo.png");
+URL url = Player_ver_end.class.getResource("/image/khongtheo.png");
 ImageIcon icon = new ImageIcon(url);
 nutkhongtheo = new JButton();
 nutkhongtheo.setIcon(icon);
@@ -364,7 +364,7 @@ nutkhongtheo.setBounds(toadoXnutkhongtheo, toadoYnutkhongtheo,icon.getIconWidth(
    }
    public void taoNhanNewGame()
     {
-        URL url = Player_ver_end.class.getResource("/ima_TLMN/newgame.png");
+        URL url = Player_ver_end.class.getResource("/image/newgame.png");
 ImageIcon icon = new ImageIcon(url);
      setLayout(null); 
      nhannewgame.setIcon(icon);
@@ -372,7 +372,7 @@ ImageIcon icon = new ImageIcon(url);
     }
    public void taoNhanBackHome()
     {
-                URL url = Player_ver_end.class.getResource("/ima_TLMN/backhome.png");
+                URL url = Player_ver_end.class.getResource("/image/backhome.png");
 ImageIcon icon = new ImageIcon(url);
      setLayout(null); 
      nhanbackhome.setIcon(icon);
@@ -380,7 +380,7 @@ ImageIcon icon = new ImageIcon(url);
     }
    public void taoNhanSoundOn()
     {
-     URL url = Player_ver_end.class.getResource("/ima_TLMN/sound_on.png");
+     URL url = Player_ver_end.class.getResource("/image/sound_on.png");
 ImageIcon icon = new ImageIcon(url);
      setLayout(null); 
      nhansoundon.setIcon(icon);
@@ -388,7 +388,7 @@ ImageIcon icon = new ImageIcon(url);
     }
     public void taoNhanSoundOff()
     {
-             URL url = Player_ver_end.class.getResource("/ima_TLMN/sound_off.png");
+             URL url = Player_ver_end.class.getResource("/image/sound_off.png");
 ImageIcon icon = new ImageIcon(url);
   
      nhansoundoff.setIcon(icon);
@@ -396,7 +396,7 @@ ImageIcon icon = new ImageIcon(url);
     }
    public void taoNhanQuestion()
     {
-        URL url = Player_ver_end.class.getResource("/ima_TLMN/hoi.png");
+        URL url = Player_ver_end.class.getResource("/image/hoi.png");
 ImageIcon icon = new ImageIcon(url);
      setLayout(null); 
      nhanquestion.setIcon(icon);

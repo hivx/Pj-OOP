@@ -88,7 +88,7 @@ for(int i=0;i<mycard.size();i++)
             int k=mycard.get(i).sohieu;
         nhanmycard[j]= new JLabel();
       String s=String.valueOf(String.valueOf(k))+".png";
-      String path="/ima_TLMN/52labaiTLMN/"+s;
+      String path="/image/52labai/"+s;
       URL url = Actor_ver_end.class.getResource(path);
 ImageIcon icon = new ImageIcon(url);
         // //////System.out.println(path);
@@ -137,7 +137,7 @@ ImageIcon icon = new ImageIcon(url);
     public void taoNhanDongHo()
     {
         
-        URL url = Actor_ver_end.class.getResource("/ima_TLMN/clock.png");
+        URL url = Actor_ver_end.class.getResource("/image/clock.png");
        ImageIcon icon = new ImageIcon(url);
      setLayout(null);//cần phải dùng để thay `đổi 
      nhanclock.setIcon(icon);
@@ -147,7 +147,7 @@ ImageIcon icon = new ImageIcon(url);
     }
     public void taoCardHide()
     {
-         URL url = Actor_ver_end.class.getResource("/ima_TLMN/card_hide.png");
+         URL url = Actor_ver_end.class.getResource("/image/card_hide.png");
        ImageIcon icon = new ImageIcon(url);
      setLayout(null);//cần phải dùng để thay `đổi 
      cardhide.setIcon(icon);
@@ -155,7 +155,7 @@ ImageIcon icon = new ImageIcon(url);
     }   
      public void taoAvatar()
     {
-        URL url = Actor_ver_end.class.getResource("/ima_TLMN/nhanvat/"+tenImageAvatar+".png");
+        URL url = Actor_ver_end.class.getResource("/image/nhanvat/"+tenImageAvatar+".png");
        ImageIcon icon = new ImageIcon(url);
      setLayout(null);//cần phải dùng để thay `đổi 
      avatar.setIcon(icon);
@@ -190,7 +190,7 @@ ImageIcon icon = new ImageIcon(url);
     }
       public void taoNhanWinner()
     {
-        URL url = Actor_ver_end.class.getResource("/ima_TLMN/winner.gif");
+        URL url = Actor_ver_end.class.getResource("/image/winner.gif");
        ImageIcon icon = new ImageIcon(url);
      setLayout(null); 
     winner.setIcon(icon);
@@ -211,7 +211,7 @@ ImageIcon icon = new ImageIcon(url);
          nhanbaira[k] = new JLabel();
          
          
-        String path="/ima_TLMN/52labaiTLMN/"+String.valueOf(j)+".png";
+        String path="/image/52labai/"+String.valueOf(j)+".png";
          URL url = Actor_ver_end.class.getResource(path);
        ImageIcon icon = new ImageIcon(url);
      
@@ -232,7 +232,7 @@ ImageIcon icon = new ImageIcon(url);
                    
          nhanbaira[k] = new JLabel();
        
-   String path="/ima_TLMN/52labaiTLMN/"+String.valueOf(j)+".png";
+   String path="/image/52labai/"+String.valueOf(j)+".png";
          URL url = Actor_ver_end.class.getResource(path);
        ImageIcon icon = new ImageIcon(url); 
      setLayout(null);//cần phải dùng để thay `đổi 
@@ -264,12 +264,12 @@ ImageIcon icon = new ImageIcon(url);
          ImageIcon icon=null;
          if(indexActor==2||indexActor==3)
          {
-         URL url = Actor_ver_end.class.getResource("/ima_TLMN/thongbao3bich1.png");
+         URL url = Actor_ver_end.class.getResource("/image/thongbao3bich1.png");
         icon = new ImageIcon(url);
          }
          else if(indexActor==1||indexActor==4)
          {
-     URL url = Actor_ver_end.class.getResource("/ima_TLMN/thongbao3bich2.png");
+     URL url = Actor_ver_end.class.getResource("/image/thongbao3bich2.png");
         icon = new ImageIcon(url);
          }
      setLayout(null);
@@ -283,12 +283,12 @@ ImageIcon icon = new ImageIcon(url);
          ImageIcon icon=null;
          if(indexActor==2||indexActor==3)
          {
-     URL url = Actor_ver_end.class.getResource("/ima_TLMN/thongbaobainhoditruoc1.png");
+     URL url = Actor_ver_end.class.getResource("/image/thongbaobainhoditruoc1.png");
         icon = new ImageIcon(url);
          }
          else if(indexActor==1||indexActor==4)
          {
-     icon = new ImageIcon(getClass().getResource("/ima_TLMN/thongbaobainhoditruoc2.png"));
+     icon = new ImageIcon(getClass().getResource("/image/thongbaobainhoditruoc2.png"));
          }
      setLayout(null);
      nhanthongbaobainhoditruoc.setIcon(icon);
