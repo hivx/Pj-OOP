@@ -6,10 +6,6 @@ import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 
-/**
- *
- * @author Admin
- */
 public class BackgroundGame extends JPanel { 
     
 	public Image img;

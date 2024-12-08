@@ -11,10 +11,6 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.Timer;
 
-/**
- *
- * @author Admin
- */
 // chứa dữ liệu các thành phần
 public class Actor extends JFrame{
     public int indexActor;

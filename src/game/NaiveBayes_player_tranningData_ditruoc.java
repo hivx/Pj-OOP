@@ -3,10 +3,6 @@ package game;
 import java.io.IOException;
 import java.util.ArrayList;
 
-/**
- *
- * @author Admin
- */
 public class NaiveBayes_player_tranningData_ditruoc {
 Player player;
 String thongbaokieubairahople;

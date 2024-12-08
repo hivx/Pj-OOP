@@ -3,10 +3,6 @@ package game;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-/**
- *
- * @author Admin
- */
 public class DieuKhienLuotDanh {
     int SONGUOICHOI;
     int nguoiDanhOViTriHienTai;

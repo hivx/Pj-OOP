@@ -1,10 +1,5 @@
 package game;
 
-
-/**
- *
- * @author Admin
- */
 public class CardBot {
     public String loaibai;
     public int sola;

@@ -2,10 +2,6 @@ package game;
 
 import java.util.ArrayList;
 
-/**
- *
- * @author Admin
- */
 public class TLMN_Player extends TLMB {
  int solabaibotra;
  boolean coDapAn;

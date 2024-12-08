@@ -1,6 +1,5 @@
 package game;
 
-
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.IOException;
@@ -10,10 +9,6 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 
-/**
- *
- * @author Admin
- */
 public class Player extends Actor {
  String KQ_PlayerTranning;
  boolean playerChonSaiBai;

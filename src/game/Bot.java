@@ -1,9 +1,5 @@
 package game;
 
-/**
- *
- * @author Admin
- */
 public class Bot extends Actor{
     public Bot(int indexActor, String listBaiDuocChia, int x_cardau,
                int y_carddau, int xclock, int yclock, int xtime, int ytime, int x_nhan_ktheo,
