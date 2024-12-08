@@ -10,21 +10,13 @@
       <change beforePath="$PROJECT_DIR$/CSDL/DB/log/log.ctrl" beforeDir="false" afterPath="$PROJECT_DIR$/CSDL/DB/log/log.ctrl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CSDL/DB/log/log28.dat" beforeDir="false" afterPath="$PROJECT_DIR$/CSDL/DB/log/log28.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CSDL/DB/log/logmirror.ctrl" beforeDir="false" afterPath="$PROJECT_DIR$/CSDL/DB/log/logmirror.ctrl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CSDL/DB/seg0/c4f0.dat" beforeDir="false" afterPath="$PROJECT_DIR$/CSDL/DB/seg0/c4f0.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CSDL/DB/seg0/c530.dat" beforeDir="false" afterPath="$PROJECT_DIR$/CSDL/DB/seg0/c530.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CSDL/DB/seg0/c560.dat" beforeDir="false" afterPath="$PROJECT_DIR$/CSDL/DB/seg0/c560.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/derby.log" beforeDir="false" afterPath="$PROJECT_DIR$/derby.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/Actor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/Actor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/BOT_TinhToan_va_RaQuyetDinh.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/BOT_TinhToan_va_RaQuyetDinh.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/CSDL_Naivebayes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/CSDL_Naivebayes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/ChiaBai_Avatar_NgauNhien.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/ChiaBai_Avatar_NgauNhien.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/ConnectDataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/ConnectDataBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/Bot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/Bot.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/DieuKhienBatDauVaKetThucGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/DieuKhienBatDauVaKetThucGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/DieuKhienLuotDanh.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/DieuKhienLuotDanh.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/LichSuDau.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/LichSuDau.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/NaiveBayes_Bot_LearnData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/NaiveBayes_Bot_LearnData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/NaiveBayes_player_tranningData_ditruoc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/NaiveBayes_player_tranningData_ditruoc.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/PhanNhomBai.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/PhanNhomBai.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/TLMB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/TLMB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/TLMN_Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/TLMN_Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/luatchoi/GT_TLMN_General_ver_end.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/TLMN/GT_TLMN_General_ver_end.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

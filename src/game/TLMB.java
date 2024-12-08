@@ -493,7 +493,7 @@ public class TLMB {
             {indexuutien=1;     return 999;}
         }
 
-        if(ctkt>4) System.out.println("Bot "+index_actor+"co chu trinh > 3");
+        if(ctkt>4) System.out.println("Bot "+index_actor+" co chu trinh > 3");
         else System.out.println("Chu trinh ket thuc ngan nhat cua bot "+index_actor+"la: "+ctkt);
         if((ctkt==1)||(tongSoLaConLai()>=10&&ctkt<=3&&countbaimanh>=3)
                 ||(SoLaConLaiCuaActor[index_actor_sau]==1)
