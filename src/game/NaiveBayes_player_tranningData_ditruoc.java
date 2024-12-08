@@ -1,8 +1,5 @@
 package game;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -10,20 +7,20 @@ import java.util.ArrayList;
  *
  * @author Admin
  */
-public class NaiveBayes_player_tranningData_ditruoc_ver_end  {
-Player_ver_end player;
+public class NaiveBayes_player_tranningData_ditruoc {
+Player player;
 String thongbaokieubairahople;
     ArrayList danhsachkieubaixacsuat=new ArrayList();
     private int SO_COT=13;
      boolean NOT_LEARNED;
-    public NaiveBayes_player_tranningData_ditruoc_ver_end(Player_ver_end player) {
+    public NaiveBayes_player_tranningData_ditruoc(Player player) {
         this.player=player;
     }
     public void run() throws IOException
     {
         
            String eleCot[]=new String[30];
-        GT_TLMN_PhanNhomBai_ver_end gtbot=new GT_TLMN_PhanNhomBai_ver_end(this.player.mycard);
+        PhanNhomBai gtbot=new PhanNhomBai(this.player.mycard);
         gtbot.xayDungDataCacLoaiBoBaiChoBot();
             int sumMyCard=0,dodaisanhmax=0,tong2vaA=0,tonglabaiovitridacbiettoptren=0,countDB=0
          ,sumTuyenTren=0,sumTuyenDuoi=0,countDOIdoclap = 0,countALLDOI=0,countBACONdoclap = 0,
@@ -171,7 +168,7 @@ String thongbaokieubairahople;
          "cot4","cot5","cot6","cot7","cot8"
              ,"cot9","cot10","cot11","cot12","cot13"};
            String TENBANG="TABLETLMNNAIVEBAYES";
-         JAVA_TLMN_CSDL_Naivebayes nBayes=new JAVA_TLMN_CSDL_Naivebayes(COT,TENBANG,eleCot,SO_COT);
+         CSDL_Naivebayes nBayes=new CSDL_Naivebayes(COT,TENBANG,eleCot,SO_COT);
          nBayes.tinhXSKetQua();
          // Mở tranning 
        //  nBayes.luuBoDaTaTranning("player");

@@ -7,7 +7,7 @@ import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class GT_TLMB {
+public class TLMB {
     int countcard;
     int[] card=new int[14];
     boolean co2Co;
@@ -29,10 +29,10 @@ public class GT_TLMB {
     int soLuongActor;
     int[] SoLaConLaiCuaActor=new int[30];
     int index_actor_truoc,index_actor_sau,minactor,maxactor,tongSoLaDoiThu;
-    GT_TLMN_PhanNhomBai_ver_end gttlmnpnb;
-    NaiveBayes_Bot_LearnData_ver_end ml_naivebays_bot;
-    ArrayList<CardBot_ver_end> cardbot =new ArrayList<CardBot_ver_end>();
-    public GT_TLMB() {
+    PhanNhomBai gttlmnpnb;
+    NaiveBayes_Bot_LearnData ml_naivebays_bot;
+    ArrayList<CardBot> cardbot =new ArrayList<CardBot>();
+    public TLMB() {
 
     }
 //    private boolean cungMau(int card1, int card2) {
@@ -366,7 +366,7 @@ public class GT_TLMB {
 
             Combination(A,B, K);
         } catch (IOException ex) {
-            Logger.getLogger(GT_TLMN_BOT_TinhToan_va_RaQuyetDinh_ver_end.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(BOT_TinhToan_va_RaQuyetDinh.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }

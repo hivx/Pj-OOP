@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package game;
 
 
@@ -11,13 +5,13 @@ package game;
  *
  * @author Admin
  */
-public class CardBot_ver_end{
+public class CardBot {
     public String loaibai;
     public int sola;
     public int sumsohieu;
     public String daycard;
     public String fullnamecard;
-    public CardBot_ver_end(String loaibai,int sola,String daycard,int sumsohieu)
+    public CardBot(String loaibai, int sola, String daycard, int sumsohieu)
     {
         this.loaibai=loaibai;
         this.sola=sola;

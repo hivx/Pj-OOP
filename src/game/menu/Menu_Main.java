@@ -18,7 +18,7 @@ import java.util.logging.Logger;
 import javax.swing.JPanel;
 
 public class Menu_Main extends JFrame {
-    ConnectDataBaseTLMN_NetBeans kn = new ConnectDataBaseTLMN_NetBeans();
+    ConnectDataBase kn = new ConnectDataBase();
     Connection cn = kn.getConnectdatabase();
     Statement stm = cn.createStatement();
     JLabel nhanchoingay = new JLabel();

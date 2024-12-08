@@ -1,22 +1,14 @@
 package game;
-import javax.swing.JComponent;
-import javax.swing.JDialog;
-import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.AbstractTableModel;
-import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GridLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class LichSuDau extends JPanel {
   
@@ -40,7 +32,7 @@ public class LichSuDau extends JPanel {
         {   
             //
         int count=0;
-            ConnectDataBaseTLMN_NetBeans kn=new ConnectDataBaseTLMN_NetBeans();
+            ConnectDataBase kn=new ConnectDataBase();
         Connection cn=kn.getConnectdatabase();
          Statement stm=cn.createStatement(); 
         ResultSet rs=stm.executeQuery("select * from tablelichsudau");

@@ -4,7 +4,42 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6153eac1-dd2b-4884-90c5-9dc81e947b01" name="Changes" comment="" />
+    <list default="true" id="6153eac1-dd2b-4884-90c5-9dc81e947b01" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CSDL/DB/db.lck" beforeDir="false" afterPath="$PROJECT_DIR$/CSDL/DB/db.lck" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CSDL/DB/log/log.ctrl" beforeDir="false" afterPath="$PROJECT_DIR$/CSDL/DB/log/log.ctrl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CSDL/DB/log/log28.dat" beforeDir="false" afterPath="$PROJECT_DIR$/CSDL/DB/log/log28.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CSDL/DB/log/logmirror.ctrl" beforeDir="false" afterPath="$PROJECT_DIR$/CSDL/DB/log/logmirror.ctrl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CSDL/DB/seg0/c4f0.dat" beforeDir="false" afterPath="$PROJECT_DIR$/CSDL/DB/seg0/c4f0.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CSDL/DB/seg0/c530.dat" beforeDir="false" afterPath="$PROJECT_DIR$/CSDL/DB/seg0/c530.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CSDL/DB/seg0/c560.dat" beforeDir="false" afterPath="$PROJECT_DIR$/CSDL/DB/seg0/c560.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/derby.log" beforeDir="false" afterPath="$PROJECT_DIR$/derby.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/Actor_ver_end.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/Actor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/Bot_ver_end.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/Bot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/CardBot_ver_end.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/CardBot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/Card_Player_ver_end.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/Card_Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/ChiaBai_Avatar_NgauNhien_ver_end.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/ChiaBai_Avatar_NgauNhien.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/ConnectDataBaseTLMN_NetBeans.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/ConnectDataBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/DieuKhienBatDauVaKetThucGame_ver_end.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/DieuKhienBatDauVaKetThucGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/DieuKhienLuotDanh_ver_end.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/DieuKhienLuotDanh.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/GT_TLMB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/TLMB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/GT_TLMN_BOT_TinhToan_va_RaQuyetDinh_ver_end.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/BOT_TinhToan_va_RaQuyetDinh.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/GT_TLMN_General_ver_end.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/luatchoi/GT_TLMN_General_ver_end.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/GT_TLMN_PhanNhomBai_ver_end.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/PhanNhomBai.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/GT_TLMN_Player_ver_end.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/TLMN_Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/InGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/InGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/JAVA_TLMN_CSDL_Naivebayes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/CSDL_Naivebayes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/LichSuDau.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/LichSuDau.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/NaiveBayes_Bot_LearnData_ver_end.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/NaiveBayes_Bot_LearnData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/NaiveBayes_player_tranningData_ditruoc_ver_end.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/NaiveBayes_player_tranningData_ditruoc.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/Player_ver_end.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/menu/BackgroundGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/menu/BackgroundGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/menu/Menu_Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/menu/Menu_Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/menu/TuyChon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/menu/TuyChon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/testsql.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/testx.java" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,10 +56,10 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 5
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 5
+}</component>
   <component name="ProjectId" id="2pwM2jKWzJD6p9B9O9pwFWGUxIM" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -40,6 +75,7 @@
     "Application.play.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "dev",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true"

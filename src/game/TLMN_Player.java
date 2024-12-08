@@ -1,30 +1,22 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package game;
 
-import game.CardBot_ver_end;
-import game.Card_Player_ver_end;
 import java.util.ArrayList;
 
 /**
  *
  * @author Admin
  */
-public class GT_TLMN_Player_ver_end extends GT_TLMB{
+public class TLMN_Player extends TLMB {
  int solabaibotra;
  boolean coDapAn;
    int[] baibotra=new int[30];
    int solabaiplayerchon;
    String strbaitoichon;
    int[] labaiplayerchon=new int[30];
-    public GT_TLMN_Player_ver_end(
-            ArrayList<Card_Player_ver_end> arrLbaibotra,
-            ArrayList<Card_Player_ver_end> arrLbaitoichon, 
-            ArrayList<CardBot_ver_end> cacbobaicuatoi ) {
+    public TLMN_Player(
+            ArrayList<Card_Player> arrLbaibotra,
+            ArrayList<Card_Player> arrLbaitoichon,
+            ArrayList<CardBot> cacbobaicuatoi ) {
         int j=0;
         this.solabaiplayerchon=arrLbaitoichon.size();
         this.solabaibotra=arrLbaibotra.size();

@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package game;
 
 import java.util.ArrayList;
@@ -13,15 +7,15 @@ import java.util.Scanner;
  *
  * @author Admin
  */
-public class DieuKhienLuotDanh_ver_end {
+public class DieuKhienLuotDanh {
     int SONGUOICHOI;
     int nguoiDanhOViTriHienTai;
     boolean[] khoaLuotPlayer;
     ArrayList dayluottiep=new ArrayList();
     String chieucualuot;
 
-    public DieuKhienLuotDanh_ver_end(int soNguoiChoi,
-            int nguoiDanhOViTriHienTai,boolean []khoaLuotPlayer,String chieucualuot) {
+    public DieuKhienLuotDanh(int soNguoiChoi,
+                             int nguoiDanhOViTriHienTai, boolean []khoaLuotPlayer, String chieucualuot) {
         this.chieucualuot=chieucualuot;
         Scanner sc=new Scanner(System.in);
      this.khoaLuotPlayer=khoaLuotPlayer;

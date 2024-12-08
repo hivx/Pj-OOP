@@ -10,43 +10,39 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JLabel;
 import javax.swing.Timer;
 
 
-public class DieuKhienBatDauVaKetThucGame_ver_end {
+public class DieuKhienBatDauVaKetThucGame {
     int SONGUOICHOI,iwin,isTurn,bodem=3;
      JLabel timechuanbivaogame=new JLabel("3");
-    Bot_ver_end bot1,bot2,bot3;
-    Player_ver_end player;
+    Bot bot1,bot2,bot3;
+    Player player;
     Timer time;
-    GT_TLMN_PhanNhomBai_ver_end gtpnpl,gtpnbot1,gtpnbot2,gtpnbot3;
+    PhanNhomBai gtpnpl,gtpnbot1,gtpnbot2,gtpnbot3;
     String bainhonhat,dapantoitrang,thoigianhethongbatdaugame,toitrangne;
      int[] soluonglaconlaicuaActor;
      JLabel thongbaochuanbivaogame=new JLabel();
      
-       ConnectDataBaseTLMN_NetBeans kn=new ConnectDataBaseTLMN_NetBeans();
+       ConnectDataBase kn=new ConnectDataBase();
         Connection cn=kn.getConnectdatabase();
              Statement stm=cn.createStatement(); 
     public boolean nhac_on,istoitrang;
-    public DieuKhienBatDauVaKetThucGame_ver_end(int SONGUOICHOI,
-            Player_ver_end player,Bot_ver_end bot1,Bot_ver_end bot2,Bot_ver_end bot3) throws SQLException{
+    public DieuKhienBatDauVaKetThucGame(int SONGUOICHOI,
+                                        Player player, Bot bot1, Bot bot2, Bot bot3) throws SQLException{
         this.SONGUOICHOI=SONGUOICHOI;
         this.bot1=bot1;
         this.bot2=bot2;
         this.bot3=bot3;
         this.player=player;
-          gtpnpl= new GT_TLMN_PhanNhomBai_ver_end(player.mycard);
+          gtpnpl= new PhanNhomBai(player.mycard);
            gtpnpl.xayDungDataCacLoaiBoBaiChoBot();
-           gtpnbot1= new GT_TLMN_PhanNhomBai_ver_end(bot1.mycard);
+           gtpnbot1= new PhanNhomBai(bot1.mycard);
            gtpnbot1.xayDungDataCacLoaiBoBaiChoBot();
-           gtpnbot2= new GT_TLMN_PhanNhomBai_ver_end(bot2.mycard);
+           gtpnbot2= new PhanNhomBai(bot2.mycard);
            gtpnbot2.xayDungDataCacLoaiBoBaiChoBot();
-           gtpnbot3= new GT_TLMN_PhanNhomBai_ver_end(bot3.mycard);
+           gtpnbot3= new PhanNhomBai(bot3.mycard);
            gtpnbot3.xayDungDataCacLoaiBoBaiChoBot();
     }
      public void thongBaoChuanBi()

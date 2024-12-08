@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package game;
 
 
@@ -12,21 +6,15 @@ import java.awt.event.MouseEvent;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 
 /**
  *
  * @author Admin
  */
-public class Player_ver_end extends Actor_ver_end{
+public class Player extends Actor {
  String KQ_PlayerTranning;
  boolean playerChonSaiBai;
  String strbaivuachon,bainhonhat;
@@ -39,16 +27,16 @@ public class Player_ver_end extends Actor_ver_end{
   JLabel nhansoundon=new JLabel();
     JLabel nhansoundoff=new JLabel();
    JLabel nhanquestion=new JLabel();
- GT_TLMN_PhanNhomBai_ver_end checknutrabaigetdata;
- GT_TLMN_BOT_TinhToan_va_RaQuyetDinh_ver_end checknutrabaitimdapan;
+ PhanNhomBai checknutrabaigetdata;
+ BOT_TinhToan_va_RaQuyetDinh checknutrabaitimdapan;
  int soPlayerBiKhoa,SONGUOICHOI;
- ArrayList<Card_Player_ver_end> theyCard=new ArrayList<Card_Player_ver_end>();
- ArrayList<Card_Player_ver_end> baiplayervuachon =new ArrayList<Card_Player_ver_end>();
-    public Player_ver_end(int indexActor,String listBaiDuocChia,int xclock,int yclock,
-     int xtime,int ytime,int x_nhan_ktheo,int y_nhan_ktheo,int xcardhide,
-     int ycardhide,int xbaira,int ybaira,int xcarddau,int ycarddau,int xrabai,
-     int yrabai,int xktheo,int yktheo,int x_avatar,int y_avatar,String tenImageAvatar,
-     int solabaiconlai,int toadoX3bich,int toadoY3bich) {
+ ArrayList<Card_Player> theyCard=new ArrayList<Card_Player>();
+ ArrayList<Card_Player> baiplayervuachon =new ArrayList<Card_Player>();
+    public Player(int indexActor, String listBaiDuocChia, int xclock, int yclock,
+                  int xtime, int ytime, int x_nhan_ktheo, int y_nhan_ktheo, int xcardhide,
+                  int ycardhide, int xbaira, int ybaira, int xcarddau, int ycarddau, int xrabai,
+                  int yrabai, int xktheo, int yktheo, int x_avatar, int y_avatar, String tenImageAvatar,
+                  int solabaiconlai, int toadoX3bich, int toadoY3bich) {
         this.toadoXnhanthongbaoditruoc=toadoX3bich;
         this.toadoYnhanthongbaoditruoc=toadoY3bich;
         this.solabaiconlai=solabaiconlai;
@@ -139,7 +127,7 @@ public class Player_ver_end extends Actor_ver_end{
     {
          
 setLayout(null);//cần phải dùng để thay đổi vị trí
-URL url = Player_ver_end.class.getResource("/image/rabai.png");
+URL url = Player.class.getResource("/image/rabai.png");
 ImageIcon icon = new ImageIcon(url);
 nutrabai = new JButton();
 nutrabai.setIcon(icon);
@@ -150,7 +138,7 @@ nutrabai.setBounds(toadoXnutrabai, toadoYnutrabai,icon.getIconWidth() ,icon.getI
     {
          
 setLayout(null);//cần phải dùng để thay đổi vị trí
-URL url = Player_ver_end.class.getResource("/image/rabaian.png");
+URL url = Player.class.getResource("/image/rabaian.png");
 ImageIcon icon = new ImageIcon(url);
 nhanrabaian = new JLabel();
 nhanrabaian.setIcon(icon);
@@ -161,7 +149,7 @@ nhanrabaian.setBounds(toadoXnutrabai, toadoYnutrabai,icon.getIconWidth() ,icon.g
     {
          
 setLayout(null);//cần phải dùng để thay đổi vị trí
-URL url = Player_ver_end.class.getResource("/image/khongtheo.png");
+URL url = Player.class.getResource("/image/khongtheo.png");
 ImageIcon icon = new ImageIcon(url);
 nutkhongtheo = new JButton();
 nutkhongtheo.setIcon(icon);
@@ -199,7 +187,7 @@ nutkhongtheo.setBounds(toadoXnutkhongtheo, toadoYnutkhongtheo,icon.getIconWidth(
              
            if(isDaDuocChon[j]==true)
            { 
-             Card_Player_ver_end tempbaivuachon=new Card_Player_ver_end(j,k);
+             Card_Player tempbaivuachon=new Card_Player(j,k);
              baiplayervuachon.add(tempbaivuachon);
             }
            else
@@ -219,9 +207,9 @@ nutkhongtheo.setBounds(toadoXnutkhongtheo, toadoYnutkhongtheo,icon.getIconWidth(
         }
    
              
-        checknutrabaigetdata=new GT_TLMN_PhanNhomBai_ver_end(mycard);
+        checknutrabaigetdata=new PhanNhomBai(mycard);
          checknutrabaigetdata.xayDungDataCacLoaiBoBaiChoBot();
-       GT_TLMN_Player_ver_end gtplayer=new GT_TLMN_Player_ver_end(theyCard,baiplayervuachon
+       TLMN_Player gtplayer=new TLMN_Player(theyCard,baiplayervuachon
             ,checknutrabaigetdata.cardbot);
            String temp=gtplayer.nhanThongBaoTinhHopLeBaiDaChonCuaToi();
            
@@ -245,7 +233,7 @@ nutkhongtheo.setBounds(toadoXnutkhongtheo, toadoYnutkhongtheo,icon.getIconWidth(
            
           
     }
-   public void xuLyRaBai(Player_ver_end player)
+   public void xuLyRaBai(Player player)
    {
        strbaivuachon="";
        playerChonSaiBai=false;
@@ -271,7 +259,7 @@ nutkhongtheo.setBounds(toadoXnutkhongtheo, toadoYnutkhongtheo,icon.getIconWidth(
                {
                    if(k==Integer.parseInt(c[t]))
                    {
-             Card_Player_ver_end tempbaivuachon=new Card_Player_ver_end(j,k);
+             Card_Player tempbaivuachon=new Card_Player(j,k);
              baivuachon.add(tempbaivuachon);
                    }
                }
@@ -287,7 +275,7 @@ nutkhongtheo.setBounds(toadoXnutkhongtheo, toadoYnutkhongtheo,icon.getIconWidth(
             if(isDaDuocChon[j]==true)
            { 
                strbaivuachon+=String.valueOf(k)+"$";
-             Card_Player_ver_end tempbaivuachon=new Card_Player_ver_end(j,k);
+             Card_Player tempbaivuachon=new Card_Player(j,k);
              baivuachon.add(tempbaivuachon);
             }
            }
@@ -296,7 +284,7 @@ nutkhongtheo.setBounds(toadoXnutkhongtheo, toadoYnutkhongtheo,icon.getIconWidth(
        
              
              {
-             GT_TLMN_PhanNhomBai_ver_end gttest=new GT_TLMN_PhanNhomBai_ver_end(mycard);
+             PhanNhomBai gttest=new PhanNhomBai(mycard);
            gttest.xayDungDataCacLoaiBoBaiChoBot();
                  for(int i=0;i<gttest.cardbot.size();i++)
              {
@@ -318,8 +306,8 @@ nutkhongtheo.setBounds(toadoXnutkhongtheo, toadoYnutkhongtheo,icon.getIconWidth(
                   if(theyCard.size()==0) 
              { 
                  
-             NaiveBayes_player_tranningData_ditruoc_ver_end ml_naivebays_pl=
-                     new NaiveBayes_player_tranningData_ditruoc_ver_end(player);
+             NaiveBayes_player_tranningData_ditruoc ml_naivebays_pl=
+                     new NaiveBayes_player_tranningData_ditruoc(player);
              //turn on tranning
           try {
                 ml_naivebays_pl.run();
@@ -364,7 +352,7 @@ nutkhongtheo.setBounds(toadoXnutkhongtheo, toadoYnutkhongtheo,icon.getIconWidth(
    }
    public void taoNhanNewGame()
     {
-        URL url = Player_ver_end.class.getResource("/image/newgame.png");
+        URL url = Player.class.getResource("/image/newgame.png");
 ImageIcon icon = new ImageIcon(url);
      setLayout(null); 
      nhannewgame.setIcon(icon);
@@ -372,7 +360,7 @@ ImageIcon icon = new ImageIcon(url);
     }
    public void taoNhanBackHome()
     {
-                URL url = Player_ver_end.class.getResource("/image/backhome.png");
+                URL url = Player.class.getResource("/image/backhome.png");
 ImageIcon icon = new ImageIcon(url);
      setLayout(null); 
      nhanbackhome.setIcon(icon);
@@ -380,7 +368,7 @@ ImageIcon icon = new ImageIcon(url);
     }
    public void taoNhanSoundOn()
     {
-     URL url = Player_ver_end.class.getResource("/image/sound_on.png");
+     URL url = Player.class.getResource("/image/sound_on.png");
 ImageIcon icon = new ImageIcon(url);
      setLayout(null); 
      nhansoundon.setIcon(icon);
@@ -388,7 +376,7 @@ ImageIcon icon = new ImageIcon(url);
     }
     public void taoNhanSoundOff()
     {
-             URL url = Player_ver_end.class.getResource("/image/sound_off.png");
+             URL url = Player.class.getResource("/image/sound_off.png");
 ImageIcon icon = new ImageIcon(url);
   
      nhansoundoff.setIcon(icon);
@@ -396,7 +384,7 @@ ImageIcon icon = new ImageIcon(url);
     }
    public void taoNhanQuestion()
     {
-        URL url = Player_ver_end.class.getResource("/image/hoi.png");
+        URL url = Player.class.getResource("/image/hoi.png");
 ImageIcon icon = new ImageIcon(url);
      setLayout(null); 
      nhanquestion.setIcon(icon);

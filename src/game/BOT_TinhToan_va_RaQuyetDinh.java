@@ -1,24 +1,15 @@
 
 package game;
-import game.Bot_ver_end;
-import game.CardBot_ver_end;
-import game.Card_Player_ver_end;
-import game.NaiveBayes_Bot_LearnData_ver_end;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
 import java.util.Random;
 import java.util.Vector;
-import game.NaiveBayes_Bot_LearnData_ver_end;
 import java.util.logging.Level;
 import java.util.logging.Logger;
- public class GT_TLMN_BOT_TinhToan_va_RaQuyetDinh_ver_end extends GT_TLMB{
-  public GT_TLMN_BOT_TinhToan_va_RaQuyetDinh_ver_end(ArrayList<Card_Player_ver_end> arrLbaiplayerra,
-        ArrayList<CardBot_ver_end> cacbobaicuatoi,int[] SoLaActor,
-       int soLuongActor,int index_actor,int index_actor_truoc,int index_actor_sau,int bainhonhat) throws IOException {
+ public class BOT_TinhToan_va_RaQuyetDinh extends TLMB {
+  public BOT_TinhToan_va_RaQuyetDinh(ArrayList<Card_Player> arrLbaiplayerra,
+                                     ArrayList<CardBot> cacbobaicuatoi, int[] SoLaActor,
+                                     int soLuongActor, int index_actor, int index_actor_truoc, int index_actor_sau, int bainhonhat) throws IOException {
       
       this.cardbot=cacbobaicuatoi;
       this.chieucualuot=chieucualuot;
@@ -97,7 +88,7 @@ import java.util.logging.Logger;
        int lengthmax=0;
        int sumsohieulengthmax=0;
         String sanhdep="koco";
-      for (CardBot_ver_end cardBotVerEnd : cardbot) {
+      for (CardBot cardBotVerEnd : cardbot) {
           if (((cardBotVerEnd.loaibai.equals("sanh")
                   && cardBotVerEnd.sola > lengthmax &&
                   khongAnhHuongDenBaiBoBaiTop(cardBotVerEnd.daycard)) ||
@@ -122,7 +113,7 @@ import java.util.logging.Logger;
   {
        int sohieumax=0;
         String dapanmaxsohieu="koco";
-      for (CardBot_ver_end cardBotVerEnd : cardbot) {
+      for (CardBot cardBotVerEnd : cardbot) {
 
           if ((cardBotVerEnd.loaibai.equals("doi") || cardBotVerEnd.loaibai.equals("coc"))
                   && cardBotVerEnd.sumsohieu > sohieumax) {
@@ -303,7 +294,7 @@ int x=chuTrinhKetThucNganNhatTry(baichon);
         
         Combination(A,B, K);
     } catch (IOException ex) {
-        Logger.getLogger(GT_TLMN_BOT_TinhToan_va_RaQuyetDinh_ver_end.class.getName()).log(Level.SEVERE, null, ex);
+        Logger.getLogger(BOT_TinhToan_va_RaQuyetDinh.class.getName()).log(Level.SEVERE, null, ex);
     }
        
   }
@@ -371,7 +362,7 @@ int x=chuTrinhKetThucNganNhatTry(baichon);
                  System.out.println(""+tempfullnameString[i]);
               }
     }
-  public String dapAnMinDiTruoc_naivebayes(Bot_ver_end bot) throws IOException
+  public String dapAnMinDiTruoc_naivebayes(Bot bot) throws IOException
 {
    String s= sanhDep();
     if(!s.equals("koco")) 
@@ -385,7 +376,7 @@ int x=chuTrinhKetThucNganNhatTry(baichon);
             }
         }
     }
-     ml_naivebays_bot =new NaiveBayes_Bot_LearnData_ver_end(bot);
+     ml_naivebays_bot =new NaiveBayes_Bot_LearnData(bot);
          ml_naivebays_bot.run();
        for(int i=1;i<ml_naivebays_bot.danhsachkieubaixacsuat.size();i++)
          {

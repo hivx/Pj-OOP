@@ -15,7 +15,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.*;
 
-import game.ConnectDataBaseTLMN_NetBeans;
+import game.ConnectDataBase;
 import game.InGame;
 import javazoom.jl.player.Player;
 
@@ -29,7 +29,7 @@ public class TuyChon extends JFrame{
     JLabel[] avtnv=new JLabel[31];
     JLabel[] tickgreen=new JLabel[31];
     JRadioButton cb1,cb2,cb3,cb4,cb5,cb6,cb7;
-    ConnectDataBaseTLMN_NetBeans kn=new ConnectDataBaseTLMN_NetBeans();
+    ConnectDataBase kn=new ConnectDataBase();
     Connection cn=kn.getConnectdatabase();
     Statement stm=cn.createStatement();
     JLabel nhantestnow=new JLabel();

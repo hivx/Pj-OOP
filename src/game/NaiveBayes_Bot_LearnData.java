@@ -2,16 +2,16 @@ package game;
 
 import java.io.IOException;
 import java.util.ArrayList;
-public class NaiveBayes_Bot_LearnData_ver_end  {
-    Bot_ver_end bot;
+public class NaiveBayes_Bot_LearnData {
+    Bot bot;
     ArrayList danhsachkieubaixacsuat=new ArrayList();
     boolean NOT_LEARNED;
-    public NaiveBayes_Bot_LearnData_ver_end(Bot_ver_end bot) {
+    public NaiveBayes_Bot_LearnData(Bot bot) {
         this.bot=bot;
     }
     public void run() throws IOException {
            String[] eleCot =new String[30];
-        GT_TLMN_PhanNhomBai_ver_end gtbot=new GT_TLMN_PhanNhomBai_ver_end(this.bot.mycard);
+        PhanNhomBai gtbot=new PhanNhomBai(this.bot.mycard);
         gtbot.xayDungDataCacLoaiBoBaiChoBot();
             int dodaisanhmax=0,countDB=0
          ,sumTuyenTren=0,sumTuyenDuoi=0,countDOIdoclap = 0,countALLDOI=0,countBACONdoclap = 0,
@@ -147,7 +147,7 @@ public class NaiveBayes_Bot_LearnData_ver_end  {
              ,"cot9","cot10","cot11","cot12","cot13"};
           String TENBANG="tableTLMNnaivebayes";
         int SO_COT = 13;
-        JAVA_TLMN_CSDL_Naivebayes nBayes=new JAVA_TLMN_CSDL_Naivebayes(COT,TENBANG,eleCot, SO_COT);
+        CSDL_Naivebayes nBayes=new CSDL_Naivebayes(COT,TENBANG,eleCot, SO_COT);
          nBayes.indexActor=bot.indexActor;
          nBayes.tinhXSKetQua();
         //nBayes.luuBoDaTaTranning("lock");

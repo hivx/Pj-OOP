@@ -1,26 +1,16 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package game;
-
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JOptionPane;
 
 /**
  *
  * @author Admin
  */
-public class Bot_ver_end extends Actor_ver_end{
-    public Bot_ver_end(int indexActor,String listBaiDuocChia,int x_cardau,
-     int y_carddau,int xclock,int yclock,int xtime,int ytime,int x_nhan_ktheo,
-     int y_nhan_ktheo,int xcardhide,int ycardhide,int xbaira,int ybaira,
-     int xnhan_sl_baiconlai,int ynhan_sl_baiconlai,int x_avatar,int y_avatar
-            ,String tenImageAvatar,String chedochoi,int solabaiconlai,
-            int toadoX3bich,int toadoY3bich) {
+public class Bot extends Actor{
+    public Bot(int indexActor, String listBaiDuocChia, int x_cardau,
+               int y_carddau, int xclock, int yclock, int xtime, int ytime, int x_nhan_ktheo,
+               int y_nhan_ktheo, int xcardhide, int ycardhide, int xbaira, int ybaira,
+               int xnhan_sl_baiconlai, int ynhan_sl_baiconlai, int x_avatar, int y_avatar
+            , String tenImageAvatar, String chedochoi, int solabaiconlai,
+               int toadoX3bich, int toadoY3bich) {
         this.toadoXnhanthongbaoditruoc=toadoX3bich;
         this.toadoYnhanthongbaoditruoc=toadoY3bich;
         this.chedochoi=chedochoi;
@@ -105,7 +95,7 @@ public class Bot_ver_end extends Actor_ver_end{
               {
                   if(Integer.parseInt(c[j])==mycard.get(z).sohieu)
                   {
-       Card_Player_ver_end tempbaivuachon=new Card_Player_ver_end(mycard.get(z).vitri,Integer.parseInt(c[j]));
+       Card_Player tempbaivuachon=new Card_Player(mycard.get(z).vitri,Integer.parseInt(c[j]));
                      baivuachon.add(tempbaivuachon);
                   }
               

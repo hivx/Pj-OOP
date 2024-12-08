@@ -1,23 +1,8 @@
-
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package game;
 
-import game.CardBot_ver_end;
-import game.Card_Player_ver_end;
-import java.awt.List;
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.Scanner;
 
-public class GT_TLMN_PhanNhomBai_ver_end extends GT_TLMB{
+public class PhanNhomBai extends TLMB {
    
 int numbbaiconlaicuatoi;
  
@@ -49,7 +34,7 @@ int[] x=new int[1000];
  int countohopdacbietsanhdoihople,countohopdacbiet3convs3dtor4dthople;
  String chuoilabaiconlaicuatoi;
  int indexactor;
-public GT_TLMN_PhanNhomBai_ver_end (ArrayList<Card_Player_ver_end> baiconlaicuatoi) {
+public PhanNhomBai(ArrayList<Card_Player> baiconlaicuatoi) {
         
         ////////System.out.println("--"+theyCardVuaRastr+numbtheycardVuaRa);
         int j=0;
@@ -84,7 +69,7 @@ public GT_TLMN_PhanNhomBai_ver_end (ArrayList<Card_Player_ver_end> baiconlaicuat
         {
          vitrilabaidon[i]="c";
          int SUM=baiconlaicuatoi[i];
-    CardBot_ver_end temp=new CardBot_ver_end("coc",
+    CardBot temp=new CardBot("coc",
             1,String.valueOf(baiconlaicuatoi[i])+"$",SUM);
     cardbot.add(temp);
         }
@@ -100,7 +85,7 @@ public GT_TLMN_PhanNhomBai_ver_end (ArrayList<Card_Player_ver_end> baiconlaicuat
         vitrilabaiLQtoidoi[i+1]=vitrilabaiLQtoidoi[i]="d";
         tempSDL=String.valueOf(baiconlaicuatoi[i])+"$"+String.valueOf(baiconlaicuatoi[i+1])+"$";
         SUM=baiconlaicuatoi[i]+baiconlaicuatoi[i+1];
-        CardBot_ver_end temp=new CardBot_ver_end("doi",2,tempSDL,SUM);
+        CardBot temp=new CardBot("doi",2,tempSDL,SUM);
       cardbot.add(temp);
     }
        }
@@ -125,10 +110,10 @@ public GT_TLMN_PhanNhomBai_ver_end (ArrayList<Card_Player_ver_end> baiconlaicuat
     vitrilabaiLQtoibacon[i+2]=vitrilabaiLQtoibacon[i+1]=vitrilabaiLQtoibacon[i]="bc";    
         tempSDL=String.valueOf(baiconlaicuatoi[i])+"$"+String.valueOf(baiconlaicuatoi[i+1])+"$"+String.valueOf(baiconlaicuatoi[i+2])+"$";
         SUM=baiconlaicuatoi[i]+baiconlaicuatoi[i+1]+baiconlaicuatoi[i+2];
-        CardBot_ver_end temp=new CardBot_ver_end("bacon",3,tempSDL,SUM);
+        CardBot temp=new CardBot("bacon",3,tempSDL,SUM);
       cardbot.add(temp);
       SUM=baiconlaicuatoi[i]+baiconlaicuatoi[i+2];
-      CardBot_ver_end tempdoi1=new CardBot_ver_end("doi",2,String.valueOf(baiconlaicuatoi[i])+"$"+String.valueOf(baiconlaicuatoi[i+2])+"$",SUM);
+      CardBot tempdoi1=new CardBot("doi",2,String.valueOf(baiconlaicuatoi[i])+"$"+String.valueOf(baiconlaicuatoi[i+2])+"$",SUM);
   cardbot.add(tempdoi1);
       //bo sung them to hop la doi
    /*CardBot_ver_end temp2=new CardBot_ver_end("doi",2,"doi$"+String.valueOf(baiconlaicuatoi[i])+"$"+String.valueOf(baiconlaicuatoi[i+2]));
@@ -159,19 +144,19 @@ public GT_TLMN_PhanNhomBai_ver_end (ArrayList<Card_Player_ver_end> baiconlaicuat
         tempSDL=String.valueOf(baiconlaicuatoi[i])+"$"+String.valueOf(baiconlaicuatoi[i+1])+
                 "$"+String.valueOf(baiconlaicuatoi[i+2])+"$"+String.valueOf(baiconlaicuatoi[i+3])+"$";
         SUM=baiconlaicuatoi[i]+baiconlaicuatoi[i+1]+baiconlaicuatoi[i+2]+baiconlaicuatoi[i+3];
-        CardBot_ver_end temp=new CardBot_ver_end("tuquy",4,tempSDL,SUM);
+        CardBot temp=new CardBot("tuquy",4,tempSDL,SUM);
       cardbot.add(temp);
      SUM= baiconlaicuatoi[i]+baiconlaicuatoi[i+2];
-  CardBot_ver_end tempdoi1=new CardBot_ver_end("doi",2,String.valueOf(baiconlaicuatoi[i])+"$"+String.valueOf(baiconlaicuatoi[i+2])+"$",SUM);
+  CardBot tempdoi1=new CardBot("doi",2,String.valueOf(baiconlaicuatoi[i])+"$"+String.valueOf(baiconlaicuatoi[i+2])+"$",SUM);
   cardbot.add(tempdoi1);
   SUM= baiconlaicuatoi[i+1]+baiconlaicuatoi[i+3];
-  CardBot_ver_end tempdoi2=new CardBot_ver_end("doi",2,String.valueOf(baiconlaicuatoi[i+1])+"$"+String.valueOf(baiconlaicuatoi[i+3])+"$",SUM);
+  CardBot tempdoi2=new CardBot("doi",2,String.valueOf(baiconlaicuatoi[i+1])+"$"+String.valueOf(baiconlaicuatoi[i+3])+"$",SUM);
   cardbot.add(tempdoi2);
   SUM= baiconlaicuatoi[i+3]+baiconlaicuatoi[i+2]+baiconlaicuatoi[i];
-  CardBot_ver_end temp3con1=new CardBot_ver_end("bacon",3,String.valueOf(baiconlaicuatoi[i])+"$"+String.valueOf(baiconlaicuatoi[i+2])+"$"+String.valueOf(baiconlaicuatoi[i+3])+"$",SUM);
+  CardBot temp3con1=new CardBot("bacon",3,String.valueOf(baiconlaicuatoi[i])+"$"+String.valueOf(baiconlaicuatoi[i+2])+"$"+String.valueOf(baiconlaicuatoi[i+3])+"$",SUM);
   cardbot.add(temp3con1);
   SUM= baiconlaicuatoi[i]+baiconlaicuatoi[i+1]+baiconlaicuatoi[i+3];
-  CardBot_ver_end temp3con2=new CardBot_ver_end("bacon",3,String.valueOf(baiconlaicuatoi[i])+"$"+String.valueOf(baiconlaicuatoi[i+1])+"$"+String.valueOf(baiconlaicuatoi[i+3])+"$",SUM);
+  CardBot temp3con2=new CardBot("bacon",3,String.valueOf(baiconlaicuatoi[i])+"$"+String.valueOf(baiconlaicuatoi[i+1])+"$"+String.valueOf(baiconlaicuatoi[i+3])+"$",SUM);
   cardbot.add(temp3con2);
     }
        }
@@ -200,7 +185,7 @@ public GT_TLMN_PhanNhomBai_ver_end (ArrayList<Card_Player_ver_end> baiconlaicuat
            {
                vitrilabailabaile[i]="bl";
                
-               CardBot_ver_end temp=new CardBot_ver_end("baile", 1, String.valueOf(baiconlaicuatoi[i])+"$",baiconlaicuatoi[i]);
+               CardBot temp=new CardBot("baile", 1, String.valueOf(baiconlaicuatoi[i])+"$",baiconlaicuatoi[i]);
                cardbot.add(temp);
            }
            else  vitrilabailabaile[i]="x";
@@ -299,7 +284,7 @@ public GT_TLMN_PhanNhomBai_ver_end (ArrayList<Card_Player_ver_end> baiconlaicuat
        &vitrilabaiLQtoisanh[i].equals("s"))
    {
        vitrilabaidacbietsanhdoi[i]="dbsanhdoi";
-      CardBot_ver_end temp=new CardBot_ver_end("baidacbiet", 1, String.valueOf(baiconlaicuatoi[i])+"$",baiconlaicuatoi[i]);
+      CardBot temp=new CardBot("baidacbiet", 1, String.valueOf(baiconlaicuatoi[i])+"$",baiconlaicuatoi[i]);
                cardbot.add(temp);
    }
    else {vitrilabaidacbietsanhdoi[i]="x";chuoirootsanhdoi+=baiconlaicuatoi[i]+"$";}
@@ -493,7 +478,7 @@ public void sapXepGiaTriTheoThuTuTangDanTrongToHopDB(String[] str,int n)
                 "$"+String.valueOf(temp[i+2])+"$"+String.valueOf(temp[i+3])+
                 "$"+String.valueOf(temp[i+4])+"$"+String.valueOf(temp[i+5])+
                 "$"+String.valueOf(temp[i+6])+"$"+String.valueOf(temp[i+7])+"$";
-        CardBot_ver_end bondt=new CardBot_ver_end("bondoithong",8,temp4DT,0);
+        CardBot bondt=new CardBot("bondoithong",8,temp4DT,0);
            
            
       cardbot.add(bondt);
@@ -557,7 +542,7 @@ public void sapXepGiaTriTheoThuTuTangDanTrongToHopDB(String[] str,int n)
                    }
                     if(kt==0)
                        {
-       CardBot_ver_end badt=new CardBot_ver_end("badoithong",6,temp3DT,SUM);
+       CardBot badt=new CardBot("badoithong",6,temp3DT,SUM);
                          cardbot.add(badt);
                        }
       
@@ -624,7 +609,7 @@ public void timSanhTuChuoiToHopVaDoDaiChuoiChoTruoc(String str,int dodaisanh)
                    }
                     if(kt==0)
                        {
-                           CardBot_ver_end cb=new CardBot_ver_end("sanh", dodaisanh, sanh,SUM);
+                           CardBot cb=new CardBot("sanh", dodaisanh, sanh,SUM);
                           cardbot.add(cb);
                        }
                  
@@ -731,7 +716,7 @@ void ToHopBaConva3or4DoiThong (int i)  {
              &&vitrilabaiLQtoibacon[i].equals("bc"))
     {
         vitrilabaithuacua3dt_4dt[i]="bthua";
-         CardBot_ver_end temp=new CardBot_ver_end("baithua", 1, String.valueOf(baiconlaicuatoi[i])+"$",baiconlaicuatoi[i]);
+         CardBot temp=new CardBot("baithua", 1, String.valueOf(baiconlaicuatoi[i])+"$",baiconlaicuatoi[i]);
            cardbot.add(temp);
     }
      if(i<=numbbaiconlaicuatoi-1&&(vitrilabaiLQtoibadoithong[i].equals("3dt")||vitrilabaiLQtoibondoithong[i].equals("4dt"))
@@ -744,7 +729,7 @@ void ToHopBaConva3or4DoiThong (int i)  {
      {
          if(i+j==numbbaiconlaicuatoi+1) break;
                  vitrilabaithuacua3dt_4dt[i+j]="baithua";
-      CardBot_ver_end temp=new CardBot_ver_end("baithua", 1, 
+      CardBot temp=new CardBot("baithua", 1,
               String.valueOf(baiconlaicuatoi[i+j])+"$",baiconlaicuatoi[i+j]);
            cardbot.add(temp);   
      }
@@ -762,7 +747,7 @@ void ToHopBaConva3or4DoiThong (int i)  {
      if(lamTronLen((float)baiconlaicuatoi[i]/4)-lamTronLen((float)baiconlaicuatoi[i-j]/4)==j)
      {
                  vitrilabaithuacua3dt_4dt[i-j]="baithua";
-      CardBot_ver_end temp=new CardBot_ver_end("baithua", 1, 
+      CardBot temp=new CardBot("baithua", 1,
               String.valueOf(baiconlaicuatoi[i-j])+"$",baiconlaicuatoi[i-j]);
            cardbot.add(temp);   
      }
@@ -799,7 +784,7 @@ void ToHopBaConva3or4DoiThong (int i)  {
             templucphebon+=baiconlaicuatoi[i]+"$";
              }
          }
-         CardBot_ver_end cb=new CardBot_ver_end("lucphebon",12,templucphebon,0);
+         CardBot cb=new CardBot("lucphebon",12,templucphebon,0);
          cardbot.add(cb);
      }
      for(int i=0;i<cardbot.size();i++) 
@@ -892,12 +877,12 @@ return true;
       {
           if(countden==12)
           {
-          CardBot_ver_end cb=new CardBot_ver_end("donghoaden",12,tempdonghoaden,0);
+          CardBot cb=new CardBot("donghoaden",12,tempdonghoaden,0);
          cardbot.add(cb);
           }
           else if(countden==13)
           {
-          CardBot_ver_end cb=new CardBot_ver_end("donghoaden",13,tempdonghoaden,0);
+          CardBot cb=new CardBot("donghoaden",13,tempdonghoaden,0);
          cardbot.add(cb);
           }
           for(int i=0;i<cardbot.size();i++) 
@@ -917,12 +902,12 @@ else dapantoitrang=cardbot.get(i).sola+"$"+cardbot.get(i).loaibai+"$"
        {
       if(countdo==12)
           {
-          CardBot_ver_end cb=new CardBot_ver_end("donghoado",12,tempdonghoado,0);
+          CardBot cb=new CardBot("donghoado",12,tempdonghoado,0);
          cardbot.add(cb);
           }
           else if(countdo==13)
           {
-          CardBot_ver_end cb=new CardBot_ver_end("donghoado",13,tempdonghoado,0);
+          CardBot cb=new CardBot("donghoado",13,tempdonghoado,0);
          cardbot.add(cb);
           }
           for(int i=0;i<cardbot.size();i++) 

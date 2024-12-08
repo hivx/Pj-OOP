@@ -1,27 +1,13 @@
-
-
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package game;
 
 import java.awt.Color;
 import java.awt.Font;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 import java.net.URL;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.Timer;
 
 /**
@@ -29,32 +15,26 @@ import javax.swing.Timer;
  * @author Admin
  */
 // chứa dữ liệu các thành phần
-public class Actor_ver_end extends JFrame{
-    String thongbaokieubairahople;
+public class Actor extends JFrame{
     public int indexActor;
     String chedochoi;
-     int isTurn;
-      JLabel winner=new JLabel();
+    JLabel winner=new JLabel();
     public int toadoXnutcarddautien,toadoYnutcarddautien;
     public int[] toadoXcard=new int[14];
     public int [] toadoYcard=new int[14];
     public Timer time;
-    public int toadoXnutstart,toadoYnutstart;
-    public int locationXlabletime,locationYlabletime;
     public int toadoXnutrabai,toadoYnutrabai;
     public int toadoXnutkhongtheo,toadoYnutkhongtheo;
-      public int  toadoXnhanclock,toadoYnhanclock;
-      public int toadoXcardhide,toadoYcardhide;
-     public int   toadoXbodemthoigian,toadoYbodemthoigian;
-     public int locationstartYlabletime;
-     public int toadoXavatar,toadoYavatar;
-     String tenImageAvatar;
-    public String listBaiDuocChia,listBaiConLai,listBaiVuaRa;
-  public int toadoXdautiencualabaitrongdanhsachbaivuara,
-    toadoYdautiencualabaitrongdanhsachbaivuara;
-     public int toadoXtrangthaikhongtheo,toadoYtrangthaikhongtheo;
-     public int toadoXnhansolabaiconlai,toadoYnhansolabaiconlai;
-     public int toadoXnhanthongbaoditruoc,toadoYnhanthongbaoditruoc;
+    public int  toadoXnhanclock,toadoYnhanclock;
+    public int toadoXcardhide,toadoYcardhide;
+    public int   toadoXbodemthoigian,toadoYbodemthoigian;
+    public int toadoXavatar,toadoYavatar;
+    String tenImageAvatar;
+    public String listBaiDuocChia;
+    public int toadoXdautiencualabaitrongdanhsachbaivuara, toadoYdautiencualabaitrongdanhsachbaivuara;
+    public int toadoXtrangthaikhongtheo,toadoYtrangthaikhongtheo;
+    public int toadoXnhansolabaiconlai,toadoYnhansolabaiconlai;
+    public int toadoXnhanthongbaoditruoc,toadoYnhanthongbaoditruoc;
     public boolean[] isDaDuocChon=new boolean[53];
     public int[] sohieucard=new int[53];
     public int [] vitricard=new int[14];
@@ -72,11 +52,11 @@ public class Actor_ver_end extends JFrame{
     int bodem;
     
  ArrayList danhsachbaivuara=new ArrayList();
- ArrayList<Card_Player_ver_end> mycard =new ArrayList<Card_Player_ver_end>();
- ArrayList<Card_Player_ver_end> baivuachon =new ArrayList<Card_Player_ver_end>();
+ ArrayList<Card_Player> mycard =new ArrayList<Card_Player>();
+ ArrayList<Card_Player> baivuachon =new ArrayList<Card_Player>();
  
 	public JLabel nhanthoigian = new JLabel();
-    public Actor_ver_end()
+    public Actor()
     {   
     }
     public void setUpHinhAnhLaBaiChuaRa()
@@ -89,7 +69,7 @@ for(int i=0;i<mycard.size();i++)
         nhanmycard[j]= new JLabel();
       String s=String.valueOf(String.valueOf(k))+".png";
       String path="/image/52labai/"+s;
-      URL url = Actor_ver_end.class.getResource(path);
+      URL url = Actor.class.getResource(path);
 ImageIcon icon = new ImageIcon(url);
         // //////System.out.println(path);
       nhanmycard[j].setIcon(icon);
@@ -128,7 +108,7 @@ ImageIcon icon = new ImageIcon(url);
            }
            for(int i=1;i<=solabaiconlai;i++)
            {
-             Card_Player_ver_end x=new Card_Player_ver_end(i,sohieucard[i]);
+             Card_Player x=new Card_Player(i,sohieucard[i]);
             mycard.add(x);
            }
     }
@@ -137,7 +117,7 @@ ImageIcon icon = new ImageIcon(url);
     public void taoNhanDongHo()
     {
         
-        URL url = Actor_ver_end.class.getResource("/image/clock.png");
+        URL url = Actor.class.getResource("/image/clock.png");
        ImageIcon icon = new ImageIcon(url);
      setLayout(null);//cần phải dùng để thay `đổi 
      nhanclock.setIcon(icon);
@@ -147,7 +127,7 @@ ImageIcon icon = new ImageIcon(url);
     }
     public void taoCardHide()
     {
-         URL url = Actor_ver_end.class.getResource("/image/card_hide.png");
+         URL url = Actor.class.getResource("/image/card_hide.png");
        ImageIcon icon = new ImageIcon(url);
      setLayout(null);//cần phải dùng để thay `đổi 
      cardhide.setIcon(icon);
@@ -155,7 +135,7 @@ ImageIcon icon = new ImageIcon(url);
     }   
      public void taoAvatar()
     {
-        URL url = Actor_ver_end.class.getResource("/image/nhanvat/"+tenImageAvatar+".png");
+        URL url = Actor.class.getResource("/image/nhanvat/"+tenImageAvatar+".png");
        ImageIcon icon = new ImageIcon(url);
      setLayout(null);//cần phải dùng để thay `đổi 
      avatar.setIcon(icon);
@@ -190,7 +170,7 @@ ImageIcon icon = new ImageIcon(url);
     }
       public void taoNhanWinner()
     {
-        URL url = Actor_ver_end.class.getResource("/image/winner.gif");
+        URL url = Actor.class.getResource("/image/winner.gif");
        ImageIcon icon = new ImageIcon(url);
      setLayout(null); 
     winner.setIcon(icon);
@@ -212,7 +192,7 @@ ImageIcon icon = new ImageIcon(url);
          
          
         String path="/image/52labai/"+String.valueOf(j)+".png";
-         URL url = Actor_ver_end.class.getResource(path);
+         URL url = Actor.class.getResource(path);
        ImageIcon icon = new ImageIcon(url);
      
      setLayout(null);//cần phải dùng để thay `đổi 
@@ -233,7 +213,7 @@ ImageIcon icon = new ImageIcon(url);
          nhanbaira[k] = new JLabel();
        
    String path="/image/52labai/"+String.valueOf(j)+".png";
-         URL url = Actor_ver_end.class.getResource(path);
+         URL url = Actor.class.getResource(path);
        ImageIcon icon = new ImageIcon(url); 
      setLayout(null);//cần phải dùng để thay `đổi 
      nhanbaira[k].setIcon(icon);
@@ -264,12 +244,12 @@ ImageIcon icon = new ImageIcon(url);
          ImageIcon icon=null;
          if(indexActor==2||indexActor==3)
          {
-         URL url = Actor_ver_end.class.getResource("/image/thongbao3bich1.png");
+         URL url = Actor.class.getResource("/image/thongbao3bich1.png");
         icon = new ImageIcon(url);
          }
          else if(indexActor==1||indexActor==4)
          {
-     URL url = Actor_ver_end.class.getResource("/image/thongbao3bich2.png");
+     URL url = Actor.class.getResource("/image/thongbao3bich2.png");
         icon = new ImageIcon(url);
          }
      setLayout(null);
@@ -283,7 +263,7 @@ ImageIcon icon = new ImageIcon(url);
          ImageIcon icon=null;
          if(indexActor==2||indexActor==3)
          {
-     URL url = Actor_ver_end.class.getResource("/image/thongbaobainhoditruoc1.png");
+     URL url = Actor.class.getResource("/image/thongbaobainhoditruoc1.png");
         icon = new ImageIcon(url);
          }
          else if(indexActor==1||indexActor==4)

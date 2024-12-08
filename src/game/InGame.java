@@ -17,17 +17,16 @@ import javax.swing.*;
 
 import game.menu.BackgroundGame;
 import game.menu.Menu_Main;
-import javazoom.jl.player.Player;
 
 public class InGame extends JFrame{
-    ArrayList<Card_Player_ver_end> theyCard=new ArrayList<>();
-    Bot_ver_end bot1,bot2,bot3;
-    Player_ver_end player;
-    private ChiaBai_Avatar_NgauNhien_ver_end cbnn;
+    ArrayList<Card_Player> theyCard=new ArrayList<>();
+    Bot bot1,bot2,bot3;
+    Player player;
+    private ChiaBai_Avatar_NgauNhien cbnn;
     //private NaiveBayes_Bot_LearnData_ver_end nbbl;
-    private GT_TLMN_BOT_TinhToan_va_RaQuyetDinh_ver_end gtbot_ttvrqd;
-    private DieuKhienBatDauVaKetThucGame_ver_end dkbatdauketthucgame;
-    private DieuKhienLuotDanh_ver_end dkluot;
+    private BOT_TinhToan_va_RaQuyetDinh gtbot_ttvrqd;
+    private DieuKhienBatDauVaKetThucGame dkbatdauketthucgame;
+    private DieuKhienLuotDanh dkluot;
     //private GT_TLMN_PhanNhomBai_ver_end gtplayer_pnb;
     private  int soPlayerBiKhoa;
     private final int SONGUOICHOI;
@@ -68,7 +67,7 @@ public class InGame extends JFrame{
         isTurn=0;
         theyCard.clear();
         tatCaPlayerDuocMoKhoaLuot();
-        dkbatdauketthucgame=new DieuKhienBatDauVaKetThucGame_ver_end(SONGUOICHOI,player,bot1,bot2,bot3);
+        dkbatdauketthucgame=new DieuKhienBatDauVaKetThucGame(SONGUOICHOI,player,bot1,bot2,bot3);
         dkbatdauketthucgame.thongBaoChuanBi();
         dkbatdauketthucgame.timeChuanBi();
         add(dkbatdauketthucgame.thongbaochuanbivaogame);
@@ -77,7 +76,7 @@ public class InGame extends JFrame{
         demNguocChuanBiBatDau();
     }
     public void chiaBai() {
-        cbnn=new ChiaBai_Avatar_NgauNhien_ver_end();
+        cbnn=new ChiaBai_Avatar_NgauNhien();
         cbnn.getChiaBai();
     }
     public void chiaAvatar() {
@@ -89,13 +88,13 @@ public class InGame extends JFrame{
     cbnn.phanbai3= "6$9$11$13$19$24$26$30$32$34$36$44$48$";
     cbnn.phanbai4= "1$4$5$14$15$16$23$27$29$41$47$50$52$";*/
     public void taoCacActor() {
-        player=new Player_ver_end(1,cbnn.phanbai1,400,440,416,455,
+        player=new Player(1,cbnn.phanbai1,400,440,416,455,
                 450,490,550,630,400,450,340,550,450,450,550,450,280,580,avatarplayer,    13    ,150,500);
-        bot1=new Bot_ver_end(2,cbnn.phanbai2,70,370,50,205,63,225,100,
+        bot1=new Bot(2,cbnn.phanbai2,70,370,50,205,63,225,100,
                 220,120,310,170,250,125,325,20,320,cbnn.avatarnv[2],chedochoi,      13    ,50,240);
-        bot2=new Bot_ver_end(3,cbnn.phanbai3,650,100,400,140,416,155,
+        bot2=new Bot(3,cbnn.phanbai3,650,100,400,140,416,155,
                 500,20,500,90,500,20,505,110,560,120,cbnn.avatarnv[3],chedochoi,    13       ,600,40);
-        bot3=new Bot_ver_end(4,cbnn.phanbai4,950,370,800,205,815,225,870,220
+        bot3=new Bot(4,cbnn.phanbai4,950,370,800,205,815,225,870,220
                 ,880,310,900,250,885,325,950,310,cbnn.avatarnv[4],chedochoi,    13      ,800,240);
         for(int i=1;i<=SONGUOICHOI;i++) {
             soluonglaconlaicuaActor[i]=13;
@@ -121,7 +120,7 @@ public class InGame extends JFrame{
         khungoption.setIcon(icon);
         khungoption.setBounds(0,0  ,icon.getIconWidth(), icon.getIconHeight());
     }
-    public void setUpOptionBotLenBackground(Bot_ver_end bot) {
+    public void setUpOptionBotLenBackground(Bot bot) {
         add(bot.winner);
         add(bot.nhanthoigian);
         add(bot.nhanclock);
@@ -136,7 +135,7 @@ public class InGame extends JFrame{
         add(bot.nhanthongbao3bichditruoc);
         add(bot.nhanthongbaobainhoditruoc);
     }
-    public void setUpOptionPlayerLenBackground(Player_ver_end pl) {
+    public void setUpOptionPlayerLenBackground(Player pl) {
         add(pl.winner);
         add(pl.nhansoundon);
         add(pl.nhansoundoff);
@@ -253,7 +252,7 @@ public class InGame extends JFrame{
                 player.xuLyRaBai(player);
                 theyCard.clear();
                 for(int i=0;i<player.baivuachon.size();i++) {
-                    Card_Player_ver_end temp=new Card_Player_ver_end(0,player.baivuachon.get(i).sohieu);
+                    Card_Player temp=new Card_Player(0,player.baivuachon.get(i).sohieu);
                     theyCard.add(temp);
                 }
                 for(int i=player.baivuachon.size()-1;i>=0;i--) {
@@ -311,7 +310,7 @@ public class InGame extends JFrame{
                             LOGGER.warning("File not found: /sound/" + nhactest + ".mp3");
                             return null;
                         }
-                        Player play = new Player(fis);
+                        javazoom.jl.player.Player play = new javazoom.jl.player.Player(fis);
                         play.play(); // Phát nhạc một lần
                     } catch (Exception e) {
                         LOGGER.severe("Error while playing sound: " + e.getMessage());
@@ -432,9 +431,9 @@ public class InGame extends JFrame{
                 player.nhanrabaian.setVisible(true);
             } else {
                 player.nutkhongtheo.setVisible(true);
-                GT_TLMN_PhanNhomBai_ver_end getdata=new GT_TLMN_PhanNhomBai_ver_end(player.mycard);
+                PhanNhomBai getdata=new PhanNhomBai(player.mycard);
                 getdata.xayDungDataCacLoaiBoBaiChoBot();
-                GT_TLMN_Player_ver_end gtplayer=new GT_TLMN_Player_ver_end(theyCard,player.baivuachon, getdata.cardbot);
+                TLMN_Player gtplayer=new TLMN_Player(theyCard,player.baivuachon, getdata.cardbot);
                 player.nhanrabaian.setVisible(gtplayer.coDapAn());
             }
         } else  if(i==2) {
@@ -521,26 +520,26 @@ public class InGame extends JFrame{
         bot3.time = new Timer(1000, aTime);
         bot3.time.start();
     }
-    public void timIndexActorTruocSau(Bot_ver_end bot) {
-        DieuKhienLuotDanh_ver_end timactortruocsau;
+    public void timIndexActorTruocSau(Bot bot) {
+        DieuKhienLuotDanh timactortruocsau;
         if(chieucualuot.equals("cungchieu")) {
             timactortruocsau=new
-                    DieuKhienLuotDanh_ver_end(SONGUOICHOI,bot.indexActor,daKhoaLuotActor,"cungchieu");
+                    DieuKhienLuotDanh(SONGUOICHOI,bot.indexActor,daKhoaLuotActor,"cungchieu");
             index_actor_sau= timactortruocsau.nguoiDanhTiepTheoOViTri();
             timactortruocsau=new
-                    DieuKhienLuotDanh_ver_end(SONGUOICHOI,bot.indexActor,daKhoaLuotActor,"nguocchieu");
+                    DieuKhienLuotDanh(SONGUOICHOI,bot.indexActor,daKhoaLuotActor,"nguocchieu");
         } else {
             timactortruocsau=new
-                    DieuKhienLuotDanh_ver_end(SONGUOICHOI,bot.indexActor,daKhoaLuotActor,"nguocchieu");
+                    DieuKhienLuotDanh(SONGUOICHOI,bot.indexActor,daKhoaLuotActor,"nguocchieu");
             index_actor_sau= timactortruocsau.nguoiDanhTiepTheoOViTri();
             timactortruocsau=new
-                    DieuKhienLuotDanh_ver_end(SONGUOICHOI,bot.indexActor,daKhoaLuotActor,"cungchieu");
+                    DieuKhienLuotDanh(SONGUOICHOI,bot.indexActor,daKhoaLuotActor,"cungchieu");
         }
         index_actor_truoc= timactortruocsau.nguoiDanhTiepTheoOViTri();
         // System.out.println("Tôi là "+bot.indexActor+"vị trí SAUU tôi là actor "+": "+index_actor_sau);
     }
-    public void actionBotMain(Bot_ver_end bot) throws SQLException, IOException {
-        GT_TLMN_PhanNhomBai_ver_end gtbot_pnb = new GT_TLMN_PhanNhomBai_ver_end(bot.mycard);
+    public void actionBotMain(Bot bot) throws SQLException, IOException {
+        PhanNhomBai gtbot_pnb = new PhanNhomBai(bot.mycard);
         gtbot_pnb.xayDungDataCacLoaiBoBaiChoBot();
         if(soPlayerBiKhoa==SONGUOICHOI-1|| theyCard.isEmpty()) {
             soluonglaconlaicuaActor[1]=player.solabaiconlai;
@@ -550,7 +549,7 @@ public class InGame extends JFrame{
             theyCard.clear();
             tatCaPlayerDuocMoKhoaLuot();
             timIndexActorTruocSau(bot);
-            gtbot_ttvrqd=new GT_TLMN_BOT_TinhToan_va_RaQuyetDinh_ver_end(theyCard, gtbot_pnb.cardbot,
+            gtbot_ttvrqd=new BOT_TinhToan_va_RaQuyetDinh(theyCard, gtbot_pnb.cardbot,
                     soluonglaconlaicuaActor,SONGUOICHOI, bot.indexActor,index_actor_truoc,index_actor_sau,
                     Integer.parseInt(dkbatdauketthucgame.bainhonhat));
             botMoComBat(bot);
@@ -560,7 +559,7 @@ public class InGame extends JFrame{
             soluonglaconlaicuaActor[2]=bot1.solabaiconlai;
             soluonglaconlaicuaActor[3]=bot2.solabaiconlai;
             soluonglaconlaicuaActor[4]=bot3.solabaiconlai;
-            gtbot_ttvrqd=new GT_TLMN_BOT_TinhToan_va_RaQuyetDinh_ver_end
+            gtbot_ttvrqd=new BOT_TinhToan_va_RaQuyetDinh
                     (theyCard, gtbot_pnb.cardbot,soluonglaconlaicuaActor,SONGUOICHOI,
                             bot.indexActor,index_actor_truoc,index_actor_sau,
                             Integer.parseInt(dkbatdauketthucgame.bainhonhat));
@@ -571,7 +570,7 @@ public class InGame extends JFrame{
             dkbatdauketthucgame.xuLyKetThucGame();
         }
     }
-    public void botMoComBat(Bot_ver_end bot) throws IOException, SQLException {
+    public void botMoComBat(Bot bot) throws IOException, SQLException {
         bot.nhanthongbaobainhoditruoc.setVisible(false);
         int uutien=gtbot_ttvrqd.mucDoUuTienRaBai();
         if(uutien==999) {
@@ -593,7 +592,7 @@ public class InGame extends JFrame{
         }
         raBaiMain(bot);
     }
-    public void botDoBai(Bot_ver_end bot) throws SQLException {
+    public void botDoBai(Bot bot) throws SQLException {
         int uutien=gtbot_ttvrqd.mucDoUuTienRaBai();
         if(uutien==98||uutien==99) {
             dapanbotchon= gtbot_ttvrqd.dapChanBaiKhongDieuKien();
@@ -611,12 +610,12 @@ public class InGame extends JFrame{
             raBaiMain(bot);
         }
     }
-    public void raBaiMain(Bot_ver_end bot) throws SQLException {
+    public void raBaiMain(Bot bot) throws SQLException {
         //System.out.println("Đáp án bot "+bot.indexActor+": "+dapanbotchon);
         bot.xuLyRaBai(dapanbotchon);
         theyCard.clear();
         for(int i=0;i<bot.baivuachon.size();i++) {
-         Card_Player_ver_end temp=new Card_Player_ver_end(0,bot.baivuachon.get(i).sohieu);
+         Card_Player temp=new Card_Player(0,bot.baivuachon.get(i).sohieu);
          theyCard.add(temp);
         }
         for(int y=bot.baivuachon.size()-1;y>=0;y--) {
@@ -648,13 +647,13 @@ public class InGame extends JFrame{
          dkbatdauketthucgame.iwin=bot.indexActor;
         }
     }
-    public void botChuyenLuot(Bot_ver_end bot) {
+    public void botChuyenLuot(Bot bot) {
         bot.tatOptionBot();
-        dkluot=new DieuKhienLuotDanh_ver_end(SONGUOICHOI,bot.indexActor,daKhoaLuotActor,chieucualuot);
+        dkluot=new DieuKhienLuotDanh(SONGUOICHOI,bot.indexActor,daKhoaLuotActor,chieucualuot);
         chuyenToiLuotActor(dkluot.nguoiDanhTiepTheoOViTri());
     }
     public void playerChuyenLuot() {
-        dkluot=new DieuKhienLuotDanh_ver_end(SONGUOICHOI,player.indexActor,daKhoaLuotActor,chieucualuot);
+        dkluot=new DieuKhienLuotDanh(SONGUOICHOI,player.indexActor,daKhoaLuotActor,chieucualuot);
         chuyenToiLuotActor(dkluot.nguoiDanhTiepTheoOViTri());
         player.time.stop();
     }

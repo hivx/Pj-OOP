@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package game;
 
 
@@ -11,7 +5,7 @@ package game;
 
 import java.util.*;
 
-public class ChiaBai_Avatar_NgauNhien_ver_end {
+public class ChiaBai_Avatar_NgauNhien {
 
 public static int sophantulay=13;
 public static int tongsophantu=52;
@@ -25,7 +19,7 @@ String avatarnv[]=new String[1000];
 ArrayList arrInt,arrAVT;
 int m[]=new int[53];
 //Constructor khong tham so
-public ChiaBai_Avatar_NgauNhien_ver_end() {
+public ChiaBai_Avatar_NgauNhien() {
 }
 
 
@@ -142,7 +136,7 @@ public void toHopAvatar(int i) {
 
 public void getChiaBai()
 {
-    arrInt = ChiaBai_Avatar_NgauNhien_ver_end.generate(52);
+    arrInt = ChiaBai_Avatar_NgauNhien.generate(52);
 phanbai1="";phanbai2="";phanbai3="";phanbai4="";
 dataCard="";
 int count1=0,count2=0,count3=0,count4=0;
@@ -202,7 +196,7 @@ public void sapxep(int[] k)
 }
 public static void main(String[] args) {
 
-ChiaBai_Avatar_NgauNhien_ver_end s=new ChiaBai_Avatar_NgauNhien_ver_end();
+ChiaBai_Avatar_NgauNhien s=new ChiaBai_Avatar_NgauNhien();
 
 s.getAvatar(7,2);
    /* System.out.println("bot1 "+s.avatarbot1);

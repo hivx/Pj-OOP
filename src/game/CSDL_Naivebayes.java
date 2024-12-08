@@ -6,25 +6,16 @@
 
 package game;
 
-import java.io.BufferedReader;
-
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Scanner;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
-public class JAVA_TLMN_CSDL_Naivebayes {
+public class CSDL_Naivebayes {
      String[] ele=new String[30];
      ArrayList KQ=new ArrayList();
        double S;
@@ -32,13 +23,13 @@ public class JAVA_TLMN_CSDL_Naivebayes {
        String TENBANG="tableTLMNold";
       double[] T=new double[30];
      ArrayList danhsachxacxuat=new ArrayList();
-        ConnectDataBaseTLMN_NetBeans kn=new ConnectDataBaseTLMN_NetBeans();
+        ConnectDataBase kn=new ConnectDataBase();
         Connection cn=kn.getConnectdatabase();
      private int SOCOT_or_SOHANG;
     String[] COT=new String[15];
      int COUNT;
     
-    public JAVA_TLMN_CSDL_Naivebayes(String[] COT,String TENBANG,String[] eleCot,int SOCOT_or_SOHANG) {
+    public CSDL_Naivebayes(String[] COT, String TENBANG, String[] eleCot, int SOCOT_or_SOHANG) {
         this.SOCOT_or_SOHANG=SOCOT_or_SOHANG;
             for(int i=1;i<=SOCOT_or_SOHANG;i++)
             {

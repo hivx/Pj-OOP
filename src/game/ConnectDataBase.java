@@ -3,7 +3,7 @@ package game;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
-public class ConnectDataBaseTLMN_NetBeans {
+public class ConnectDataBase {
     Connection cnn=null;
     public Connection getConnectdatabase() {
         try {
@@ -24,7 +24,7 @@ public class ConnectDataBaseTLMN_NetBeans {
         return null;
     }
     public static void main(String[] args) {
-        ConnectDataBaseTLMN_NetBeans cn=new ConnectDataBaseTLMN_NetBeans();
+        ConnectDataBase cn=new ConnectDataBase();
         cn.getConnectdatabase();
     }
 }
