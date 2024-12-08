@@ -42,8 +42,7 @@ public class TLMN_Player extends TLMB {
     public boolean coDapAn()
     {
          luuDuLieuCacBoThoaManCoTinhHonSoVoi(baibotra,solabaibotra);
-        if(countdapanlienquan!=0) return true;
-        return false;
+        return countdapanlienquan != 0;
     }
     public boolean chanDuocBaiBot()
     {
@@ -59,8 +58,7 @@ public class TLMN_Player extends TLMB {
     {
         if(strbaitoichon.equals("")) return false;
         String[] temp=strbaitoichon.split("\\$");
-        if(temp[0].equals(bainhonhat)) return true;
-        return false;
+        return temp[0].equals(bainhonhat);
     }
     public boolean boBaiChuaBaiNhoNhat(String bainhonhat)
     {

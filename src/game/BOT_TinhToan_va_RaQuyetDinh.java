@@ -193,7 +193,7 @@ import java.util.logging.Logger;
       luuDuLieuCacBoThoaManCoTinhHonSoVoi(sohieu_baidoithura,solabaitoira);
       int min=10000;
      String dapanmin="koco";
-     if(baitopdoduoc==true)
+     if(baitopdoduoc)
       {
      if(SoLaConLaiCuaActor[1]==1&&tongsohieulabaidothura>=49&&mucDoUuTienRaBai()==0)
               return "koco";
@@ -229,8 +229,8 @@ import java.util.logging.Logger;
                     sohieu_baidoithura[solabaitoira]<Integer.parseInt(elebot[0]))
                      
              {
-      if(cardbot.get(i).sumsohieu<min&&khongAnhHuongDenBaiBoBaiTop(cardbot.get(i).daycard)==true
-          &&GiuDuocSanhDep(cardbot.get(i).daycard)==true
+      if(cardbot.get(i).sumsohieu<min&& khongAnhHuongDenBaiBoBaiTop(cardbot.get(i).daycard)
+          && GiuDuocSanhDep(cardbot.get(i).daycard)
               /*&&khongLamTangChuTrinhKetThuc(cardbot.get(i).daycard)*/)
             {
             min=cardbot.get(i).sumsohieu;
@@ -248,8 +248,8 @@ import java.util.logging.Logger;
                if(dapanlienquan[j].equals(cardbot.get(i).daycard))
                  {
          if(cardbot.get(i).sumsohieu<min&&
-            khongAnhHuongDenBaiBoBaiTop(cardbot.get(i).daycard)==true
-                 &&GiuDuocSanhDep(cardbot.get(i).daycard)==true)
+                 khongAnhHuongDenBaiBoBaiTop(cardbot.get(i).daycard)
+                 && GiuDuocSanhDep(cardbot.get(i).daycard))
             {
             min=cardbot.get(i).sumsohieu;
   dapanmin=cardbot.get(i).sola+"$"+cardbot.get(i).loaibai+"$"+
@@ -314,7 +314,7 @@ int x=chuTrinhKetThucNganNhatTry(baichon);
       }*/
       this.chutrinhketthuc=ctkt;
            duyetmoitohopTry(baichon);
-           if(cochutrinhketthuc==true)
+           if(cochutrinhketthuc)
            {
                return ctkt;
            }
@@ -336,7 +336,7 @@ int x=chuTrinhKetThucNganNhatTry(baichon);
             tempsola[country]=cardbot.get(i).sola;
             if(tempsola[country]>maxla)
                 maxla=tempsola[country];
-            System.out.println(""+tempfullnameString[country]);
+            System.out.println(tempfullnameString[country]);
             country++;
         }
         String tg1,tg2;int tg3;
@@ -359,7 +359,7 @@ int x=chuTrinhKetThucNganNhatTry(baichon);
         }
               for(int i=0;i<country;i++)
               {
-                 System.out.println(""+tempfullnameString[i]);
+                 System.out.println(tempfullnameString[i]);
               }
     }
   public String dapAnMinDiTruoc_naivebayes(Bot bot) throws IOException
@@ -388,7 +388,7 @@ int x=chuTrinhKetThucNganNhatTry(baichon);
              {
                   if((cardbot.get(j).loaibai.equals(temploaibainaivebayes)||
            (cardbot.get(j).loaibai.equals(c[0])&&cardbot.get(j).loaibai.equals(c[1])))
-            &&khongAnhHuongDenBaiBoBaiTop(cardbot.get(j).daycard)==true)
+            && khongAnhHuongDenBaiBoBaiTop(cardbot.get(j).daycard))
           {
              return cardbot.get(j).sola+"$"+cardbot.get(j).loaibai+"$"+
   cardbot.get(j).daycard;
@@ -410,7 +410,7 @@ int x=chuTrinhKetThucNganNhatTry(baichon);
                if(dapanlienquan[j].equals(cardbot.get(i).daycard))
                  {
          if(cardbot.get(i).sumsohieu>max&&
-            khongAnhHuongDenBaiBoBaiTop(cardbot.get(i).daycard)==true
+                 khongAnhHuongDenBaiBoBaiTop(cardbot.get(i).daycard)
                  &&GiuDuocSanhDep(cardbot.get(i).daycard))
          {
                        max=cardbot.get(i).sumsohieu;
@@ -571,9 +571,8 @@ public boolean khongAnhHuongDenBaiBoBaiTop(String baichon)
                      count++;
          }
            }
-          if(count==m) return false;
+          return count != m;
       }
-    return true;
   }
   public int mucDoUuTienRaBai()
 {

@@ -160,10 +160,10 @@ nutkhongtheo.setBounds(toadoXnutkhongtheo, toadoYnutkhongtheo,icon.getIconWidth(
     
    public void nhapLaBaiDuocChonLenHoacXuong(int i)
     {
-        if(isKetThuc==true) return;
+        if(isKetThuc) return;
     baiplayervuachon.removeAll(baiplayervuachon);
    
-        if(isDaDuocChon[i]==false)
+        if(!isDaDuocChon[i])
         {      
         nhanmycard[i].setBounds(toadoXcard[i],toadoYcard[i]-42, 105, 143);
       
@@ -171,7 +171,7 @@ nutkhongtheo.setBounds(toadoXnutkhongtheo, toadoYnutkhongtheo,icon.getIconWidth(
         
             
         }
-        else if(isDaDuocChon[i]==true)
+        else if(isDaDuocChon[i])
         {
             
             
@@ -185,7 +185,7 @@ nutkhongtheo.setBounds(toadoXnutkhongtheo, toadoYnutkhongtheo,icon.getIconWidth(
              int k=mycard.get(a).sohieu;
              
              
-           if(isDaDuocChon[j]==true)
+           if(isDaDuocChon[j])
            { 
              Card_Player tempbaivuachon=new Card_Player(j,k);
              baiplayervuachon.add(tempbaivuachon);
@@ -203,7 +203,7 @@ nutkhongtheo.setBounds(toadoXnutkhongtheo, toadoYnutkhongtheo,icon.getIconWidth(
       
        for(int t=0;t<baiplayervuachon.size();t++)
         {
-            strbaivuachon+=String.valueOf(baiplayervuachon.get(t).sohieu)+"$";
+            strbaivuachon+= baiplayervuachon.get(t).sohieu +"$";
         }
    
              
@@ -218,14 +218,14 @@ nutkhongtheo.setBounds(toadoXnutkhongtheo, toadoYnutkhongtheo,icon.getIconWidth(
            {
                nutrabai.setVisible(false);
            }
-           if(mycard.size()==13&&gtplayer.baiChonChuaBaiNhoNhat(bainhonhat)==false&&
-                   gtplayer.boBaiChuaBaiNhoNhat(bainhonhat)==true)
+           if(mycard.size()==13&& !gtplayer.baiChonChuaBaiNhoNhat(bainhonhat) &&
+                   gtplayer.boBaiChuaBaiNhoNhat(bainhonhat))
            {
                nutrabai.setVisible(false);
            }
            if(theyCard.size()!=0)
            {
-              if(gtplayer.chanDuocBaiBot()==false)
+              if(!gtplayer.chanDuocBaiBot())
            {
                nutrabai.setVisible(false);
            }  
@@ -239,10 +239,9 @@ nutkhongtheo.setBounds(toadoXnutkhongtheo, toadoYnutkhongtheo,icon.getIconWidth(
        playerChonSaiBai=false;
        baivuachon.removeAll(baivuachon);
        int count=0;
-       ;
-     if(baitoitrang!=null)
+       if(baitoitrang!=null)
      {
-      String c[]=baitoitrang.split("\\$");
+      String[] c =baitoitrang.split("\\$");
       
       for(int i=0;i<baitoitrang.length();i++)
       {
@@ -272,9 +271,9 @@ nutkhongtheo.setBounds(toadoXnutkhongtheo, toadoYnutkhongtheo,icon.getIconWidth(
              int j=mycard.get(i).vitri;
              int k=mycard.get(i).sohieu;
              
-            if(isDaDuocChon[j]==true)
+            if(isDaDuocChon[j])
            { 
-               strbaivuachon+=String.valueOf(k)+"$";
+               strbaivuachon+= k +"$";
              Card_Player tempbaivuachon=new Card_Player(j,k);
              baivuachon.add(tempbaivuachon);
             }
@@ -403,7 +402,7 @@ ImageIcon icon = new ImageIcon(url);
        int j=mycard.get(i).vitri;
        if(e.getSource()==nhanmycard[j])
        {
-            if(isTurnPlayer==true)
+            if(isTurnPlayer)
         {
             nhapLaBaiDuocChonLenHoacXuong(j); 
         }

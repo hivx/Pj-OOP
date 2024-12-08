@@ -25,24 +25,21 @@ public class CSDL_Naivebayes {
      ArrayList danhsachxacxuat=new ArrayList();
         ConnectDataBase kn=new ConnectDataBase();
         Connection cn=kn.getConnectdatabase();
-     private int SOCOT_or_SOHANG;
+     private final int SOCOT_or_SOHANG;
     String[] COT=new String[15];
      int COUNT;
     
     public CSDL_Naivebayes(String[] COT, String TENBANG, String[] eleCot, int SOCOT_or_SOHANG) {
         this.SOCOT_or_SOHANG=SOCOT_or_SOHANG;
-            for(int i=1;i<=SOCOT_or_SOHANG;i++)
-            {
-                this.ele[i]=eleCot[i];
-            //    ////System.out.println("-"+ele[i]);
-            }
+        //    ////System.out.println("-"+ele[i]);
+        if (SOCOT_or_SOHANG >= 0) System.arraycopy(eleCot, 1, this.ele, 1, SOCOT_or_SOHANG);
             this.COT=COT;
             this.TENBANG=TENBANG;
       KQ.add("0");
     
       
     }
-      public int count2DieuKien(String tencot,String dieukien1,String dieukien2) throws FileNotFoundException, IOException
+      public int count2DieuKien(String tencot,String dieukien1,String dieukien2) throws IOException
     {
         
      try
@@ -68,7 +65,7 @@ public class CSDL_Naivebayes {
         
       return 0;
     }
-      public int count1DieuKien(String tencot,String dieukien1) throws FileNotFoundException, IOException
+      public int count1DieuKien(String tencot,String dieukien1) throws IOException
     {
        try
     {
@@ -90,7 +87,7 @@ public class CSDL_Naivebayes {
     }
          return 0;
     }
-       public int count0DieuKien(String tencot) throws FileNotFoundException, IOException
+       public int count0DieuKien(String tencot) throws IOException
     {
          try
     {
@@ -204,8 +201,7 @@ public class CSDL_Naivebayes {
   "' and "+COT[12]+"='"+ele[12]+"' and "+COT[13]+"='"+ele[13]+
  "';";
         ////System.out.println("Xem truy van: "+kqtruyvan);
-       String k="INSERT INTO "+TENBANG+"("+COT[1]+","+COT[2]+","+COT[3]+","+COT[4]+","+COT[5]+","+COT[6]+","+COT[7]+""
-         + ","+COT[8]+","+COT[9]+","+COT[10]+","+COT[11]+","+COT[12]+","+COT[13]+")" 
+       String k= "INSERT INTO "+TENBANG+"("+COT[1]+","+COT[2]+","+COT[3]+","+COT[4]+","+COT[5]+","+COT[6]+","+COT[7]+ ","+COT[8]+","+COT[9]+","+COT[10]+","+COT[11]+","+COT[12]+","+COT[13]+")"
        + "VALUES ('"+ele[1]+"','"+ele[2]+"','"+ele[3]+"'"
          + ",'"+ele[4]+"','"+ele[5]+"','"+ele[6]
         +"','"+ele[7] +"','"+ele[8]+"'"+ ",'"

@@ -110,7 +110,7 @@ public class TLMB {
 
         return (int)kqchia+1;
     }
-    public void luuDuLieuCacBoThoaManCoTinhHonSoVoi(int carddp[],int countdp)
+    public void luuDuLieuCacBoThoaManCoTinhHonSoVoi(int[] carddp, int countdp)
     {
         String kieubai=timKieuBai(countdp, carddp);
         for(int i=0;i<cardbot.size();i++)
@@ -158,7 +158,7 @@ public class TLMB {
         String bien1="",bien2=B;int count1=0,count2=0;
         for(int i=0;i<local.size();i++)
         {
-            bien1+=local.get(i).toString();
+            bien1+= local.get(i);
         }
 
         int count=0;
@@ -173,8 +173,8 @@ public class TLMB {
         //   System.out.println("count1: "+count1); System.out.println("count2: "+count2);
         //   System.out.println("--"+bien1);
         // System.out.println("--"+bien2);
-        String temp1[]=bien1.split("\\$");
-        String temp2[]=bien2.split("\\$");
+        String[] temp1 =bien1.split("\\$");
+        String[] temp2 =bien2.split("\\$");
 
         for(int i=0;i<count1;i++)
         {
@@ -200,7 +200,7 @@ public class TLMB {
                             Vector<String> A, Vector<String> B) throws IOException
     {
         //
-        if(cochutrinhketthuc==true) return;
+        if(cochutrinhketthuc) return;
         if (sapXepGiaTriTheoThuTuTangDanString(sumString).equals(K))
         {
             cochutrinhketthuc=true;
@@ -293,15 +293,15 @@ public class TLMB {
         str="";
         for(int j=1;j<=count;j++)
         {
-            str+=String.valueOf(temgiatricuachuoi[j])+"$";
+            str+= temgiatricuachuoi[j] +"$";
         }
         //   //////System.out.println(chuoitohopdacbietsanhdoi[i]);
 
         return str;
     }
-    String tempfullnameString[]=new String[5000];
-    String tempdaycard[]=new String[5000];
-    int tempsola[]=new int[5000];
+    String[] tempfullnameString =new String[5000];
+    String[] tempdaycard =new String[5000];
+    int[] tempsola =new int[5000];
     int count_tohopchutrinh;
     int maxla=0;
     public void sort()
@@ -393,7 +393,7 @@ public class TLMB {
         {
             this.chutrinhketthuc=i;
             duyetmoitohop();
-            if(cochutrinhketthuc==true)
+            if(cochutrinhketthuc)
             {
                 return i;
             }
@@ -532,7 +532,7 @@ public class TLMB {
         }
         if(SoLaConLaiCuaActor[index_actor_truoc]==1&&tongSoLaDoiThu>=91) return 99;
         if(soLuongActor==2&&(SoLaConLaiCuaActor[index_actor_sau]==2)) return 99;
-        if(tongsohieulabaidothura>=50&&co2Co==true
+        if(tongsohieulabaidothura>=50&& co2Co
                 &&index_actor_truoc==1&&solabaitoira==1)
         {System.out.println("TM");System.out.println("tại 8");return 99;}
 

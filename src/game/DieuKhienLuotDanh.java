@@ -65,7 +65,7 @@ public class DieuKhienLuotDanh {
         int i=nguoiDanhOViTriHienTai;
         for(int j=0;j<dayluottiep.size();j++)
         {
-            if(khoaLuotPlayer[Integer.parseInt(dayluottiep.get(j).toString())]==false)
+            if(!khoaLuotPlayer[Integer.parseInt(dayluottiep.get(j).toString())])
             {
                 return Integer.parseInt(dayluottiep.get(j).toString());
             }

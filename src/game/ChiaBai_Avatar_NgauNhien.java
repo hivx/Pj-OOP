@@ -15,9 +15,9 @@ public String phanbai3;
 public String phanbai4;
 public String dataCard;
 boolean stop;
-String avatarnv[]=new String[1000];
+String[] avatarnv =new String[1000];
 ArrayList arrInt,arrAVT;
-int m[]=new int[53];
+int[] m =new int[53];
 //Constructor khong tham so
 public ChiaBai_Avatar_NgauNhien() {
 }
@@ -74,8 +74,8 @@ count++;
 return loca;
 
 }
-int x[]=new int[1000];
-int avatarbot[][]=new int[1000][1000];
+int[] x =new int[1000];
+int[][] avatarbot =new int[1000][1000];
 int index_avatar_pl;
 int count;
 int n;
@@ -147,7 +147,7 @@ int count1=0,count2=0,count3=0,count4=0;
    for(int i=1;i<=tongsophantu;i++)
 {
     m[i]=Integer.parseInt(arrInt.get(i).toString());
-     dataCard+=String.valueOf(m[i])+"$";
+     dataCard+= m[i] +"$";
     if(i>=1&&i<=13)
     {
         count1++;
@@ -173,10 +173,10 @@ int count1=0,count2=0,count3=0,count4=0;
     sapxep(tempphanbai1);sapxep(tempphanbai2);sapxep(tempphanbai3);sapxep(tempphanbai4);
     for(int i=1;i<=13;i++)
     {
-         phanbai1+=String.valueOf(tempphanbai1[i])+"$";
-          phanbai2+=String.valueOf(tempphanbai2[i])+"$";
-           phanbai3+=String.valueOf(tempphanbai3[i])+"$";
-            phanbai4+=String.valueOf(tempphanbai4[i])+"$";
+         phanbai1+= tempphanbai1[i] +"$";
+          phanbai2+= tempphanbai2[i] +"$";
+           phanbai3+= tempphanbai3[i] +"$";
+            phanbai4+= tempphanbai4[i] +"$";
     }
 }
 

@@ -64,12 +64,12 @@ public class DieuKhienBatDauVaKetThucGame {
     {
         if(SONGUOICHOI==4)
         {
-        String temp1[]=player.listBaiDuocChia.split("\\$");
-        String temp2[]=bot1.listBaiDuocChia.split("\\$");
-        String temp3[]=bot2.listBaiDuocChia.split("\\$");
-         String temp4[]=bot3.listBaiDuocChia.split("\\$");
+        String[] temp1 =player.listBaiDuocChia.split("\\$");
+        String[] temp2 =bot1.listBaiDuocChia.split("\\$");
+        String[] temp3 =bot2.listBaiDuocChia.split("\\$");
+         String[] temp4 =bot3.listBaiDuocChia.split("\\$");
          int min=1000;
-       int tempmin[]={Integer.parseInt(temp1[0]),Integer.parseInt(temp2[0]),
+       int[] tempmin ={Integer.parseInt(temp1[0]),Integer.parseInt(temp2[0]),
              Integer.parseInt(temp3[0]),Integer.parseInt(temp4[0])};
        for(int i=0;i<4;i++)
        {
@@ -114,11 +114,11 @@ public class DieuKhienBatDauVaKetThucGame {
         }
         else if(SONGUOICHOI==3)
         {
-       String temp1[]=player.listBaiDuocChia.split("\\$");
-        String temp2[]=bot1.listBaiDuocChia.split("\\$");
-        String temp3[]=bot2.listBaiDuocChia.split("\\$");
+       String[] temp1 =player.listBaiDuocChia.split("\\$");
+        String[] temp2 =bot1.listBaiDuocChia.split("\\$");
+        String[] temp3 =bot2.listBaiDuocChia.split("\\$");
          int min=1000;
-       int tempmin[]={Integer.parseInt(temp1[0]),Integer.parseInt(temp2[0]),
+       int[] tempmin ={Integer.parseInt(temp1[0]),Integer.parseInt(temp2[0]),
              Integer.parseInt(temp3[0])};
        
        for(int i=0;i<3;i++)
@@ -157,11 +157,11 @@ public class DieuKhienBatDauVaKetThucGame {
         }
         else if(SONGUOICHOI==2)
         {
-        String temp1[]=player.listBaiDuocChia.split("\\$");
-        String temp2[]=bot1.listBaiDuocChia.split("\\$");
+        String[] temp1 =player.listBaiDuocChia.split("\\$");
+        String[] temp2 =bot1.listBaiDuocChia.split("\\$");
    
          int min=1000;
-       int tempmin[]={Integer.parseInt(temp1[0]),Integer.parseInt(temp2[0]),
+       int[] tempmin ={Integer.parseInt(temp1[0]),Integer.parseInt(temp2[0]),
            };
        for(int i=0;i<2;i++)
        {
@@ -219,7 +219,7 @@ for(int i=bot3.mycard.size()-1;i>=0;i--)
           else if(iwin==2)  bot1.winner.setVisible(true);
            else if(iwin==3)  bot2.winner.setVisible(true);
            else if(iwin==4)  bot3.winner.setVisible(true);
-              if(istoitrang==false)
+              if(!istoitrang)
               {
           if(isTurn==1)
           {
@@ -242,7 +242,7 @@ for(int i=bot3.mycard.size()-1;i>=0;i--)
          gtpnbot1.indexactor=2;
          gtpnbot2.indexactor=3;
          gtpnbot3.indexactor=4;
-   int index[]={tuQuy3(),baDoiThongChua3Bich(),tuQuy2(),sanhRong(),lucPheBon(),dongHoa()};
+   int[] index ={tuQuy3(),baDoiThongChua3Bich(),tuQuy2(),sanhRong(),lucPheBon(),dongHoa()};
          for(int i=0;i<6;i++)
          {
         if(index[i]!=0) return index[i];
@@ -251,7 +251,7 @@ for(int i=bot3.mycard.size()-1;i>=0;i--)
      }
    public int tuQuy3()
    {
-        if(gtpnpl.baiCoTuQuy3()==true) 
+        if(gtpnpl.baiCoTuQuy3())
    {
        player.baitoitrang=gtpnpl.dapantoitrang;
        player.toitrang=true;
@@ -259,18 +259,18 @@ for(int i=bot3.mycard.size()-1;i>=0;i--)
        
        return 1;
    }
-   else if(gtpnbot1.baiCoTuQuy3()==true) 
+   else if(gtpnbot1.baiCoTuQuy3())
    {
       
        dapantoitrang=gtpnbot1.dapantoitrang;
        return 2;
    }
-   else if(gtpnbot2.baiCoTuQuy3()==true) 
+   else if(gtpnbot2.baiCoTuQuy3())
    {
       dapantoitrang=gtpnbot2.dapantoitrang;
        return 3;
    }
-   else if(gtpnbot3.baiCoTuQuy3()==true) 
+   else if(gtpnbot3.baiCoTuQuy3())
    {
        dapantoitrang=gtpnbot3.dapantoitrang;
        return 4;
@@ -281,7 +281,7 @@ for(int i=bot3.mycard.size()-1;i>=0;i--)
    {
        
  
-       if(nhacon==true)
+       if(nhacon)
        {
   String temp="UPDATE OTHER SET SOUND = 'on'";
              stm.executeUpdate(temp);
@@ -315,35 +315,31 @@ for(int i=bot3.mycard.size()-1;i>=0;i--)
         {
             trangthainhac=rs.getString(1);
         }
-    if(trangthainhac.equals("on")) 
-               {
-               return true;
-               }
-        return false;
-         
-        
-    }
+       return trangthainhac.equals("on");
+
+
+   }
 
    public int tuQuy2()
    {
-       if(gtpnpl.baiCoTuQuy2()==true) 
+       if(gtpnpl.baiCoTuQuy2())
    {
        player.baitoitrang=gtpnpl.dapantoitrang;
        player.toitrang=true;
        player.xuLyRaBai(player);
        return 1;
    }
-   else if(gtpnbot1.baiCoTuQuy2()==true) 
+   else if(gtpnbot1.baiCoTuQuy2())
    {
        dapantoitrang=gtpnbot1.dapantoitrang;
        return 2;
    }
-   else if(gtpnbot2.baiCoTuQuy2()==true) 
+   else if(gtpnbot2.baiCoTuQuy2())
    {
        dapantoitrang=gtpnbot2.dapantoitrang;
        return 3;
    }
-   else if(gtpnbot3.baiCoTuQuy2()==true) 
+   else if(gtpnbot3.baiCoTuQuy2())
    {
        dapantoitrang=gtpnbot3.dapantoitrang;
        return 4;
@@ -352,24 +348,24 @@ for(int i=bot3.mycard.size()-1;i>=0;i--)
    }
    public int baDoiThongChua3Bich()
    {
-       if(gtpnpl.baiCo3DoiThongChua3Bich()==true)
+       if(gtpnpl.baiCo3DoiThongChua3Bich())
    {
        player.baitoitrang=gtpnpl.dapantoitrang;
        player.toitrang=true;
        player.xuLyRaBai(player);
        return 1;
    }
-         else if(gtpnbot1.baiCo3DoiThongChua3Bich()==true)
+         else if(gtpnbot1.baiCo3DoiThongChua3Bich())
              {
        dapantoitrang=gtpnbot1.dapantoitrang;
        return 2;
             }
-          else if(gtpnbot2.baiCo3DoiThongChua3Bich()==true)
+          else if(gtpnbot2.baiCo3DoiThongChua3Bich())
             {
        dapantoitrang=gtpnbot2.dapantoitrang;
        return 3;
           }
-          else if(gtpnbot3.baiCo3DoiThongChua3Bich()==true)
+          else if(gtpnbot3.baiCo3DoiThongChua3Bich())
         {
        dapantoitrang=gtpnbot3.dapantoitrang;
        return 4;
@@ -378,24 +374,24 @@ for(int i=bot3.mycard.size()-1;i>=0;i--)
    }
    public int sanhRong()
    {
-       if(gtpnpl.baiCoSanhRong()==true)
+       if(gtpnpl.baiCoSanhRong())
    {
        player.baitoitrang=gtpnpl.dapantoitrang;
        player.toitrang=true;
        player.xuLyRaBai(player);
        return 1;
    }
-         else if(gtpnbot1.baiCoSanhRong()==true)
+         else if(gtpnbot1.baiCoSanhRong())
              {
        dapantoitrang=gtpnbot1.dapantoitrang;
        return 2;
             }
-          else if(gtpnbot2.baiCoSanhRong()==true)
+          else if(gtpnbot2.baiCoSanhRong())
             {
        dapantoitrang=gtpnbot2.dapantoitrang;
        return 3;
           }
-          else if(gtpnbot3.baiCoSanhRong()==true)
+          else if(gtpnbot3.baiCoSanhRong())
         {
        dapantoitrang=gtpnbot3.dapantoitrang;
        return 4;
@@ -404,25 +400,25 @@ for(int i=bot3.mycard.size()-1;i>=0;i--)
    }
    public int dongHoa()
    {
-       if(gtpnpl.baiCoDongHoa()==true)
+       if(gtpnpl.baiCoDongHoa())
    {
        player.baitoitrang=gtpnpl.dapantoitrang;
        player.toitrang=true;
        player.xuLyRaBai(player);
        return 1;
    }
-         else if(gtpnbot1.baiCoDongHoa()==true)
+         else if(gtpnbot1.baiCoDongHoa())
              {
                 
        dapantoitrang=gtpnbot1.dapantoitrang;
        return 2;
             }
-          else if(gtpnbot2.baiCoDongHoa()==true)
+          else if(gtpnbot2.baiCoDongHoa())
             {
        dapantoitrang=gtpnbot2.dapantoitrang;
        return 3;
           }
-          else if(gtpnbot3.baiCoDongHoa()==true)
+          else if(gtpnbot3.baiCoDongHoa())
         {
        dapantoitrang=gtpnbot3.dapantoitrang;
        return 4;
@@ -431,24 +427,24 @@ for(int i=bot3.mycard.size()-1;i>=0;i--)
    }
    public int lucPheBon()
    {
-       if(gtpnpl.baiCoLucPheBon()==true)
+       if(gtpnpl.baiCoLucPheBon())
    {
        player.baitoitrang=gtpnpl.dapantoitrang;
        player.toitrang=true;
        player.xuLyRaBai(player);
        return 1;
    }
-         else if(gtpnbot1.baiCoLucPheBon()==true)
+         else if(gtpnbot1.baiCoLucPheBon())
              {
        dapantoitrang=gtpnbot1.dapantoitrang;
        return 2;
             }
-          else if(gtpnbot2.baiCoLucPheBon()==true)
+          else if(gtpnbot2.baiCoLucPheBon())
             {
        dapantoitrang=gtpnbot2.dapantoitrang;
        return 3;
           }
-          else if(gtpnbot3.baiCoLucPheBon()==true)
+          else if(gtpnbot3.baiCoLucPheBon())
         {
        dapantoitrang=gtpnbot3.dapantoitrang;
        return 4;

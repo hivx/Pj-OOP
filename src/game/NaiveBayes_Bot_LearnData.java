@@ -139,10 +139,10 @@ public class NaiveBayes_Bot_LearnData {
            eleCot[14]="";
          for(int i=0;i<bot.mycard.size();i++)
          {
-         eleCot[14]+=String.valueOf(bot.mycard.get(i).sohieu)+"$";
+         eleCot[14]+= bot.mycard.get(i).sohieu +"$";
          }
          //Xem xác xuất dự đoán tr của máy 
-          String COT[]={null,"cot1","cot2","cot3",
+          String[] COT ={null,"cot1","cot2","cot3",
          "cot4","cot5","cot6","cot7","cot8"
              ,"cot9","cot10","cot11","cot12","cot13"};
           String TENBANG="tableTLMNnaivebayes";

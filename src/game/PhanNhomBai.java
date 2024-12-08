@@ -44,7 +44,7 @@ public PhanNhomBai(ArrayList<Card_Player> baiconlaicuatoi) {
         {
             j++;
             this.baiconlaicuatoi[j]=baiconlaicuatoi.get(i).sohieu;
-            chuoilabaiconlaicuatoi+=String.valueOf(baiconlaicuatoi.get(i).sohieu)+"$";
+            chuoilabaiconlaicuatoi+= baiconlaicuatoi.get(i).sohieu +"$";
             
         }
       
@@ -70,7 +70,7 @@ public PhanNhomBai(ArrayList<Card_Player> baiconlaicuatoi) {
          vitrilabaidon[i]="c";
          int SUM=baiconlaicuatoi[i];
     CardBot temp=new CardBot("coc",
-            1,String.valueOf(baiconlaicuatoi[i])+"$",SUM);
+            1, baiconlaicuatoi[i] +"$",SUM);
     cardbot.add(temp);
         }
     }
@@ -83,7 +83,7 @@ public PhanNhomBai(ArrayList<Card_Player> baiconlaicuatoi) {
     if((baiconlaicuatoi[i+1]-baiconlaicuatoi[i]<=3) && (lamTronLen((float)baiconlaicuatoi[i+1]/4)-lamTronLen((float)baiconlaicuatoi[i]/4))==0)
     {
         vitrilabaiLQtoidoi[i+1]=vitrilabaiLQtoidoi[i]="d";
-        tempSDL=String.valueOf(baiconlaicuatoi[i])+"$"+String.valueOf(baiconlaicuatoi[i+1])+"$";
+        tempSDL= baiconlaicuatoi[i] +"$"+ baiconlaicuatoi[i + 1] +"$";
         SUM=baiconlaicuatoi[i]+baiconlaicuatoi[i+1];
         CardBot temp=new CardBot("doi",2,tempSDL,SUM);
       cardbot.add(temp);
@@ -108,12 +108,12 @@ public PhanNhomBai(ArrayList<Card_Player> baiconlaicuatoi) {
     if(baiconlaicuatoi[i+2]-baiconlaicuatoi[i]<=3 && (lamTronLen((float)baiconlaicuatoi[i+2]/4)-lamTronLen((float)baiconlaicuatoi[i]/4))==0)
     {
     vitrilabaiLQtoibacon[i+2]=vitrilabaiLQtoibacon[i+1]=vitrilabaiLQtoibacon[i]="bc";    
-        tempSDL=String.valueOf(baiconlaicuatoi[i])+"$"+String.valueOf(baiconlaicuatoi[i+1])+"$"+String.valueOf(baiconlaicuatoi[i+2])+"$";
+        tempSDL= baiconlaicuatoi[i] +"$"+ baiconlaicuatoi[i + 1] +"$"+ baiconlaicuatoi[i + 2] +"$";
         SUM=baiconlaicuatoi[i]+baiconlaicuatoi[i+1]+baiconlaicuatoi[i+2];
         CardBot temp=new CardBot("bacon",3,tempSDL,SUM);
       cardbot.add(temp);
       SUM=baiconlaicuatoi[i]+baiconlaicuatoi[i+2];
-      CardBot tempdoi1=new CardBot("doi",2,String.valueOf(baiconlaicuatoi[i])+"$"+String.valueOf(baiconlaicuatoi[i+2])+"$",SUM);
+      CardBot tempdoi1=new CardBot("doi",2, baiconlaicuatoi[i] +"$"+ baiconlaicuatoi[i + 2] +"$",SUM);
   cardbot.add(tempdoi1);
       //bo sung them to hop la doi
    /*CardBot_ver_end temp2=new CardBot_ver_end("doi",2,"doi$"+String.valueOf(baiconlaicuatoi[i])+"$"+String.valueOf(baiconlaicuatoi[i+2]));
@@ -141,22 +141,22 @@ public PhanNhomBai(ArrayList<Card_Player> baiconlaicuatoi) {
     {
     vitrilabaiLQtoituquy[i+3]=vitrilabaiLQtoituquy[i+2]=
     vitrilabaiLQtoituquy[i+1]=vitrilabaiLQtoituquy[i]="tq";    
-        tempSDL=String.valueOf(baiconlaicuatoi[i])+"$"+String.valueOf(baiconlaicuatoi[i+1])+
-                "$"+String.valueOf(baiconlaicuatoi[i+2])+"$"+String.valueOf(baiconlaicuatoi[i+3])+"$";
+        tempSDL= baiconlaicuatoi[i] +"$"+ baiconlaicuatoi[i + 1] +
+                "$"+ baiconlaicuatoi[i + 2] +"$"+ baiconlaicuatoi[i + 3] +"$";
         SUM=baiconlaicuatoi[i]+baiconlaicuatoi[i+1]+baiconlaicuatoi[i+2]+baiconlaicuatoi[i+3];
         CardBot temp=new CardBot("tuquy",4,tempSDL,SUM);
       cardbot.add(temp);
      SUM= baiconlaicuatoi[i]+baiconlaicuatoi[i+2];
-  CardBot tempdoi1=new CardBot("doi",2,String.valueOf(baiconlaicuatoi[i])+"$"+String.valueOf(baiconlaicuatoi[i+2])+"$",SUM);
+  CardBot tempdoi1=new CardBot("doi",2, baiconlaicuatoi[i] +"$"+ baiconlaicuatoi[i + 2] +"$",SUM);
   cardbot.add(tempdoi1);
   SUM= baiconlaicuatoi[i+1]+baiconlaicuatoi[i+3];
-  CardBot tempdoi2=new CardBot("doi",2,String.valueOf(baiconlaicuatoi[i+1])+"$"+String.valueOf(baiconlaicuatoi[i+3])+"$",SUM);
+  CardBot tempdoi2=new CardBot("doi",2, baiconlaicuatoi[i + 1] +"$"+ baiconlaicuatoi[i + 3] +"$",SUM);
   cardbot.add(tempdoi2);
   SUM= baiconlaicuatoi[i+3]+baiconlaicuatoi[i+2]+baiconlaicuatoi[i];
-  CardBot temp3con1=new CardBot("bacon",3,String.valueOf(baiconlaicuatoi[i])+"$"+String.valueOf(baiconlaicuatoi[i+2])+"$"+String.valueOf(baiconlaicuatoi[i+3])+"$",SUM);
+  CardBot temp3con1=new CardBot("bacon",3, baiconlaicuatoi[i] +"$"+ baiconlaicuatoi[i + 2] +"$"+ baiconlaicuatoi[i + 3] +"$",SUM);
   cardbot.add(temp3con1);
   SUM= baiconlaicuatoi[i]+baiconlaicuatoi[i+1]+baiconlaicuatoi[i+3];
-  CardBot temp3con2=new CardBot("bacon",3,String.valueOf(baiconlaicuatoi[i])+"$"+String.valueOf(baiconlaicuatoi[i+1])+"$"+String.valueOf(baiconlaicuatoi[i+3])+"$",SUM);
+  CardBot temp3con2=new CardBot("bacon",3, baiconlaicuatoi[i] +"$"+ baiconlaicuatoi[i + 1] +"$"+ baiconlaicuatoi[i + 3] +"$",SUM);
   cardbot.add(temp3con2);
     }
        }
@@ -185,7 +185,7 @@ public PhanNhomBai(ArrayList<Card_Player> baiconlaicuatoi) {
            {
                vitrilabailabaile[i]="bl";
                
-               CardBot temp=new CardBot("baile", 1, String.valueOf(baiconlaicuatoi[i])+"$",baiconlaicuatoi[i]);
+               CardBot temp=new CardBot("baile", 1, baiconlaicuatoi[i] +"$",baiconlaicuatoi[i]);
                cardbot.add(temp);
            }
            else  vitrilabailabaile[i]="x";
@@ -207,7 +207,7 @@ public PhanNhomBai(ArrayList<Card_Player> baiconlaicuatoi) {
        int t=0;
     for(int i=1;i<=13;i++)
 {
-    if(checkXuoivsXuoiNguocvsNguocViTriLQToiSanh(i)==true)
+    if(checkXuoivsXuoiNguocvsNguocViTriLQToiSanh(i))
     vitrilabaiLQtoisanh[i]="s";
     else vitrilabaiLQtoisanh[i]="x";
 }
@@ -284,7 +284,7 @@ public PhanNhomBai(ArrayList<Card_Player> baiconlaicuatoi) {
        &vitrilabaiLQtoisanh[i].equals("s"))
    {
        vitrilabaidacbietsanhdoi[i]="dbsanhdoi";
-      CardBot temp=new CardBot("baidacbiet", 1, String.valueOf(baiconlaicuatoi[i])+"$",baiconlaicuatoi[i]);
+      CardBot temp=new CardBot("baidacbiet", 1, baiconlaicuatoi[i] +"$",baiconlaicuatoi[i]);
                cardbot.add(temp);
    }
    else {vitrilabaidacbietsanhdoi[i]="x";chuoirootsanhdoi+=baiconlaicuatoi[i]+"$";}
@@ -331,7 +331,7 @@ public PhanNhomBai(ArrayList<Card_Player> baiconlaicuatoi) {
    for(int i=1;i<=countchuoicontohopdacbietsanhdoi;i++)
     {/* //////System.out.println(""+chuoicontohopdacbietsanhdoi[i]);*/
        
-        if(toHopConBaiDBSanhDoiCoChuaDoi(ksanhdoi,chuoicontohopdacbietsanhdoi[i])==false)
+        if(!toHopConBaiDBSanhDoiCoChuaDoi(ksanhdoi, chuoicontohopdacbietsanhdoi[i]))
         {
           //  //////System.out.println("/"+chuoicontohopdacbietsanhdoi[i]);
         countohopdacbietsanhdoihople++;
@@ -426,7 +426,7 @@ public void sapXepGiaTriTheoThuTuTangDanTrongToHopDB(String[] str,int n)
            str[i]="";
             for(int j=1;j<=count;j++)
        {
-            str[i]+=String.valueOf(temgiatricuachuoi[j])+"$";           
+            str[i]+= temgiatricuachuoi[j] +"$";
        }
          //   //////System.out.println(chuoitohopdacbietsanhdoi[i]);
                
@@ -468,16 +468,16 @@ public void sapXepGiaTriTheoThuTuTangDanTrongToHopDB(String[] str,int n)
     {
      for(int k=0;k<=7;k++)
      {
-         if(temp[i+k]==baiconlaicuatoi[j])
-         {
-             vitrilabaiLQtoibondoithong[j]="4dt";
+         if (temp[i + k] == baiconlaicuatoi[j]) {
+             vitrilabaiLQtoibondoithong[j] = "4dt";
+             break;
          }
      }
     }
-      temp4DT=String.valueOf(temp[i])+"$"+String.valueOf(temp[i+1])+
-                "$"+String.valueOf(temp[i+2])+"$"+String.valueOf(temp[i+3])+
-                "$"+String.valueOf(temp[i+4])+"$"+String.valueOf(temp[i+5])+
-                "$"+String.valueOf(temp[i+6])+"$"+String.valueOf(temp[i+7])+"$";
+      temp4DT= temp[i] +"$"+ temp[i + 1] +
+                "$"+ temp[i + 2] +"$"+ temp[i + 3] +
+                "$"+ temp[i + 4] +"$"+ temp[i + 5] +
+                "$"+ temp[i + 6] +"$"+ temp[i + 7] +"$";
         CardBot bondt=new CardBot("bondoithong",8,temp4DT,0);
            
            
@@ -520,15 +520,15 @@ public void sapXepGiaTriTheoThuTuTangDanTrongToHopDB(String[] str,int n)
     {
      for(int k=0;k<=5;k++)
      {
-         if(temp[i+k]==baiconlaicuatoi[j])
-         {
-             vitrilabaiLQtoibadoithong[j]="3dt";
+         if (temp[i + k] == baiconlaicuatoi[j]) {
+             vitrilabaiLQtoibadoithong[j] = "3dt";
+             break;
          }
      }
     }
-      temp3DT=String.valueOf(temp[i])+"$"+String.valueOf(temp[i+1])+
-                "$"+String.valueOf(temp[i+2])+"$"+String.valueOf(temp[i+3])+
-                "$"+String.valueOf(temp[i+4])+"$"+String.valueOf(temp[i+5])+"$";
+      temp3DT= temp[i] +"$"+ temp[i + 1] +
+                "$"+ temp[i + 2] +"$"+ temp[i + 3] +
+                "$"+ temp[i + 4] +"$"+ temp[i + 5] +"$";
               int kt=0;
               SUM=temp[i]+temp[i+1]+temp[i+2]+temp[i+3]+temp[i+4]+temp[i+5];
                    for(int u=0;u<cardbot.size();u++)
@@ -582,11 +582,11 @@ public void timSanhTuChuoiToHopVaDoDaiChuoiChoTruoc(String str,int dodaisanh)
            int flag=0;
            for(int j=i;j<=i+dodaisanh-2;j++)
            {
-               sanh+=String.valueOf(temp[j])+"$";
+               sanh+= temp[j] +"$";
                SUM+=temp[j];
                if(j==i+dodaisanh-2)
                {
-                   sanh+=String.valueOf(temp[j+1])+"$";
+                   sanh+= temp[j + 1] +"$";
                    SUM+=temp[j+1];
                }
       if(lamTronLen((float)temp[j+1]/4)-lamTronLen((float)temp[j]/4)!=1 ||temp[j+1]>48||temp[j]>48)
@@ -651,9 +651,9 @@ public void MoRongToHopBaConvaBahoacBonDoiThong()
     for(int i=1;i<=countchuoicontohopdacbiet3convs3or4dt;i++)
     {
        
-       if(toHopConBaiDBBaConva3DTor4DTCoChuaBaCon(k3c3or4dt,chuoicontohopdacbiet3convs3or4dt[i])==false)
-       { /*//////System.out.println(""+chuoicontohopdacbiet3convs3or4dt[i])*/;
-       countohopdacbiet3convs3dtor4dthople++;
+       if(!toHopConBaiDBBaConva3DTor4DTCoChuaBaCon(k3c3or4dt, chuoicontohopdacbiet3convs3or4dt[i]))
+       { /*//////System.out.println(""+chuoicontohopdacbiet3convs3or4dt[i])*/
+           countohopdacbiet3convs3dtor4dthople++;
   chuoitohopdacbiet3convs3or4dt[countohopdacbiet3convs3dtor4dthople]=chuoiroot3convs3or4dt+chuoicontohopdacbiet3convs3or4dt[i];
       
        }
@@ -716,7 +716,7 @@ void ToHopBaConva3or4DoiThong (int i)  {
              &&vitrilabaiLQtoibacon[i].equals("bc"))
     {
         vitrilabaithuacua3dt_4dt[i]="bthua";
-         CardBot temp=new CardBot("baithua", 1, String.valueOf(baiconlaicuatoi[i])+"$",baiconlaicuatoi[i]);
+         CardBot temp=new CardBot("baithua", 1, baiconlaicuatoi[i] +"$",baiconlaicuatoi[i]);
            cardbot.add(temp);
     }
      if(i<=numbbaiconlaicuatoi-1&&(vitrilabaiLQtoibadoithong[i].equals("3dt")||vitrilabaiLQtoibondoithong[i].equals("4dt"))
@@ -730,7 +730,7 @@ void ToHopBaConva3or4DoiThong (int i)  {
          if(i+j==numbbaiconlaicuatoi+1) break;
                  vitrilabaithuacua3dt_4dt[i+j]="baithua";
       CardBot temp=new CardBot("baithua", 1,
-              String.valueOf(baiconlaicuatoi[i+j])+"$",baiconlaicuatoi[i+j]);
+              baiconlaicuatoi[i + j] +"$",baiconlaicuatoi[i+j]);
            cardbot.add(temp);   
      }
            }
@@ -748,7 +748,7 @@ void ToHopBaConva3or4DoiThong (int i)  {
      {
                  vitrilabaithuacua3dt_4dt[i-j]="baithua";
       CardBot temp=new CardBot("baithua", 1,
-              String.valueOf(baiconlaicuatoi[i-j])+"$",baiconlaicuatoi[i-j]);
+              baiconlaicuatoi[i - j] +"$",baiconlaicuatoi[i-j]);
            cardbot.add(temp);   
      }
            }
@@ -869,9 +869,9 @@ return true;
       for(int i=1;i<=numbbaiconlaicuatoi;i++)
       {
          if((baiconlaicuatoi[i]+1)%4==0||(baiconlaicuatoi[i]%4==0))
-         {tempdonghoado+=String.valueOf(baiconlaicuatoi[i])+"$";countdo++;}
+         {tempdonghoado+= baiconlaicuatoi[i] +"$";countdo++;}
          else if((baiconlaicuatoi[i]+2)%4==0||(baiconlaicuatoi[i]+3)%4==0)
-         {tempdonghoaden+=String.valueOf(baiconlaicuatoi[i])+"$";countden++;}
+         {tempdonghoaden+= baiconlaicuatoi[i] +"$";countden++;}
       }
       if(countden>=12) 
       {

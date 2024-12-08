@@ -11,7 +11,7 @@ public class NaiveBayes_player_tranningData_ditruoc {
 Player player;
 String thongbaokieubairahople;
     ArrayList danhsachkieubaixacsuat=new ArrayList();
-    private int SO_COT=13;
+    private final int SO_COT=13;
      boolean NOT_LEARNED;
     public NaiveBayes_player_tranningData_ditruoc(Player player) {
         this.player=player;
@@ -19,7 +19,7 @@ String thongbaokieubairahople;
     public void run() throws IOException
     {
         
-           String eleCot[]=new String[30];
+           String[] eleCot =new String[30];
         PhanNhomBai gtbot=new PhanNhomBai(this.player.mycard);
         gtbot.xayDungDataCacLoaiBoBaiChoBot();
             int sumMyCard=0,dodaisanhmax=0,tong2vaA=0,tonglabaiovitridacbiettoptren=0,countDB=0
@@ -161,10 +161,10 @@ String thongbaokieubairahople;
            eleCot[14]="";
          for(int i=0;i<player.mycard.size();i++)
          {
-         eleCot[14]+=String.valueOf(player.mycard.get(i).sohieu)+"$";
+         eleCot[14]+= player.mycard.get(i).sohieu +"$";
          }
          //Xem xác xuất dự đoán tr của máy 
-         String COT[]={null,"cot1","cot2","cot3",
+         String[] COT ={null,"cot1","cot2","cot3",
          "cot4","cot5","cot6","cot7","cot8"
              ,"cot9","cot10","cot11","cot12","cot13"};
            String TENBANG="TABLETLMNNAIVEBAYES";

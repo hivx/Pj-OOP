@@ -13,7 +13,7 @@ public class ConnectDataBase {
             String uRL = "jdbc:derby:CSDL\\DB";String user = "ttaht"; String pass = "qaz@123";
             // String uRL="jdbc:sqlserver://localhost;databasename=dataTLMN"; String user="sa";String pass="ssl";
             Class.forName("org.apache.derby.jdbc.ClientDriver");
-            cnn = (Connection) DriverManager.getConnection(uRL,user,pass);
+            cnn = DriverManager.getConnection(uRL,user,pass);
             cnn=DriverManager.getConnection(uRL, user,pass);
             // System.out.println("Thanh cong");
             return cnn;

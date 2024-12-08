@@ -58,9 +58,9 @@ public class LichSuDau extends JPanel {
         }
         
                 
-private String[] columnNames = {"STT","Thời gian bắt đầu","Số Người Chơi","May mắn tới trắng nè","Winner"};
+private final String[] columnNames = {"STT","Thời gian bắt đầu","Số Người Chơi","May mắn tới trắng nè","Winner"};
 
-        private String[][] data=x;
+        private final String[][] data=x;
            
         public int getColumnCount() {
             return columnNames.length;
