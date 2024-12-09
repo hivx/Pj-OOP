@@ -11,9 +11,9 @@
       <change beforePath="$PROJECT_DIR$/CSDL/DB/log/log28.dat" beforeDir="false" afterPath="$PROJECT_DIR$/CSDL/DB/log/log28.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CSDL/DB/log/logmirror.ctrl" beforeDir="false" afterPath="$PROJECT_DIR$/CSDL/DB/log/logmirror.ctrl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CSDL/DB/seg0/c530.dat" beforeDir="false" afterPath="$PROJECT_DIR$/CSDL/DB/seg0/c530.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CSDL/DB/seg0/c560.dat" beforeDir="false" afterPath="$PROJECT_DIR$/CSDL/DB/seg0/c560.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/derby.log" beforeDir="false" afterPath="$PROJECT_DIR$/derby.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/CardBot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/CardBot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/ChiaBai_Avatar_NgauNhien.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/ChiaBai_Avatar_NgauNhien.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/CSDL_Naivebayes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/CSDL_Naivebayes.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
