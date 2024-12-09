@@ -216,14 +216,14 @@ public class TuyChon extends JFrame{
         gbc.ipady=50;
         gbc.gridx = 1;
         gbc.gridy = 7;
-        cb1 = new JRadioButton("Cùng kim đồng hồ");
+        cb1 = new JRadioButton("Chiều tay trái");
         panel.add(cb1,gbc);
 
         gbc.fill = GridBagConstraints.HORIZONTAL;
         gbc.ipady=50;
         gbc.gridx = 2;
         gbc.gridy = 7;
-        cb2 = new JRadioButton("Ngược kim đồng hồ");
+        cb2 = new JRadioButton("Chiều tay phải");
         panel.add(cb2,gbc);
         ButtonGroup bg = new ButtonGroup();
         bg.add(cb1);

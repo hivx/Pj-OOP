@@ -493,12 +493,12 @@ public class TLMB {
         }
 
         if(ctkt>4) System.out.println("Bot "+index_actor+" co chu trinh > 3");
-        else System.out.println("Chu trinh ket thuc ngan nhat cua bot "+index_actor+"la: "+ctkt);
+        else System.out.println("Chu trinh ket thuc ngan nhat cua bot "+index_actor+" la: "+ctkt);
         if((ctkt==1)||(tongSoLaConLai()>=10&&ctkt<=3&&countbaimanh>=3)
                 ||(SoLaConLaiCuaActor[index_actor_sau]==1)
                 ||(minactor==1&&(ctkt<=3))||((minactor==1)&&countbaimanh>=2))
-        {System.out.println("uu tien chu trinh toc chien max lenght");
-            System.out.println("tại 4");return 99;}
+        {System.out.print("uu tien chu trinh toc chien max lenght");
+            System.out.println(" tại 4");return 99;}
         return 0;
     }
     public int mucDoUuTienRaBai4Actor()
@@ -508,11 +508,11 @@ public class TLMB {
         if(ctkt<=2)
         {
             if(tongSoLaConLai()==3&&countbaimanh>=1)
-            {System.out.println("uu Tien chu trinh < 2"); System.out.println("tại 1");return 99;}
+            {System.out.println("uu Tien chu trinh < 2"); System.out.println(" tại 1");return 99;}
             if(ctkt<=tongSoLaConLai()&&tongSoLaConLai()!=2)
-            {System.out.println("uu tien chu trinh toc chien so la nhieu hon 2"); System.out.println("tại 2");return 99;}
+            {System.out.println("uu tien chu trinh toc chien so la nhieu hon 2"); System.out.println(" tại 2");return 99;}
             if(ctkt<=tongSoLaConLai()&&tongSoLaConLai()==2&& co2Co)
-            {System.out.println("uu tien chu trinh toc chien co 2 co"); System.out.println("tại 3");return 99;}
+            {System.out.println("uu tien chu trinh toc chien co 2 co"); System.out.println(" tại 3");return 99;}
         }
 
         if(solabaitoira==1&&ctkt<=3&&countbaimanh>=3)
