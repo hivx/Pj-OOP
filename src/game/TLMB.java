@@ -349,49 +349,86 @@ public class TLMB {
         }
         return 0;
     }
+    // Hàm kiểm tra nếu hai lá bài có cùng chất
+    public boolean sameSuit(int card1, int card2) {
+        return (card1 / 13 == card2 / 13);  // Chia cho 13 để xác định chất của bài
+    }
+
     public int mucDoUuTienRaBai4Actor() {
-        int mdutrbc=mucDoUuTienRaBaiChung();
-        if(mdutrbc!=0) return mdutrbc;
-        if(ctkt<=2) {
-            if(tongSoLaConLai()==3&&countbaimanh>=1) {
-                System.out.println("uu Tien chu trinh < 2"); System.out.println(" tại 1");return 99;
+        int mdutrbc = mucDoUuTienRaBaiChung();
+        if (mdutrbc != 0) return mdutrbc;
+
+        // Điều kiện nếu số lá bài còn lại <= 2
+        if (ctkt <= 2) {
+            if (tongSoLaConLai() == 3 && countbaimanh >= 1) {
+                System.out.println("uu Tien chu trinh < 2");
+                System.out.println("tại 1");
+                return 99;
             }
-            if(ctkt<=tongSoLaConLai()&&tongSoLaConLai()!=2) {
+            if (ctkt <= tongSoLaConLai() && tongSoLaConLai() != 2) {
                 System.out.println("uu tien chu trinh toc chien so la nhieu hon 2");
-                System.out.println(" tại 2");return 99;
+                System.out.println("tại 2");
+                return 99;
             }
-            if(ctkt<=tongSoLaConLai()&&tongSoLaConLai()==2&& co2Co) {
+            if (ctkt <= tongSoLaConLai() && tongSoLaConLai() == 2 && co2Co) {
                 System.out.println("uu tien chu trinh toc chien co 2 co");
-                System.out.println(" tại 3");return 99;
+                System.out.println("tại 3");
+                return 99;
             }
         }
-        if(solabaitoira==1&&ctkt<=3&&countbaimanh>=3)
-        {System.out.println("tại 5"); return 99;}
-        if(SoLaConLaiCuaActor[index_actor_sau]==1) {
-            if(SoLaConLaiCuaActor[index_actor_truoc]==1) {  indexuutien=2;  System.out.println("tại 6");return 99; }
-            else if(countbaimanh>=2&&SoLaConLaiCuaActor[index_actor]>=4) {
-                Random rd=new Random();
+
+        // Điều kiện khi số lá bài tồn tại là 1 và bài mạnh >= 3
+        if (solabaitoira == 1 && ctkt <= 3 && countbaimanh >= 3) {
+            System.out.println("tại 5");
+            return 99;
+        }
+
+        // Kiểm tra bài chặn có phải bài cùng chất không
+        if (SoLaConLaiCuaActor[index_actor_sau] == 1) {
+            if (SoLaConLaiCuaActor[index_actor_truoc] == 1) {
+                indexuutien = 2;
+                System.out.println("tại 6");
+                return 99;
+            } else if (countbaimanh >= 2 && SoLaConLaiCuaActor[index_actor] >= 4) {
+                Random rd = new Random();
                 int index_dapanrandom = rd.nextInt(3);
-                if(index_dapanrandom==0) {System.out.println("random=9");return 9;}
-                else {System.out.println("random=99");System.out.println("tại 7");return 99;}
-            } else if(index_actor_sau==1) return 99;
-        }
-        if(SoLaConLaiCuaActor[index_actor_truoc]==1&&tongSoLaDoiThu>=91) return 99;
-        if(soLuongActor==2&&(SoLaConLaiCuaActor[index_actor_sau]==2)) return 99;
-        if(tongsohieulabaidothura>=50&& co2Co
-                &&index_actor_truoc==1&&solabaitoira==1) {
-            System.out.println("TM");System.out.println("tại 8");return 99;
-        }
-        if(SoLaConLaiCuaActor[1]<=2) {
-            if(countbaimanh>=3) return 99;
-            else return 98;
-        } else if(minactor<=3&&countbaimanh<3) {
-            if(SoLaConLaiCuaActor[index_actor]>=maxactor||
-                    ((SoLaConLaiCuaActor[index_actor]>tongSoLaDoiThu/(soLuongActor-1)
-                            &&tongSoLaDoiThu<(soLuongActor-1)*11))) {
-                indexuutien=13;  return 8;
+                if (index_dapanrandom == 0) {
+                    System.out.println("random=9");
+                    return 9;
+                } else {
+                    System.out.println("random=99");
+                    System.out.println("tại 7");
+                    return 99;
+                }
+            } else if (index_actor_sau == 1) {
+                return 99;
             }
         }
+
+        // Kiểm tra các điều kiện khác
+        if (SoLaConLaiCuaActor[index_actor_truoc] == 1 && tongSoLaDoiThu >= 91) return 99;
+        if (soLuongActor == 2 && (SoLaConLaiCuaActor[index_actor_sau] == 2)) return 99;
+
+        // Kiểm tra bài mạnh và các điều kiện chặn
+        if (tongsohieulabaidothura >= 50 && co2Co && index_actor_truoc == 1 && solabaitoira == 1) {
+            System.out.println("TM");
+            System.out.println("tại 8");
+            return 99;
+        }
+
+        // Điều kiện khi số lá bài còn lại <= 2
+        if (SoLaConLaiCuaActor[1] <= 2) {
+            if (countbaimanh >= 3) return 99;
+            else return 98;
+        } else if (minactor <= 3 && countbaimanh < 3) {
+            if (SoLaConLaiCuaActor[index_actor] >= maxactor ||
+                    (SoLaConLaiCuaActor[index_actor] > tongSoLaDoiThu / (soLuongActor - 1)
+                            && tongSoLaDoiThu < (soLuongActor - 1) * 11)) {
+                indexuutien = 13;
+                return 8;
+            }
+        }
+
         return 0;
     }
     public int mucDoUuTienRaBai2Actor() {

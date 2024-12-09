@@ -10,15 +10,20 @@
       <change beforePath="$PROJECT_DIR$/CSDL/DB/log/log.ctrl" beforeDir="false" afterPath="$PROJECT_DIR$/CSDL/DB/log/log.ctrl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CSDL/DB/log/log28.dat" beforeDir="false" afterPath="$PROJECT_DIR$/CSDL/DB/log/log28.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CSDL/DB/log/logmirror.ctrl" beforeDir="false" afterPath="$PROJECT_DIR$/CSDL/DB/log/logmirror.ctrl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CSDL/DB/seg0/c4f0.dat" beforeDir="false" afterPath="$PROJECT_DIR$/CSDL/DB/seg0/c4f0.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CSDL/DB/seg0/c530.dat" beforeDir="false" afterPath="$PROJECT_DIR$/CSDL/DB/seg0/c530.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CSDL/DB/seg0/c560.dat" beforeDir="false" afterPath="$PROJECT_DIR$/CSDL/DB/seg0/c560.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/derby.log" beforeDir="false" afterPath="$PROJECT_DIR$/derby.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/BOT_TinhToan_va_RaQuyetDinh.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/BOT_TinhToan_va_RaQuyetDinh.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/DieuKhienBatDauVaKetThucGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/DieuKhienBatDauVaKetThucGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/InGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/InGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/PhanNhomBai.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/PhanNhomBai.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/TLMB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/TLMB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/image/backhome.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/image/backhome.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/image/bg_TLMN_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/image/bg_TLMN_2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/image/luatgame1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/image/luatgame1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/image/luatgame2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/image/luatgame2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/image/luatgame3.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/image/luatgame3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/image/luatgame4.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/image/luatgame4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/image/luatgame5.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/image/luatgame5.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/image/newgame.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/image/newgame.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/image/sound_off.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/image/sound_off.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/image/sound_on.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/image/sound_on.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
