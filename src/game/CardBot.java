@@ -42,7 +42,7 @@ public class CardBot {
         fullnamecard = Arrays.stream(s).map(string -> {
                     int value = Integer.parseInt(string);
                     return cardMap.getOrDefault(value, ""); // Lấy giá trị từ cardMap
-                })
+        })
                 .filter(str -> !str.isEmpty()) // Bỏ qua chuỗi rỗng
                 .collect(Collectors.joining("$")); // Ghép chuỗi với "$"
     }
