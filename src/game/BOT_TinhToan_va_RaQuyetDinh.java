@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.stream.Collectors;
 
-public class BOT_TinhToan_va_RaQuyetDinh extends TLMN {
+public class BOT_TinhToan_va_RaQuyetDinh extends TLMB {
     public BOT_TinhToan_va_RaQuyetDinh(ArrayList<Card_Player> arrLbaiplayerra,
                                        ArrayList<CardBot> cacbobaicuatoi, int[] SoLaActor,
                                        int soLuongActor, int index_actor, int index_actor_truoc, int index_actor_sau, int bainhonhat) {

@@ -1,7 +1,7 @@
 package game;
 
 import java.util.ArrayList;
-public class TLMN_Player extends TLMN {
+public class TLMN_Player extends TLMB {
     int solabaibotra;
     int[] baibotra=new int[30];
     int solabaiplayerchon;

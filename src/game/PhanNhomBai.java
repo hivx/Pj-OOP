@@ -1,7 +1,7 @@
 package game;
 
 import java.util.ArrayList;
-public class PhanNhomBai extends TLMN {
+public class PhanNhomBai extends TLMB {
     int numbbaiconlaicuatoi;
     int[] baiconlaicuatoi=new int[30];
     int[] cardDBsanhdoi=new int[30];
