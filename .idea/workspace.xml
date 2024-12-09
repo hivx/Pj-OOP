@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6153eac1-dd2b-4884-90c5-9dc81e947b01" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CSDL/DB/db.lck" beforeDir="false" afterPath="$PROJECT_DIR$/CSDL/DB/db.lck" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CSDL/DB/log/log.ctrl" beforeDir="false" afterPath="$PROJECT_DIR$/CSDL/DB/log/log.ctrl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CSDL/DB/log/log28.dat" beforeDir="false" afterPath="$PROJECT_DIR$/CSDL/DB/log/log28.dat" afterDir="false" />
@@ -14,9 +15,10 @@
       <change beforePath="$PROJECT_DIR$/CSDL/DB/seg0/c560.dat" beforeDir="false" afterPath="$PROJECT_DIR$/CSDL/DB/seg0/c560.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/derby.log" beforeDir="false" afterPath="$PROJECT_DIR$/derby.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/BOT_TinhToan_va_RaQuyetDinh.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/BOT_TinhToan_va_RaQuyetDinh.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/DieuKhienBatDauVaKetThucGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/DieuKhienBatDauVaKetThucGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/InGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/InGame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/PhanNhomBai.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/PhanNhomBai.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/TLMN_Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/TLMN_Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/menu/BackgroundGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/menu/BackgroundGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/TLMB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/TLMB.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,6 +85,17 @@
       <updated>1733672480379</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />

@@ -1,6 +1,5 @@
 package game;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.stream.Collectors;
@@ -202,7 +201,7 @@ public class BOT_TinhToan_va_RaQuyetDinh extends TLMB {
         }
         return dapanmin;
     }
-    public String dapAnMinDiTruoc_naivebayes(Bot bot) throws IOException {
+    public String dapAnMinDiTruoc_naivebayes(Bot bot) {
         String s= sanhDep();
         if(!s.equals("koco")) {
             for (CardBot cardBot : cardbot) {
@@ -215,8 +214,8 @@ public class BOT_TinhToan_va_RaQuyetDinh extends TLMB {
         ml_naivebays_bot =new NaiveBayes_Bot_LearnData(bot);
         ml_naivebays_bot.run();
         for(int i=1;i<ml_naivebays_bot.danhsachkieubaixacsuat.size();i++) {
-            String temploaibainaivebayes=ml_naivebays_bot.
-                    danhsachkieubaixacsuat.get(i).toString().trim();
+            String temploaibainaivebayes= ml_naivebays_bot.
+                    danhsachkieubaixacsuat.get(i).trim();
             String[] c=temploaibainaivebayes.split("\\$");
 
             for (CardBot cardBot : cardbot) {

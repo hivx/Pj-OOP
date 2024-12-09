@@ -189,8 +189,8 @@ public class DieuKhienBatDauVaKetThucGame {
         gtpnbot1.indexactor=2;
         gtpnbot2.indexactor=3;
         gtpnbot3.indexactor=4;
-        int[] index ={tuQuy3(),baDoiThongChua3Bich(),tuQuy2(),sanhRong(),lucPheBon(),dongHoa()};
-        for(int i=0;i<6;i++) {
+        int[] index ={tuQuy3(),tuQuy2(),sanhRong(),dongHoa()};
+        for(int i=0;i<4;i++) {
             if(index[i]!=0) return index[i];
         }
         return 0;
@@ -260,24 +260,6 @@ public class DieuKhienBatDauVaKetThucGame {
         }
         return 0;
     }
-    public int baDoiThongChua3Bich() {
-        if(gtpnpl.baiCo3DoiThongChua3Bich()) {
-            player.baitoitrang=gtpnpl.dapantoitrang;
-            player.toitrang=true;
-            player.xuLyRaBai(player);
-            return 1;
-        } else if(gtpnbot1.baiCo3DoiThongChua3Bich()) {
-            dapantoitrang=gtpnbot1.dapantoitrang;
-            return 2;
-        } else if(gtpnbot2.baiCo3DoiThongChua3Bich()) {
-            dapantoitrang=gtpnbot2.dapantoitrang;
-            return 3;
-        } else if(gtpnbot3.baiCo3DoiThongChua3Bich()) {
-            dapantoitrang=gtpnbot3.dapantoitrang;
-            return 4;
-        }
-        return 0;
-    }
     public int sanhRong() {
         if(gtpnpl.baiCoSanhRong()) {
             player.baitoitrang=gtpnpl.dapantoitrang;
@@ -314,24 +296,7 @@ public class DieuKhienBatDauVaKetThucGame {
         }
         return 0;
     }
-    public int lucPheBon() {
-        if(gtpnpl.baiCoLucPheBon()) {
-            player.baitoitrang=gtpnpl.dapantoitrang;
-            player.toitrang=true;
-            player.xuLyRaBai(player);
-            return 1;
-        } else if(gtpnbot1.baiCoLucPheBon()) {
-            dapantoitrang=gtpnbot1.dapantoitrang;
-            return 2;
-        } else if(gtpnbot2.baiCoLucPheBon()) {
-            dapantoitrang=gtpnbot2.dapantoitrang;
-            return 3;
-        } else if(gtpnbot3.baiCoLucPheBon()) {
-            dapantoitrang=gtpnbot3.dapantoitrang;
-            return 4;
-        }
-        return 0;
-    }
+
     public void luuLichSuDau(String thoigianhethongbatdaugame,
                              int SONGUOICHOI,String toitrangne,String chisoavatarLOL,int iwin)
             throws SQLException {

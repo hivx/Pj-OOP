@@ -50,8 +50,7 @@ public class TLMB {
         }
         return true; // Tất cả các lá bài đều liền kề và cùng chất
     }
-    public boolean LaBaCon()
-    {
+    public boolean LaBaCon() {
         return (lamTronLen((float) card[3] / 4) - lamTronLen((float) card[1] / 4) == 0)
                 && countcard == 3;
     }

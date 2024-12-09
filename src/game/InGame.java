@@ -4,7 +4,6 @@ import java.awt.EventQueue;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 import java.sql.SQLException;
@@ -83,10 +82,10 @@ public class InGame extends JFrame{
         cbnn.getAvatar(9, Integer.parseInt(avatarplayer));
     }
     //Bộ bài đầu vào
-    /*cbnn.phanbai1= "2$3$8$10$12$17$18$20$31$33$35$37$40$";
-    cbnn.phanbai2= "7$21$22$25$28$38$39$42$43$45$46$49$51$";
-    cbnn.phanbai3= "6$9$11$13$19$24$26$30$32$34$36$44$48$";
-    cbnn.phanbai4= "1$4$5$14$15$16$23$27$29$41$47$50$52$";*/
+    //cbnn.phanbai1= "2$3$8$10$12$17$18$20$31$33$35$37$40$";
+    //cbnn.phanbai2= "7$21$22$25$28$38$39$42$43$45$46$49$51$";
+    //cbnn.phanbai3= "6$9$11$13$19$24$26$30$32$34$36$44$48$";
+    //cbnn.phanbai4= "1$4$5$14$15$16$23$27$29$41$47$50$52$";
     public void taoCacActor() {
         player=new Player(1,cbnn.phanbai1,400,440,416,455,
                 450,490,550,630,400,450,340,550,450,450,550,450,280,580,avatarplayer,    13    ,150,500);
@@ -538,7 +537,7 @@ public class InGame extends JFrame{
         index_actor_truoc= timactortruocsau.nguoiDanhTiepTheoOViTri();
         // System.out.println("Tôi là "+bot.indexActor+"vị trí SAUU tôi là actor "+": "+index_actor_sau);
     }
-    public void actionBotMain(Bot bot) throws SQLException, IOException {
+    public void actionBotMain(Bot bot) throws SQLException {
         PhanNhomBai gtbot_pnb = new PhanNhomBai(bot.mycard);
         gtbot_pnb.xayDungDataCacLoaiBoBaiChoBot();
         if(soPlayerBiKhoa==SONGUOICHOI-1|| theyCard.isEmpty()) {
@@ -570,7 +569,7 @@ public class InGame extends JFrame{
             dkbatdauketthucgame.xuLyKetThucGame();
         }
     }
-    public void botMoComBat(Bot bot) throws IOException, SQLException {
+    public void botMoComBat(Bot bot) throws SQLException {
         bot.nhanthongbaobainhoditruoc.setVisible(false);
         int uutien=gtbot_ttvrqd.mucDoUuTienRaBai();
         if(uutien==999) {
