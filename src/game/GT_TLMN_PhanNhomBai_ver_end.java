@@ -60,8 +60,6 @@ public class GT_TLMN_PhanNhomBai_ver_end extends GT_TLMB {
 
     public int lamTronLen(float kqchia) {
 
-        // //////System.out.println("Lay"+kqchia+"-"+(int)kqchia);
-
         if (kqchia - (int) kqchia < 0.01) return (int) kqchia;
 
         return (int) kqchia + 1;
@@ -111,9 +109,7 @@ public class GT_TLMN_PhanNhomBai_ver_end extends GT_TLMB {
                 SUM = baiconlaicuatoi[i] + baiconlaicuatoi[i + 2];
                 CardBot_ver_end tempdoi1 = new CardBot_ver_end("doi", 2, String.valueOf(baiconlaicuatoi[i]) + "$" + String.valueOf(baiconlaicuatoi[i + 2]) + "$", SUM);
                 cardbot.add(tempdoi1);
-                //bo sung them to hop la doi
-   /*CardBot_ver_end temp2=new CardBot_ver_end("doi",2,"doi$"+String.valueOf(baiconlaicuatoi[i])+"$"+String.valueOf(baiconlaicuatoi[i+2]));
-   cardbot.add(temp2);*/
+
             }
         }
         for (int i = 1; i <= numbbaiconlaicuatoi; i++) {
@@ -234,17 +230,6 @@ public class GT_TLMN_PhanNhomBai_ver_end extends GT_TLMB {
         chuoirootsanhdoi = "";
 
         for (int i = 1; i <= numbbaiconlaicuatoi; i++) {
-        /*//////System.out.print("+"+vitrilabaiLQtoibacon[i]);
-        //////System.out.println("");
-        //////System.out.print("+"+vitrilabaiLQtoidoi[i]);
-        //////System.out.println("");*/
-            // //////System.out.print("+"+vitrilabaiLQtoisanh[i]);
-        }
-        for (int i = 1; i <= numbbaiconlaicuatoi; i++) {
-            //   //////System.out.print(" "+vitrilabaiLQtoisanh[i]);
-        }
-        // //////System.out.println("");
-        for (int i = 1; i <= numbbaiconlaicuatoi; i++) {
             if ((vitrilabaiLQtoidoi[i].equals("d") || vitrilabaiLQtoibacon[i].equals("bc"))
                     & vitrilabaiLQtoisanh[i].equals("s")) {
                 vitrilabaidacbietsanhdoi[i] = "dbsanhdoi";
@@ -273,9 +258,7 @@ public class GT_TLMN_PhanNhomBai_ver_end extends GT_TLMB {
                 }
             }
         }
-        ////////System.out.println("n,k"+n+k);
         if (ksanhdoi == 0) {
-            //  //////System.out.println("K có vị trí đặc biệt");
             for (int l = 3; l <= 13; l++) {
                 timSanhTuChuoiToHopVaDoDaiChuoiChoTruoc(chuoilabaiconlaicuatoi, l);
             }
@@ -284,12 +267,12 @@ public class GT_TLMN_PhanNhomBai_ver_end extends GT_TLMB {
 
         for (int i = 1; i <= numbbaiconlaicuatoi; i++) {
             if (vitrilabaidacbietsanhdoi[i].equals("dbsanhdoi")) {
-                ////////System.out.print("vitri"+i);
+
                 nsanhdoi++;
                 cardDBsanhdoi[nsanhdoi] = baiconlaicuatoi[i];
             }
         }
-        ////////System.out.println("\nTong n,k: "+nsanhdoi+","+ksanhdoi);
+
 
         x[0] = 0;
         ToHopSanhDoi(1);
@@ -297,14 +280,14 @@ public class GT_TLMN_PhanNhomBai_ver_end extends GT_TLMB {
         for (int i = 1; i <= countchuoicontohopdacbietsanhdoi; i++) {/* //////System.out.println(""+chuoicontohopdacbietsanhdoi[i]);*/
 
             if (toHopConBaiDBSanhDoiCoChuaDoi(ksanhdoi, chuoicontohopdacbietsanhdoi[i]) == false) {
-                //  //////System.out.println("/"+chuoicontohopdacbietsanhdoi[i]);
+
                 countohopdacbietsanhdoihople++;
                 chuoitohopdacbietsanhdoi[countohopdacbietsanhdoihople] = chuoirootsanhdoi + chuoicontohopdacbietsanhdoi[i];
-                ////////System.out.println("*"+chuoitohopdacbietsanhdoi[countohopdacbietsanhdoihople]);
+
             }
 
         }
-        // //////System.out.println(""+chuoirootsanhdoi+ countohopdacbietsanhdoihople);
+
     }
 
 
@@ -313,11 +296,11 @@ public class GT_TLMN_PhanNhomBai_ver_end extends GT_TLMB {
         chuoicontohopdacbietsanhdoi[countchuoicontohopdacbietsanhdoi] = "";
         for (int i = 1; i <= ksanhdoi; i++) {
 
-            ////////System.out.print(" "+x[i]);
+
             chuoicontohopdacbietsanhdoi[countchuoicontohopdacbietsanhdoi] += cardDBsanhdoi[x[i]] + "$";
 
         }
-        // //////System.out.println("");
+
     }
 
     void ToHopSanhDoi(int i) {
@@ -334,7 +317,7 @@ public class GT_TLMN_PhanNhomBai_ver_end extends GT_TLMB {
         int[] card = new int[10];
         String[] c = s.split("\\$");
         for (int i = 1; i <= num; i++) {
-            ////////System.out.print(""+Integer.parseInt(c[i]));
+
             card[i] = Integer.parseInt(c[i - 1]);
         }
 
@@ -350,18 +333,18 @@ public class GT_TLMN_PhanNhomBai_ver_end extends GT_TLMB {
 
         for (int i = 1; i <= n; i++) {
             int count = 0;
-            ////////System.out.println(""+chuoicontohopdacbietsanhdoi[i]);
+
             for (int t = 0; t < str[i].length(); t++) {
                 if (str[i].charAt(t) == '$') {
                     count++;
                 }
             }
-            ////////System.out.println("Count "+count);
+
             String[] s = str[i].split("\\$");
             int[] temgiatricuachuoi = new int[30];
             for (int j = 1; j <= count; j++) {
                 temgiatricuachuoi[j] = Integer.valueOf(s[j - 1]);
-                //   //////System.out.print("-"+temgiatricuachuoi[j]);
+
             }
             int tg = 0;
             for (int u = 1; u < count; u++) {
@@ -378,7 +361,7 @@ public class GT_TLMN_PhanNhomBai_ver_end extends GT_TLMB {
             for (int j = 1; j <= count; j++) {
                 str[i] += String.valueOf(temgiatricuachuoi[j]) + "$";
             }
-            //   //////System.out.println(chuoitohopdacbietsanhdoi[i]);
+
         }
     }
 
@@ -391,12 +374,12 @@ public class GT_TLMN_PhanNhomBai_ver_end extends GT_TLMB {
                 count++;
             }
         }
-        ////////System.out.println("Count "+count);
+
         String[] s = str.split("\\$");
 
         for (int j = 1; j <= count; j++) {
             temp[j] = Integer.valueOf(s[j - 1]);
-            // //////System.out.print("-"+temp[j]);
+
         }
         for (int i = 1; i <= count; i++) {
             if (temp[i + 6] >= 49) continue;
@@ -435,12 +418,12 @@ public class GT_TLMN_PhanNhomBai_ver_end extends GT_TLMB {
                 count++;
             }
         }
-        ////////System.out.println("Count "+count);
+
         String[] s = str.split("\\$");
 
         for (int j = 1; j <= count; j++) {
             temp[j] = Integer.valueOf(s[j - 1]);
-            // //////System.out.print("-"+temp[j]);
+
         }
         for (int i = 1; i <= count; i++) {
             if (temp[i + 4] >= 48) continue;
@@ -551,13 +534,13 @@ public class GT_TLMN_PhanNhomBai_ver_end extends GT_TLMB {
 
             return;
         }
-        ////////System.out.println("\nTong n,k: "+n3c3or4dt+","+k3c3or4dt);
+
 
 
         x[0] = 0;
         ToHopBaConva3or4DoiThong(1);
 
-        // //////System.out.println("Đã lọc");
+
         for (int i = 1; i <= countchuoicontohopdacbiet3convs3or4dt; i++) {
 
             if (toHopConBaiDBBaConva3DTor4DTCoChuaBaCon(k3c3or4dt, chuoicontohopdacbiet3convs3or4dt[i]) == false) { /*//////System.out.println(""+chuoicontohopdacbiet3convs3or4dt[i])*/
@@ -586,18 +569,18 @@ public class GT_TLMN_PhanNhomBai_ver_end extends GT_TLMB {
 
         for (int i = 1; i <= k3c3or4dt; i++) {
 
-            ////////System.out.print(" "+x[i]);
+
             chuoicontohopdacbiet3convs3or4dt[countchuoicontohopdacbiet3convs3or4dt] += cardDB3c3or4dt[x[i]] + "$";
 
         }
-        // //////System.out.println("");
+
     }
 
     public boolean toHopConBaiDBBaConva3DTor4DTCoChuaBaCon(int num, String s) {
         int[] card = new int[16];
         String[] c = s.split("\\$");
         for (int i = 1; i <= num; i++) {
-            ////////System.out.print(""+Integer.parseInt(c[i]));
+
             card[i] = Integer.parseInt(c[i - 1]);
         }
 

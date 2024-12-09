@@ -18,9 +18,9 @@ public class ChiaBai_Avatar_NgauNhien_ver_end {
     public String phanbai4;
     public String dataCard;
     boolean stop;
-    String avatarnv[] = new String[1000];
+    String[] avatarnv = new String[1000];
     ArrayList arrInt, arrAVT;
-    int m[] = new int[53];
+    int[] m = new int[53];
 
     //Constructor khong tham so
     public ChiaBai_Avatar_NgauNhien_ver_end() {
@@ -29,23 +29,21 @@ public class ChiaBai_Avatar_NgauNhien_ver_end {
 //Phuong thuc xu ly
     public static ArrayList generate(int number) {
 //Khai bao thanh phan trung gian
-        ArrayList loca = new ArrayList();
-
+        ArrayList<Integer> loca = new ArrayList<>();
         loca.add(0);
         int count = 0;
         int value;
         boolean flag;
-
-
         while (count < number) {
             flag = false;
             value = (int) (Math.random() * tongsophantu) + 1;//Gia su cac gia tri nam trong khoang tu 1 den 100
-            for (int i = 0; i < loca.size(); i++) {
-                if (((Integer) loca.get(i)).intValue() == value) {
+            for (Integer num : loca) {
+                if (num == value) {
                     flag = true;
                     break;
                 }
             }
+
             if (!flag) {
                 loca.add(value);
                 count++;
@@ -55,31 +53,29 @@ public class ChiaBai_Avatar_NgauNhien_ver_end {
     }
 
     int[] x = new int[1000];
-    int avatarbot[][] = new int[1000][1000];
+    int[][] avatarbot = new int[1000][1000];
     int index_avatar_pl;
     int count;
     int n;
-
     public void getAvatar(int soluongavatar, int indexplayer) {
         n = soluongavatar;
         index_avatar_pl = indexplayer;
         toHopAvatar(1);
         Random rd = new Random();
         int temp;
-        while (true) {
+        do {
             temp = rd.nextInt(count);
-            if (temp != 0) break;
-        }
+        } while (temp == 0);
         avatarnv[1] = String.valueOf(index_avatar_pl);
         avatarnv[2] = String.valueOf(avatarbot[temp][1]);
         avatarnv[3] = String.valueOf(avatarbot[temp][2]);
         avatarnv[4] = String.valueOf(avatarbot[temp][3]);
-        for (int i = 1; i <= count; i++) {
-            for (int j = 1; j <= 3; j++) {
-                //  System.out.print(""+avatarbot[i][j]);
-            }
-            //   System.out.println("\n");
-        }
+//        for (int i = 1; i <= count; i++) {
+//            for (int j = 1; j <= 3; j++) {
+//                //  System.out.print(""+avatarbot[i][j]);
+//            }
+//            //   System.out.println("\n");
+//        }
     }
     public void toHopAvatar(int i) {
 
@@ -94,10 +90,6 @@ public class ChiaBai_Avatar_NgauNhien_ver_end {
     }
 
     private void Xuat() {
-        for (int i = 1; i <= 3; i++) {
-            //  System.out.print(" "+x[i]);
-        }
-        //  System.out.println("\n");
         if (x[1] != index_avatar_pl && x[2] != index_avatar_pl && x[3] != index_avatar_pl) {
             count++;
             avatarbot[count][1] = x[1];
@@ -106,7 +98,6 @@ public class ChiaBai_Avatar_NgauNhien_ver_end {
             stop = true;
         }
     }
-
     public void getChiaBai() {
         arrInt = ChiaBai_Avatar_NgauNhien_ver_end.generate(52);
         phanbai1 = "";

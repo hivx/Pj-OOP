@@ -37,11 +37,7 @@ public class DieuKhienLuotDanh_ver_end {
                 tinhDayLuot(i);
             }
         }
-        //////System.out.println("\n");
-      /*  for(int i=0;i<dayluottiep.size();i++)
-        {
-     System.out.println("Dãy lượt khả dụng sau người có index "+nguoiDanhOViTriHienTai+" là "+dayluottiep.get(i));
-        }*/
+
     }
     public void tinhDayLuot(int i) {
         if (i % SONGUOICHOI == 0) {

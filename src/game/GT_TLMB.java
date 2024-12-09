@@ -35,9 +35,7 @@ public class GT_TLMB {
     public GT_TLMB() {
 
     }
-//    private boolean cungMau(int card1, int card2) {
-//        return (card1 - 1) % 4 / 2 == (card2 - 1)% 4 / 2; // cung mau
-//    }
+
     public boolean LaCoc()
     {
         return countcard == 1;
@@ -53,19 +51,7 @@ public class GT_TLMB {
             }
         }
         return true;} // Tất cả các lá bài đều liền kề và cùng chất
-//    public boolean LaSanh() {
-//        if (countcard < 3) return false; // Sảnh phải có ít nhất 3 lá
-//        for (int i = 0; i < countcard - 1; i++) { // Tránh lỗi vượt giới hạn mảng
-//            // Kiểm tra các lá bài phải liền kề về số và cùng chất
-//            if ((int) Math.ceil((float) card[i + 1] / 4) - (int) Math.ceil((float) card[i] / 4) != 1
-//                    || card[i] % 4 != card[i + 1] % 4) {
-//                return false; // Không phải sảnh
-//            }
-//        }
-//
-//        // Có thể thêm logic xử lý A, 2, 3 hoặc Q, K, A (nếu cần)
-//        return true; // Tất cả các lá bài đều liền kề và cùng chất
-//    }
+
 
     public boolean LaBaCon()
     {
@@ -73,30 +59,11 @@ public class GT_TLMB {
                 && countcard == 3;
     }
     public boolean LaDoi() {
-//        System.out.println("Card[1]: " + card[1] + ", Card[2]: " + card[2]);
-//        System.out.println("Cùng số: " + (lamTronLen((float) card[2] / 4) == lamTronLen((float) card[1] / 4)));
-//        System.out.println("Cùng màu: " + ((card[1] % 4) / 2) + "=" + ((card[2] % 4) / 2));
-//        System.out.println("Countcard: " + countcard);
 
         return lamTronLen((float) card[2] / 4) == lamTronLen((float) card[1] / 4) // Cùng số
                 && ((card[1] - 1) % 4 / 2 == (card[2] - 1)% 4 / 2)
                 && countcard == 2;
     }
-//    public boolean LaDoi() {
-//        // Đảm bảo có đúng 2 lá bài
-//        if (countcard != 2) {
-//            return false;
-//        }
-//
-//        // Lấy giá trị số và chất của từng lá bài
-//        int card1Value = (int) Math.ceil((float) card[0] / 4); // Giá trị lá bài 1
-//        int card2Value = (int) Math.ceil((float) card[1] / 4); // Giá trị lá bài 2
-//        int card1Color = (card[0] - 1) % 4 / 2; // Màu lá bài 1
-//        int card2Color = (card[1] - 1) % 4 / 2; // Màu lá bài 2
-//
-//        // Kiểm tra cùng giá trị và cùng màu
-//        return card1Value == card2Value && card1Color == card2Color;
-//    }
 
     public boolean LaTuQuy()
     {
@@ -162,25 +129,10 @@ public class GT_TLMB {
                 }
             }
         }
-//        if(kieubai.equals("doi")&&(carddp[countdp]<=50&&carddp[countdp]>=49))
-//        {
-//            for(int i=0;i<cardbot.size();i++)
-//            {
-//                if(cardbot.get(i).loaibai.equals("doi")
-//                        &&(cardbot.get(i)>=51))
-//                {
-//                    baitopdoduoc=true;
-//                    luuDuLieuCacDapAnLienQuan(i);
-//                }
-//
-//            }
-//        }
+
     }
     public boolean BiVaCham2(Vector<String> local, String B) throws IOException
     {
-       /* System.out.print("Enter a character: ");
-        // Read the char
-        char ch = (char) System.in.read();*/
         String bien1="",bien2=B;int count1=0,count2=0;
         for (String s : local) {
             bien1 += s.toString();
@@ -195,9 +147,7 @@ public class GT_TLMB {
         {
             if(bien2.charAt(i)=='$') count2++;
         }
-        //   System.out.println("count1: "+count1); System.out.println("count2: "+count2);
-        //   System.out.println("--"+bien1);
-        // System.out.println("--"+bien2);
+
         String temp1[]=bien1.split("\\$");
         String temp2[]=bien2.split("\\$");
 
@@ -229,15 +179,7 @@ public class GT_TLMB {
         if (sapXepGiaTriTheoThuTuTangDanString(sumString).equals(K))
         {
             cochutrinhketthuc=true;
-           /* System.out.print("{");
-            for (int i = 0; i < local.size(); i++) {
-                if (i != 0)
-                    System.out.print(" ");
-                System.out.print("Đánh: "); System.out.print(local2.get(i));
-                if (i != local.size() - 1)
-                    System.out.print(", ");
-            }
-            System.out.println("}");*/
+
             return;
         }
 
@@ -300,7 +242,6 @@ public class GT_TLMB {
         for(int j=1;j<=count;j++)
         {
             temgiatricuachuoi[j]=Integer.valueOf(s[j-1]);
-            //   //////System.out.print("-"+temgiatricuachuoi[j]);
         }
         int tg=0;
         for(int u = 1; u < count ; u++){
@@ -324,9 +265,9 @@ public class GT_TLMB {
 
         return str;
     }
-    String tempfullnameString[]=new String[5000];
-    String tempdaycard[]=new String[5000];
-    int tempsola[]=new int[5000];
+    String[] tempfullnameString = new String[5000];
+    String[] tempdaycard = new String[5000];
+    int[] tempsola = new int[5000];
     int count_tohopchutrinh;
     int maxla=0;
     public void sort()
@@ -372,22 +313,18 @@ public class GT_TLMB {
             sort();
 
             Integer[] arr = new Integer[900000];
-            java.util.List<String> list = new ArrayList<String>();
-            java.util.List<String> list2 = new ArrayList<String>();
+            java.util.List<String> list = new ArrayList<>();
+            java.util.List<String> list2 = new ArrayList<>();
             int count=0;
             for(int i=0;i<cardbot.size();i++)
             {
-           /* System.out.println(""+i+"\t"+tempdaycard[i]
-                    +"\t"+cardbot.get(i).loaibai+"\t"+cardbot.get(i).sola+
-                    "\t"+cardbot.get(i).fullnamecard
-+"\t"+cardbot.get(i).sumsohieu);*/
 
                 list.add(tempdaycard[i]);
                 list2.add(tempfullnameString[i]);
 
             }
-            Vector<String> A = new Vector<String>(list);
-            Vector<String> B = new Vector<String>(list2);
+            Vector<String> A = new Vector<>(list);
+            Vector<String> B = new Vector<>(list2);
 
             Combination(A,B, K);
         } catch (IOException ex) {
@@ -398,20 +335,10 @@ public class GT_TLMB {
 
     public int chuTrinhKetThucNganNhat()
     {
-        int i=0;
-     /* for(;i<cardbot.size();i++)
-            {
-                if(cardbot.get(i).loaibai.equals("coc"))
-                {
-                    System.out.print(cardbot.get(i).daycard);
-                }
-            }*/
-        int start=0;int end=0;
-      /*if(tongSoLaConLai()>=13)
-      {
-          System.out.println("Thỏa mãn");
+        int i;
+        int start = 0;
+        int end  =0;
 
-      }*/
         end=3;
         start=1;
         for(i=start;i<=end;i++)

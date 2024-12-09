@@ -241,10 +241,6 @@ public class GT_TLMN_BOT_TinhToan_va_RaQuyetDinh_ver_end extends GT_TLMB {
             java.util.List<String> list2 = new ArrayList<String>();
             int count = 0;
             for (int i = 0; i < cardbot.size(); i++) {
-         /*   System.out.println(""+i+"\t"+tempdaycard[i]
-                    +"\t"+cardbot.get(i).loaibai+"\t"+cardbot.get(i).sola+
-                    "\t"+cardbot.get(i).fullnamecard
-+"\t"+cardbot.get(i).sumsohieu);*/
 
                 list.add(tempdaycard[i]);
                 list2.add(tempfullnameString[i]);
@@ -260,18 +256,7 @@ public class GT_TLMN_BOT_TinhToan_va_RaQuyetDinh_ver_end extends GT_TLMB {
     }
 
     public int chuTrinhKetThucNganNhatTry(String baichon) {
-     /* for(;i<cardbot.size();i++)
-            {
-                if(cardbot.get(i).loaibai.equals("coc"))
-                {
-                    System.out.print(cardbot.get(i).daycard);
-                }
-            }*/
-      /*if(tongSoLaConLai()>=13)
-      {
-          System.out.println("Thỏa mãn");
-       
-      }*/
+
         this.chutrinhketthuc = ctkt;
         duyetmoitohopTry(baichon);
         if (cochutrinhketthuc == true) {

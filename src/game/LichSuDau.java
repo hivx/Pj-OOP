@@ -45,15 +45,6 @@ public class LichSuDau extends JPanel {
                 }
                 count++;
             }
-       /* for(int i=0;i<count;i++)
-        {
-            for(int j=1;j<=5;j++)
-            {
-              
-             System.out.println(x[i][j]);
-            }
-            System.out.print("\n");
-        }*/
         }
 
 
