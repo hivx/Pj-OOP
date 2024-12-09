@@ -10,10 +10,6 @@ public class BackgroundGame extends JPanel {
     
 	public Image img;
 
-	public BackgroundGame(String img) {
-	this(new ImageIcon(img).getImage());
-	}
-
 	public BackgroundGame(Image img) {
 	this.img = img;
 	Dimension size = new Dimension(img.getWidth(null), img.getHeight(null));
