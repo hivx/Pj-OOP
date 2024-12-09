@@ -32,7 +32,7 @@ public class Bot extends Actor{
         this.toadoXavatar=x_avatar;
         this.toadoYavatar=y_avatar;
 
-        System.out.println("cbnn.phanbai"+indexActor+"= "+(char)34+listBaiDuocChia+(char)34+";");
+        System.out.println("Bài của actor "+indexActor+" = "+(char)34+listBaiDuocChia+(char)34+";");
         setUpCacOptionBot();
     }
     public void setUpCacOptionBot() {

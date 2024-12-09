@@ -18,9 +18,9 @@ String thongbaokieubairahople;
            String[] eleCot =new String[30];
         PhanNhomBai gtbot=new PhanNhomBai(this.player.mycard);
         gtbot.xayDungDataCacLoaiBoBaiChoBot();
-            int sumMyCard=0,dodaisanhmax=0,tong2vaA=0,tonglabaiovitridacbiettoptren=0,countDB=0
+            int dodaisanhmax=0,countDB=0
          ,sumTuyenTren=0,sumTuyenDuoi=0,countDOIdoclap = 0,countALLDOI=0,countBACONdoclap = 0,
-          countBaiLe=0,countDoi=0,countSanh=0,count3con=0,countTuQuy=0,
+          countBaiLe=0,count3con=0,countTuQuy=0,
     countBaDoiThong=0,countBonDoiThong=0,sumDoiMax = 0,sumDoiMin=0,
            sumSanhMax = 0,sumSanhMin=0,sumBaCon=0;
             int tongsolaplayer=player.mycard.size();

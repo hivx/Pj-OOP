@@ -1,108 +1,49 @@
 package game;
 
+import java.util.Arrays;
+import java.util.Map;
+import java.util.stream.Collectors;
+
 public class CardBot {
     public String loaibai;
     public int sola;
     public int sumsohieu;
     public String daycard;
     public String fullnamecard;
-    public CardBot(String loaibai, int sola, String daycard, int sumsohieu)
-    {
-        this.loaibai=loaibai;
-        this.sola=sola;
-        this.daycard=daycard;
-        this.sumsohieu=sumsohieu;
-       
+
+    public CardBot(String loaibai, int sola, String daycard, int sumsohieu) {
+        this.loaibai = loaibai;
+        this.sola = sola;
+        this.daycard = daycard;
+        this.sumsohieu = sumsohieu;
+
         giaiMaSoHieuRaFullNameCard();
     }
-   public  void giaiMaSoHieuRaFullNameCard()
-    { 
-        String[] s=daycard.split("\\$");
-         fullnamecard="";
-        int count=0;
-        int[] temp=new int[30];
-        for(int t=0;t<daycard.length();t++)
-        {
-            if(daycard.charAt(t)=='$')
-            {
-                count++;//////System.out.println(" "+count);
-            }
-        }
-       for(int i=0;i<count;i++)
-       {
-           String str="";
-           temp[i]=Integer.valueOf(s[i]);
-           if(temp[i]==1) str="3B"; 
-           if(temp[i]==2) str="3T"; 
-           if(temp[i]==3) str="3R"; 
-           if(temp[i]==4) str="3C"; 
-           
-           if(temp[i]==5) str="4B"; 
-           if(temp[i]==6) str="4T"; 
-           if(temp[i]==7) str="4R"; 
-           if(temp[i]==8) str="4C"; 
-           
-           if(temp[i]==9) str="5B"; 
-           if(temp[i]==10) str="5T"; 
-           if(temp[i]==11) str="5R"; 
-           if(temp[i]==12) str="5C"; 
-           
-           if(temp[i]==13) str="6B"; 
-           if(temp[i]==14) str="6T"; 
-           if(temp[i]==15) str="6R"; 
-           if(temp[i]==16) str="6C"; 
-           
-           if(temp[i]==17) str="7B"; 
-           if(temp[i]==18) str="7T"; 
-           if(temp[i]==19) str="7R"; 
-           if(temp[i]==20) str="7C"; 
-           
-           if(temp[i]==21) str="8B"; 
-           if(temp[i]==22) str="8T"; 
-           if(temp[i]==23) str="8R"; 
-           if(temp[i]==24) str="8C"; 
-           
-           if(temp[i]==25) str="9B"; 
-           if(temp[i]==26) str="9T"; 
-           if(temp[i]==27) str="9R"; 
-           if(temp[i]==28) str="9C"; 
-           
-            if(temp[i]==29) str="XB"; 
-           if(temp[i]==30) str="XT"; 
-           if(temp[i]==31) str="XR"; 
-           if(temp[i]==32) str="XC";
-           
-            if(temp[i]==33) str="JB"; 
-           if(temp[i]==34) str="JT"; 
-           if(temp[i]==35) str="JR"; 
-           if(temp[i]==36) str="JC";
-           
-             if(temp[i]==37) str="QB"; 
-           if(temp[i]==38) str="QT"; 
-           if(temp[i]==39) str="QR"; 
-           if(temp[i]==40) str="QC";
-           
-             if(temp[i]==41) str="KB"; 
-           if(temp[i]==42) str="KT"; 
-           if(temp[i]==43) str="KR"; 
-           if(temp[i]==44) str="KC";
-           
-             if(temp[i]==45) str="AB"; 
-           if(temp[i]==46) str="AT"; 
-           if(temp[i]==47) str="AR"; 
-           if(temp[i]==48) str="AC";
-           
-             if(temp[i]==49) str="2B"; 
-           if(temp[i]==50) str="2T"; 
-           if(temp[i]==51) str="2R"; 
-           if(temp[i]==52) str="2C";
-           
-               
-           fullnamecard+=str+"$";
-           
-        // ////System.out.print("-"+temp[i]);
-       }
-        
+
+    public void giaiMaSoHieuRaFullNameCard() {
+        Map<Integer, String> cardMap = Map.<Integer, String>ofEntries(
+                Map.entry(1, "3B"), Map.entry(2, "3T"), Map.entry(3, "3R"), Map.entry(4, "3C"),
+                Map.entry(5, "4B"), Map.entry(6, "4T"), Map.entry(7, "4R"), Map.entry(8, "4C"),
+                Map.entry(9, "5B"), Map.entry(10, "5T"), Map.entry(11, "5R"), Map.entry(12, "5C"),
+                Map.entry(13, "6B"), Map.entry(14, "6T"), Map.entry(15, "6R"), Map.entry(16, "6C"),
+                Map.entry(17, "7B"), Map.entry(18, "7T"), Map.entry(19, "7R"), Map.entry(20, "7C"),
+                Map.entry(21, "8B"), Map.entry(22, "8T"), Map.entry(23, "8R"), Map.entry(24, "8C"),
+                Map.entry(25, "9B"), Map.entry(26, "9T"), Map.entry(27, "9R"), Map.entry(28, "9C"),
+                Map.entry(29, "XB"), Map.entry(30, "XT"), Map.entry(31, "XR"), Map.entry(32, "XC"),
+                Map.entry(33, "JB"), Map.entry(34, "JT"), Map.entry(35, "JR"), Map.entry(36, "JC"),
+                Map.entry(37, "QB"), Map.entry(38, "QT"), Map.entry(39, "QR"), Map.entry(40, "QC"),
+                Map.entry(41, "KB"), Map.entry(42, "KT"), Map.entry(43, "KR"), Map.entry(44, "KC"),
+                Map.entry(45, "AB"), Map.entry(46, "AT"), Map.entry(47, "AR"), Map.entry(48, "AC"),
+                Map.entry(49, "2B"), Map.entry(50, "2T"), Map.entry(51, "2R"), Map.entry(52, "2C")
+        );
+
+        // Chuyển daycard thành mảng số nguyên
+        String[] s = daycard.split("\\$");
+        fullnamecard = Arrays.stream(s).map(string -> {
+                    int value = Integer.parseInt(string);
+                    return cardMap.getOrDefault(value, ""); // Lấy giá trị từ cardMap
+                })
+                .filter(str -> !str.isEmpty()) // Bỏ qua chuỗi rỗng
+                .collect(Collectors.joining("$")); // Ghép chuỗi với "$"
     }
-    
 }

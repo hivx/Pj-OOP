@@ -2,7 +2,7 @@ package game;
 
 import java.util.ArrayList;
 
-public class TLMN_Player extends TLMB {
+public class TLMN_Player extends TLMN {
  int solabaibotra;
  boolean coDapAn;
    int[] baibotra=new int[30];

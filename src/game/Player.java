@@ -60,7 +60,7 @@ public class Player extends Actor {
     this.toadoYnutrabai=yrabai;
     this.toadoXnutkhongtheo=xktheo;
     this.toadoYnutkhongtheo=yktheo;
-     System.out.println("cbnn.phanbai"+indexActor+"= "+(char)34+listBaiDuocChia+(char)34+";");
+     System.out.println("Bài player "+indexActor+" = "+(char)34+listBaiDuocChia+(char)34+";");
    setUpCacOptionPlayer();
     }
     public void batOptionPlayer()

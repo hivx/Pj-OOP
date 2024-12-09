@@ -1,18 +1,17 @@
 package game;
 
 import java.util.ArrayList;
-
-public class PhanNhomBai extends TLMB {
-   
-int numbbaiconlaicuatoi;
- 
-String dapAnCuaBot;
-int[] baiconlaicuatoi=new int[30];
-int[] cardDBsanhdoi=new int[30];
+public class PhanNhomBai extends TLMN {
+    int numbbaiconlaicuatoi;
+    int[] baiconlaicuatoi=new int[30];
+    int[] cardDBsanhdoi=new int[30];
 int[] cardDB3c3or4dt=new int[30];
 String dapantoitrang;
-int nsanhdoi, ksanhdoi,n3c3or4dt,k3c3or4dt,chuoihoanvithu;
-String[] vitrilabaidon=new String[20];
+int nsanhdoi;
+    int ksanhdoi;
+    int n3c3or4dt;
+    int k3c3or4dt;
+    String[] vitrilabaidon=new String[20];
 String[] vitrilabailabaile=new String[20];
 String[] vitrilabaiLQtoidoi=new String[20];
 String[] vitrilabaiLQtoibacon=new String[20];
@@ -24,8 +23,7 @@ String[] vitrilabaiLQtoibondoithong=new String[20];
 String[] vitrilabaidacbietsanhdoi=new String[20];
 String[] chuoitohopdacbietsanhdoi=new String[1000];
 String[] chuoitohopdacbiet3convs3or4dt=new String[1000];
-boolean bobaikhongcovitridacbietsanhdoi;
-String chuoirootsanhdoi,chuoiroot3convs3or4dt;
+    String chuoirootsanhdoi,chuoiroot3convs3or4dt;
 int[] x=new int[1000];  
  String[] chuoicontohopdacbietsanhdoi=new String[1000];
   String[] chuoicontohopdacbiet3convs3or4dt=new String[1000];
@@ -35,9 +33,7 @@ int[] x=new int[1000];
  String chuoilabaiconlaicuatoi;
  int indexactor;
 public PhanNhomBai(ArrayList<Card_Player> baiconlaicuatoi) {
-        
-        ////////System.out.println("--"+theyCardVuaRastr+numbtheycardVuaRa);
-        int j=0;
+    int j=0;
         numbbaiconlaicuatoi=baiconlaicuatoi.size();
         chuoilabaiconlaicuatoi="";
          for(int i=0;i<numbbaiconlaicuatoi;i++)

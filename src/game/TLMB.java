@@ -18,8 +18,7 @@ public class TLMB {
     String[] dapanlienquan=new String[100];
     boolean baitopdoduoc;
     int solabaitoira;
-    String strbaiplayerchon,chieucualuot;
-    int[] sumSoHieu=new int[30];
+    String strbaiplayerchon;
     int[] sohieu_baidoithura=new int[30];
     int index_actor;
     int bainhonhat;

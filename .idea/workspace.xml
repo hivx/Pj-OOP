@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6153eac1-dd2b-4884-90c5-9dc81e947b01" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/image/Actor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CSDL/DB/db.lck" beforeDir="false" afterPath="$PROJECT_DIR$/CSDL/DB/db.lck" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CSDL/DB/log/log.ctrl" beforeDir="false" afterPath="$PROJECT_DIR$/CSDL/DB/log/log.ctrl" afterDir="false" />
@@ -14,9 +15,28 @@
       <change beforePath="$PROJECT_DIR$/CSDL/DB/seg0/c530.dat" beforeDir="false" afterPath="$PROJECT_DIR$/CSDL/DB/seg0/c530.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CSDL/DB/seg0/c560.dat" beforeDir="false" afterPath="$PROJECT_DIR$/CSDL/DB/seg0/c560.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/derby.log" beforeDir="false" afterPath="$PROJECT_DIR$/derby.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/BOT_TinhToan_va_RaQuyetDinh.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/BOT_TinhToan_va_RaQuyetDinh.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/Bot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/Bot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/DieuKhienBatDauVaKetThucGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/DieuKhienBatDauVaKetThucGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/luatchoi/GT_TLMN_General_ver_end.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/TLMN/GT_TLMN_General_ver_end.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/CardBot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/CardBot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/NaiveBayes_player_tranningData_ditruoc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/NaiveBayes_player_tranningData_ditruoc.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/PhanNhomBai.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/PhanNhomBai.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/TLMB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/TLMB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/TLMN/GT_TLMN_General_ver_end.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/TLMN.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/TLMN_Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/TLMN_Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/image/choingay.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/image/choingay.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/image/huongdan.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/image/huongdan.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/image/nhanvat/1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/image/nhanvat/1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/image/nhanvat/2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/image/nhanvat/2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/image/nhanvat/3.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/image/nhanvat/3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/image/nhanvat/4.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/image/nhanvat/4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/image/nhanvat/5.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/image/nhanvat/5.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/image/nhanvat/6.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/image/nhanvat/6.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/image/nhanvat/7.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/image/nhanvat/7.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/image/nhanvat/8.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/image/nhanvat/8.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/image/nhanvat/9.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/image/nhanvat/9.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/image/thoat.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/image/thoat.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/image/tuychon.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/image/tuychon.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
