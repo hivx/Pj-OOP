@@ -28,7 +28,7 @@ public class TuyChon extends JFrame{
     JPanel jp4=new JPanel();
     JLabel[] avtnv=new JLabel[31];
     JLabel[] tickgreen=new JLabel[31];
-    JRadioButton cb1,cb2,cb3,cb4,cb5,cb6,cb7;
+    JRadioButton cb1,cb2,cb3,cb4,cb5,cb6,cb7, cb8, cb9;
     ConnectDataBase kn=new ConnectDataBase();
     Connection cn=kn.getConnectdatabase();
     Statement stm=cn.createStatement();
@@ -51,7 +51,7 @@ public class TuyChon extends JFrame{
         getContentPane().add(jtp);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
-              
+
     public JPanel caiDatNhanVat() throws SQLException{
         ResultSet rs=stm.executeQuery("SELECT AVATAR FROM TABLETLMNTUYCHON");
         while(rs.next()) {
@@ -72,7 +72,7 @@ public class TuyChon extends JFrame{
         gbc.gridx = 2;
         gbc.gridy = 0;
         panel.add(new JLabel("Chọn nhân vật"), gbc);
-        
+
         gbc.fill = GridBagConstraints.HORIZONTAL;
         gbc.ipady=20;
         gbc.ipadx=20;
@@ -80,17 +80,17 @@ public class TuyChon extends JFrame{
         gbc.gridy = 1;
         panel.add(tickgreen[1], gbc);
         panel.add(NhanNV(1), gbc);
- 
+
         gbc.gridx = 2;
         gbc.gridy = 1;
         panel.add(tickgreen[2], gbc);
         panel.add(NhanNV(2), gbc);
- 
+
         gbc.gridx = 3;
         gbc.gridy = 1;
         panel.add(tickgreen[3], gbc);
         panel.add(NhanNV(3), gbc);
-        
+
         gbc.fill = GridBagConstraints.HORIZONTAL;
         gbc.gridx = 1;
         gbc.gridy = 2;
@@ -104,7 +104,7 @@ public class TuyChon extends JFrame{
         gbc.gridy = 2;
         panel.add(tickgreen[6], gbc);
         panel.add(NhanNV(6), gbc);
-        
+
         gbc.fill = GridBagConstraints.HORIZONTAL;
         gbc.gridx = 1;
         gbc.gridy = 3;
@@ -118,7 +118,7 @@ public class TuyChon extends JFrame{
         gbc.gridy = 3;
         panel.add(tickgreen[9], gbc);
         panel.add(NhanNV(9), gbc);
-        
+
         tickgreen[indexgreen].setVisible(true);
         gbc.fill = GridBagConstraints.HORIZONTAL;
         gbc.gridx = 2;
@@ -142,7 +142,7 @@ public class TuyChon extends JFrame{
         ImageIcon Iconplay = new ImageIcon(Objects.requireNonNull(getClass().getResource("/image/ok.png")));
         nhanoktab1.setIcon(Iconplay);
         nhanoktab1.setBounds(200, 200, Iconplay.getIconWidth(), Iconplay.getIconHeight());
-    
+
         add(nhanoktab1);
         nhanoktab1.addMouseListener(mouseAdapterUserClickTab1);
 
@@ -198,63 +198,63 @@ public class TuyChon extends JFrame{
     JButton nuttang,nutgiam;
     JLabel textthoigiantre;
     public JPanel tuyChinhGame() throws SQLException {
-        JLabel text1,text2,text3;
+        JLabel text1,text2,text3, text4;
         JPanel panel = new JPanel();
         GridBagLayout layout = new GridBagLayout();
         panel.setLayout(layout);
         GridBagConstraints gbc = new GridBagConstraints();
 
         gbc.fill = GridBagConstraints.HORIZONTAL;
-        gbc.ipady=50;
+        gbc.ipady=30;
         gbc.gridx = 1;
-        gbc.gridy = 6;
+        gbc.gridy = 8;
         text1 =new JLabel("Chọn chiều của lượt");
         text1.setFont(new Font("Arial", Font.BOLD, 20));
         panel.add(text1, gbc);
 
         gbc.fill = GridBagConstraints.HORIZONTAL;
-        gbc.ipady=50;
+        gbc.ipady=30;
         gbc.gridx = 1;
-        gbc.gridy = 7;
+        gbc.gridy = 9;
         cb1 = new JRadioButton("Chiều tay trái");
         panel.add(cb1,gbc);
 
         gbc.fill = GridBagConstraints.HORIZONTAL;
-        gbc.ipady=50;
+        gbc.ipady=30;
         gbc.gridx = 2;
-        gbc.gridy = 7;
+        gbc.gridy = 9;
         cb2 = new JRadioButton("Chiều tay phải");
         panel.add(cb2,gbc);
         ButtonGroup bg = new ButtonGroup();
         bg.add(cb1);
         bg.add(cb2);
-                  
+
         gbc.fill = GridBagConstraints.HORIZONTAL;
-        gbc.ipady=50;
+        gbc.ipady=30;
         gbc.gridx = 1;
-        gbc.gridy = 2;
+        gbc.gridy = 4;
         text2 =new JLabel("Số lượng người chơi");
         text2.setFont(new Font("Arial", Font.BOLD, 20));
         panel.add(text2, gbc);
 
         gbc.fill = GridBagConstraints.HORIZONTAL;
-        gbc.ipady=50;
+        gbc.ipady=30;
         gbc.gridx = 1;
-        gbc.gridy = 3;
+        gbc.gridy = 5;
         cb3 = new JRadioButton("2 người");
         panel.add(cb3,gbc);
 
         gbc.fill = GridBagConstraints.HORIZONTAL;
-        gbc.ipady=50;
+        gbc.ipady=30;
         gbc.gridx = 2;
-        gbc.gridy = 3;
+        gbc.gridy = 5;
         cb4 = new JRadioButton("3 người");
         panel.add(cb4,gbc);
 
         gbc.fill = GridBagConstraints.HORIZONTAL;
-        gbc.ipady=50;
+        gbc.ipady=30;
         gbc.gridx = 3;
-        gbc.gridy = 3;
+        gbc.gridy = 5;
         cb5 = new JRadioButton("4 người");
         panel.add(cb5,gbc);
         ButtonGroup slmay = new ButtonGroup();
@@ -263,31 +263,58 @@ public class TuyChon extends JFrame{
         slmay.add(cb5);
 
         gbc.fill = GridBagConstraints.HORIZONTAL;
-        gbc.ipady=50;
+        gbc.ipady=30;
         gbc.gridx = 1;
-        gbc.gridy = 4;
+        gbc.gridy = 6;
         text3 =new JLabel("Chế độ chơi");
         text3.setFont(new Font("Arial", Font.BOLD, 20));
         panel.add(text3, gbc);
 
         gbc.fill = GridBagConstraints.HORIZONTAL;
-        gbc.ipady=50;
+        gbc.ipady=30;
         gbc.gridx = 1;
-        gbc.gridy = 5;
+        gbc.gridy = 7;
         cb6 = new JRadioButton("Chơi với người");
         panel.add(cb6,gbc);
-        gbc.fill = GridBagConstraints.HORIZONTAL;
-        gbc.ipady=50;
-        gbc.gridx = 2;
-        gbc.gridy = 5;
-        cb7 = new JRadioButton("Chơi với máy");
-        panel.add(cb7,gbc);
-        ButtonGroup chedochoi = new ButtonGroup();
-        chedochoi.add(cb6);
-        chedochoi.add(cb7);
 
         gbc.fill = GridBagConstraints.HORIZONTAL;
-        gbc.ipady=50;
+        gbc.ipady=30;
+        gbc.gridx = 2;
+        gbc.gridy = 7;
+        cb7 = new JRadioButton("Chơi với máy");
+        panel.add(cb7,gbc);
+        ButtonGroup chedochoi1 = new ButtonGroup();
+        chedochoi1.add(cb6);
+        chedochoi1.add(cb7);
+
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+        gbc.ipady=30;
+        gbc.gridx = 1;
+        gbc.gridy = 2;
+        text4 =new JLabel("Chọn trò chơi");
+        text4.setFont(new Font("Arial", Font.BOLD, 20));
+        panel.add(text4, gbc);
+
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+        gbc.ipady=30;
+        gbc.gridx = 1;
+        gbc.gridy = 3;
+        cb8 = new JRadioButton("Tiến lên miền nam");
+        panel.add(cb8,gbc);
+
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+        gbc.ipady=30;
+        gbc.gridx = 2;
+        gbc.gridy = 3;
+        cb9 = new JRadioButton("Tiến lên miền bắc");
+        panel.add(cb9,gbc);
+
+        ButtonGroup chedochoi2 = new ButtonGroup();
+        chedochoi2.add(cb8);
+        chedochoi2.add(cb9);
+
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+        gbc.ipady=30;
         gbc.gridx = 1;
         gbc.gridy = 0;
         ResultSet rs=null;
@@ -302,7 +329,7 @@ public class TuyChon extends JFrame{
         textthoigiantre =new JLabel("Thời gian máy ra quyết định: "+thoigiantre+" giây");
         textthoigiantre.setFont(new Font("Arial", Font.BOLD, 14));
         panel.add(textthoigiantre, gbc);
-                
+
         gbc.fill = GridBagConstraints.HORIZONTAL;
         gbc.gridx = 1;
         gbc.gridy = 1;
@@ -314,15 +341,15 @@ public class TuyChon extends JFrame{
         gbc.fill = GridBagConstraints.HORIZONTAL;
         gbc.gridx = 2;
         gbc.gridy = 1;
-        nutgiam=new JButton("Giảm "); 
+        nutgiam=new JButton("Giảm ");
         panel.add(nutgiam);
         nutgiam.addMouseListener(mouseAdapterUserClickTangGiam);
         // nuttang.addMouseListener(mouseAdapterUserClickTangGiam);
 
         gbc.fill = GridBagConstraints.HORIZONTAL;
-        gbc.ipady=50;
+        gbc.ipady=30;
         gbc.gridx = 1;
-        gbc.gridy = 8;
+        gbc.gridy = 10;
         try {
             panel.add(taoNutOKTab2(),gbc) ;
         } catch (SQLException ex) {
