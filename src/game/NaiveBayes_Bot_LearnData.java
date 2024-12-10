@@ -16,8 +16,8 @@ public class NaiveBayes_Bot_LearnData {
         int dodaisanhmax=0,countDB=0
                 ,sumTuyenTren=0,sumTuyenDuoi=0,countDOIdoclap = 0,countALLDOI=0,countBACONdoclap = 0,
                 countBaiLe=0,countTuQuy=0,
-                countBaDoiThong=0,countBonDoiThong=0,sumDoiMax = 0,sumDoiMin=0,
-                sumSanhMax = 0,sumSanhMin=0,sumBaCon=0;
+                countBaDoiThong=0,countBonDoiThong=0,sumDoiMax = 0,sumDoiMin,
+                sumSanhMax = 0,sumSanhMin,sumBaCon=0;
         for(int i=0;i<bot.mycard.size();i++) {
             int j=i+1;
             if(gtbot.vitrilabaiLQtoidoi[j].equals("d")&&

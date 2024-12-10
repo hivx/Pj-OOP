@@ -93,7 +93,13 @@ public class TLMB {
             if(cardbot.get(i).loaibai.equals(kieubai)
                     &&cardbot.get(i).sola==countdp&&
                     carddp[countdp]<Integer.parseInt(elebot[countdp-1])) {
-                luuDuLieuCacDapAnLienQuan(i);
+                if((carddp[countdp] - 1) % 4 == (Integer.parseInt(elebot[countdp-1]) - 1) % 4 || Integer.parseInt(elebot[countdp - 1]) >= 49) {
+//                    System.out.println("KIEM TRA");
+//                    System.out.println("carddp: " + carddp[countdp]);
+//                    System.out.println("elebot: " + Integer.parseInt(elebot[countdp - 1]));
+                    baitopdoduoc=true;
+                    luuDuLieuCacDapAnLienQuan(i);
+                }
             }
         }
         if(kieubai.equals("coc")&&carddp[countdp]>=49) {
@@ -104,6 +110,14 @@ public class TLMB {
                 }
             }
         }
+    }
+    public void luuDuLieuCacDapAnLienQuan(int i) {
+        countdapanlienquan++;
+        dapanlienquan[countdapanlienquan] = cardbot.get(i).daycard;
+        dapanlienquansum[countdapanlienquansum] = cardbot.get(i).sumsohieu;
+
+        // In ra dãy bài và tổng giá trị
+        System.out.println("Dãy bài lưu: " + dapanlienquan[countdapanlienquan]);
     }
     public boolean BiVaCham2(Vector<String> local, String B) {
         StringBuilder bien1= new StringBuilder();
@@ -298,11 +312,6 @@ public class TLMB {
         }
         return sum;
     }
-    public void luuDuLieuCacDapAnLienQuan(int i) {
-        countdapanlienquan++;
-        dapanlienquan[countdapanlienquan]=cardbot.get(i).daycard;
-        dapanlienquansum[countdapanlienquansum]=cardbot.get(i).sumsohieu;
-    }
     public void xacDinhCacThongSoLienQuan() {
         minactor=10000;
         maxactor=0;
@@ -348,10 +357,6 @@ public class TLMB {
             System.out.println(" tại 4");return 99;
         }
         return 0;
-    }
-    // Hàm kiểm tra nếu hai lá bài có cùng chất
-    public boolean sameSuit(int card1, int card2) {
-        return (card1 / 13 == card2 / 13);  // Chia cho 13 để xác định chất của bài
     }
 
     public int mucDoUuTienRaBai4Actor() {
